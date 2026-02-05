@@ -49,7 +49,11 @@ export default function Header() {
             {navItems.map((item) => {
               const active = isActive(item.href);
               return (
-                <motion.div key={item.href} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <motion.div
+                  key={item.href}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <Link
                     href={item.href}
                     className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
@@ -60,7 +64,11 @@ export default function Header() {
                       <motion.span
                         layoutId="activeNav"
                         className="absolute inset-0 rounded-full bg-white/10"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 380,
+                          damping: 30,
+                        }}
                       />
                     )}
                     <span className="relative z-10">{item.label}</span>
@@ -70,7 +78,13 @@ export default function Header() {
             })}
           </nav>
 
-          <motion.div whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(34,211,238,0.4)" }} whileTap={{ scale: 0.95 }}>
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0 0 30px rgba(34,211,238,0.4)",
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
             <Link
               href="/contact"
               className="hidden rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-2.5 text-sm font-semibold text-slate-900 transition-all lg:inline-flex"
@@ -87,7 +101,9 @@ export default function Header() {
           >
             <div className="flex w-5 flex-col gap-1.5">
               <motion.span
-                animate={mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+                animate={
+                  mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }
+                }
                 className="h-0.5 w-full bg-white"
               />
               <motion.span
@@ -95,7 +111,9 @@ export default function Header() {
                 className="h-0.5 w-full bg-white"
               />
               <motion.span
-                animate={mobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                animate={
+                  mobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }
+                }
                 className="h-0.5 w-full bg-white"
               />
             </div>
@@ -106,7 +124,11 @@ export default function Header() {
       {/* Mobile menu overlay */}
       <motion.div
         initial={false}
-        animate={mobileMenuOpen ? { opacity: 1, pointerEvents: "auto" as const } : { opacity: 0, pointerEvents: "none" as const }}
+        animate={
+          mobileMenuOpen
+            ? { opacity: 1, pointerEvents: "auto" as const }
+            : { opacity: 0, pointerEvents: "none" as const }
+        }
         transition={{ duration: 0.2 }}
         className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
         onClick={() => setMobileMenuOpen(false)}
@@ -127,14 +149,20 @@ export default function Header() {
                 <motion.div
                   key={item.href}
                   initial={{ opacity: 0, x: 20 }}
-                  animate={mobileMenuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+                  animate={
+                    mobileMenuOpen
+                      ? { opacity: 1, x: 0 }
+                      : { opacity: 0, x: 20 }
+                  }
                   transition={{ delay: index * 0.05 }}
                 >
                   <Link
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block rounded-xl px-4 py-3 text-base font-medium transition-colors ${
-                      active ? "bg-white/10 text-white" : "text-slate-400 hover:bg-white/5 hover:text-white"
+                      active
+                        ? "bg-white/10 text-white"
+                        : "text-slate-400 hover:bg-white/5 hover:text-white"
                     }`}
                   >
                     {item.label}
@@ -146,7 +174,9 @@ export default function Header() {
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={mobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={
+              mobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
             transition={{ delay: 0.3 }}
           >
             <Link
@@ -159,7 +189,9 @@ export default function Header() {
           </motion.div>
 
           <div className="mt-auto pb-8">
-            <p className="text-xs text-slate-500">© {new Date().getFullYear()} Анджинтранс ХХК</p>
+            <p className="text-xs text-slate-500">
+              © {new Date().getFullYear()} Анджинтранс ХХК
+            </p>
           </div>
         </div>
       </motion.nav>

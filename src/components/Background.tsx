@@ -2,7 +2,13 @@
 
 import { motion } from "framer-motion";
 
-function FloatingOrb({ className, delay = 0 }: { className: string; delay?: number }) {
+function FloatingOrb({
+  className,
+  delay = 0,
+}: {
+  className: string;
+  delay?: number;
+}) {
   return (
     <motion.div
       className={className}
@@ -17,7 +23,7 @@ function MovingIcon({
   direction = "left",
   duration = 20,
   className = "",
-  delay = 0
+  delay = 0,
 }: {
   children: React.ReactNode;
   direction?: "left" | "right";
@@ -25,7 +31,8 @@ function MovingIcon({
   className?: string;
   delay?: number;
 }) {
-  const xValues = direction === "left" ? ["100vw", "-20vw"] : ["-20vw", "100vw"];
+  const xValues =
+    direction === "left" ? ["100vw", "-20vw"] : ["-20vw", "100vw"];
 
   return (
     <motion.div
@@ -33,14 +40,14 @@ function MovingIcon({
       initial={{ x: xValues[0], opacity: 0 }}
       animate={{
         x: xValues,
-        opacity: [0, 1, 1, 0]
+        opacity: [0, 1, 1, 0],
       }}
       transition={{
         duration,
         repeat: Infinity,
         delay,
         ease: "linear",
-        times: [0, 0.1, 0.9, 1]
+        times: [0, 0.1, 0.9, 1],
       }}
     >
       {children}
@@ -52,7 +59,7 @@ function MovingIcon({
 function PlaneIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+      <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
     </svg>
   );
 }
@@ -60,7 +67,7 @@ function PlaneIcon({ className }: { className?: string }) {
 function ShipIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.38 0 2.74-.35 4-.99 2.52 1.29 5.48 1.29 8 0 1.26.65 2.62.99 4 .99h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.5L20 10.62V6c0-1.1-.9-2-2-2h-3V1H9v3H6c-1.1 0-2 .9-2 2v4.62l-1.29.42c-.26.08-.48.26-.6.5s-.15.52-.06.78L3.95 19zM6 6h12v3.97L12 8 6 9.97V6z"/>
+      <path d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.38 0 2.74-.35 4-.99 2.52 1.29 5.48 1.29 8 0 1.26.65 2.62.99 4 .99h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.5L20 10.62V6c0-1.1-.9-2-2-2h-3V1H9v3H6c-1.1 0-2 .9-2 2v4.62l-1.29.42c-.26.08-.48.26-.6.5s-.15.52-.06.78L3.95 19zM6 6h12v3.97L12 8 6 9.97V6z" />
     </svg>
   );
 }
@@ -68,7 +75,7 @@ function ShipIcon({ className }: { className?: string }) {
 function TrainIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+      <path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
     </svg>
   );
 }
@@ -76,7 +83,7 @@ function TrainIcon({ className }: { className?: string }) {
 function TruckIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+      <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
     </svg>
   );
 }
@@ -84,7 +91,7 @@ function TruckIcon({ className }: { className?: string }) {
 function ContainerIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M21 3H3v18h18V3zm-2 16H5V5h14v14zM7 7h2v10H7V7zm4 0h2v10h-2V7zm4 0h2v10h-2V7z"/>
+      <path d="M21 3H3v18h18V3zm-2 16H5V5h14v14zM7 7h2v10H7V7zm4 0h2v10h-2V7zm4 0h2v10h-2V7z" />
     </svg>
   );
 }
@@ -92,7 +99,10 @@ function ContainerIcon({ className }: { className?: string }) {
 // Animated dotted route line
 function RouteLine() {
   return (
-    <svg className="absolute inset-0 h-full w-full opacity-[0.03]" viewBox="0 0 1200 800">
+    <svg
+      className="absolute inset-0 h-full w-full opacity-[0.03]"
+      viewBox="0 0 1200 800"
+    >
       <motion.path
         d="M0,400 Q300,200 600,400 T1200,400"
         fill="none"
@@ -171,7 +181,10 @@ function WorldMapPattern() {
 
         {/* Connection lines */}
         <motion.line
-          x1="200" y1="150" x2="480" y2="130"
+          x1="200"
+          y1="150"
+          x2="480"
+          y2="130"
           stroke="currentColor"
           strokeWidth="1"
           strokeDasharray="5 5"
@@ -181,7 +194,10 @@ function WorldMapPattern() {
           transition={{ duration: 2, repeat: Infinity }}
         />
         <motion.line
-          x1="480" y1="130" x2="720" y2="170"
+          x1="480"
+          y1="130"
+          x2="720"
+          y2="170"
           stroke="currentColor"
           strokeWidth="1"
           strokeDasharray="5 5"
@@ -223,31 +239,66 @@ export default function Background() {
         />
 
         {/* Moving transport icons */}
-        <MovingIcon direction="right" duration={25} className="top-[15%]" delay={0}>
+        <MovingIcon
+          direction="right"
+          duration={25}
+          className="top-[15%]"
+          delay={0}
+        >
           <PlaneIcon className="h-8 w-8 text-cyan-500/10 rotate-45" />
         </MovingIcon>
 
-        <MovingIcon direction="left" duration={35} className="top-[35%]" delay={5}>
+        <MovingIcon
+          direction="left"
+          duration={35}
+          className="top-[35%]"
+          delay={5}
+        >
           <ShipIcon className="h-10 w-10 text-blue-500/10" />
         </MovingIcon>
 
-        <MovingIcon direction="right" duration={30} className="top-[55%]" delay={10}>
+        <MovingIcon
+          direction="right"
+          duration={30}
+          className="top-[55%]"
+          delay={10}
+        >
           <TrainIcon className="h-8 w-8 text-purple-500/10" />
         </MovingIcon>
 
-        <MovingIcon direction="left" duration={22} className="top-[75%]" delay={3}>
+        <MovingIcon
+          direction="left"
+          duration={22}
+          className="top-[75%]"
+          delay={3}
+        >
           <TruckIcon className="h-8 w-8 text-emerald-500/10" />
         </MovingIcon>
 
-        <MovingIcon direction="right" duration={40} className="top-[45%]" delay={15}>
+        <MovingIcon
+          direction="right"
+          duration={40}
+          className="top-[45%]"
+          delay={15}
+        >
           <ContainerIcon className="h-12 w-12 text-orange-500/8" />
         </MovingIcon>
 
-        <MovingIcon direction="left" duration={28} className="top-[25%]" delay={8}>
+        <MovingIcon
+          direction="left"
+          duration={28}
+          className="top-[25%]"
+          delay={8}
+        >
           <PlaneIcon className="h-6 w-6 text-cyan-500/8 -rotate-12" />
         </MovingIcon>
 
-        <MovingIcon direction="right" duration={32} className="top-[65%]" delay={12}>
+        <MovingIcon
+          direction="right"
+          duration={32}
+          className="top-[65%]"
+          delay={12}
+        >
           <ShipIcon className="h-8 w-8 text-blue-500/8" />
         </MovingIcon>
       </div>
@@ -256,10 +307,13 @@ export default function Background() {
       <div className="fixed inset-0 z-[1] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-50" />
 
       {/* Grid pattern overlay */}
-      <div className="fixed inset-0 z-[1] opacity-[0.02]" style={{
-        backgroundImage: `linear-gradient(rgba(56,189,248,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,0.3) 1px, transparent 1px)`,
-        backgroundSize: '100px 100px'
-      }} />
+      <div
+        className="fixed inset-0 z-[1] opacity-[0.02]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(56,189,248,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,0.3) 1px, transparent 1px)`,
+          backgroundSize: "100px 100px",
+        }}
+      />
     </>
   );
 }
