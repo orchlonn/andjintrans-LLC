@@ -238,29 +238,19 @@ export default function Home() {
         className="fixed left-0 right-0 top-0 z-50 border-b border-white/5 bg-[#0a0a0f]/80 backdrop-blur-xl"
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <motion.div
-            className="flex items-center gap-3"
+          <motion.a
+            href="#home"
+            className="flex items-center"
             whileHover={{ scale: 1.02 }}
           >
-            <div className="relative h-10 w-10">
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500" />
-              <Image
-                src="/globe.svg"
-                alt="Andjintrans logo"
-                width={40}
-                height={40}
-                className="relative z-10 p-2"
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="bg-gradient-to-r from-white to-slate-300 bg-clip-text text-sm font-bold tracking-wider text-transparent">
-                ANDJINTRANS
-              </span>
-              <span className="text-[10px] tracking-widest text-slate-500">
-                LOGISTICS
-              </span>
-            </div>
-          </motion.div>
+            <Image
+              src="/logo.png"
+              alt="Andjintrans logo"
+              width={160}
+              height={48}
+              className="h-10 w-auto sm:h-12"
+            />
+          </motion.a>
 
           <nav className="hidden items-center gap-1 md:flex">
             {navItems.map((item) => {
