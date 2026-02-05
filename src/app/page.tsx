@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -111,8 +111,18 @@ function ServiceCard({
   );
 }
 
+const navItems = [
+  { href: "#home", label: "Нүүр" },
+  { href: "#about", label: "Бидний тухай" },
+  { href: "#services", label: "Үйлчилгээ" },
+  { href: "#resources", label: "Танд хэрэгтэй" },
+  { href: "#contact", label: "Холбоо барих" },
+];
+
 export default function Home() {
   const heroRef = useRef(null);
+  const [activeSection, setActiveSection] = useState("home");
+
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
@@ -120,6 +130,33 @@ export default function Home() {
 
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  useEffect(() => {
+    const sectionIds = ["home", "about", "services", "resources", "contact"];
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const services = [
     {
@@ -236,23 +273,31 @@ export default function Home() {
           </motion.div>
 
           <nav className="hidden items-center gap-1 md:flex">
-            {[
-              { href: "#home", label: "Нүүр" },
-              { href: "#about", label: "Бидний тухай" },
-              { href: "#services", label: "Үйлчилгээ" },
-              { href: "#resources", label: "Танд хэрэгтэй" },
-              { href: "#contact", label: "Холбоо барих" },
-            ].map((item) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
-                className="relative rounded-full px-4 py-2 text-sm text-slate-400 transition-colors hover:text-white"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {item.label}
-              </motion.a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.slice(1);
+              return (
+                <motion.a
+                  key={item.href}
+                  href={item.href}
+                  className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
+                    isActive
+                      ? "text-white"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeNav"
+                      className="absolute inset-0 rounded-full bg-white/10"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{item.label}</span>
+                </motion.a>
+              );
+            })}
           </nav>
 
           <motion.a
