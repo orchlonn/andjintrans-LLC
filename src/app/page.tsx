@@ -69,20 +69,12 @@ function ServiceCard({
   description,
   subtext,
   index,
-  size = "normal",
 }: {
   title: string;
   description: string;
   subtext: string;
   index: number;
-  size?: "normal" | "large" | "wide";
 }) {
-  const sizeClasses = {
-    normal: "",
-    large: "md:col-span-2 md:row-span-2",
-    wide: "md:col-span-2",
-  };
-
   return (
     <motion.article
       initial={{ opacity: 0, y: 40, scale: 0.95 }}
@@ -90,7 +82,7 @@ function ServiceCard({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -8, scale: 1.02 }}
-      className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-800/40 p-6 backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/50 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] ${sizeClasses[size]}`}
+      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-800/40 p-6 backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/50 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       <div className="relative z-10">
@@ -122,6 +114,7 @@ const navItems = [
 export default function Home() {
   const heroRef = useRef(null);
   const [activeSection, setActiveSection] = useState("home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -148,7 +141,10 @@ export default function Home() {
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions,
+    );
 
     sectionIds.forEach((id) => {
       const element = document.getElementById(id);
@@ -163,37 +159,31 @@ export default function Home() {
       title: "Агаарын тээвэр",
       description:
         "Яаралтай, өндөр үнэ цэнтэй ачаанд тохиромжтой. Нисэх буудлаас нисэх буудал, хаалганаас хаалганд, нэгтгэл болон шуурхай горимтой ачааг зохион байгуулна.",
-      subtext:
-        "Ачаа хүлээн авах → бичиг баримт → тээвэрлэлт → гааль → хүргэлт",
-      size: "large" as const,
+      subtext: "Ачаа хүлээн авах → бичиг баримт → тээвэрлэлт → гааль → хүргэлт",
     },
     {
       title: "Далайн тээвэр",
       description:
         "Их хэмжээний ачаанд өртөг оновчтой. FCL / LCL, боомтоос боомт, тусгай тоноглол.",
       subtext: "Storage / demurrage эрсдэлийг бууруулна",
-      size: "normal" as const,
     },
     {
       title: "Төмөр замын тээвэр",
       description:
         "Их жин, их эзэлхүүнтэй ачаанд тогтвортой хугацаатай, өртөг багатай сонголт.",
       subtext: "Контейнер болон вагон тээвэр, транзит урсгал",
-      size: "normal" as const,
     },
     {
       title: "Авто замын тээвэр",
       description:
         "Хил дамнасан болон дотоод хүргэлтийн уян хатан шийдэл. LTL / FTL ачаа.",
       subtext: "Баримтын шалгалт, гааль-терминалын уялдаа",
-      size: "normal" as const,
     },
     {
       title: "Транзит тээвэр",
       description:
         "Гуравдагч орны ачааг Монгол Улсын нутгаар дамжуулан тээвэрлэх тусгай зохион байгуулалт.",
       subtext: "Хил, терминал, гаалийн горимыг нэг цэгээс хянана",
-      size: "normal" as const,
     },
   ];
 
@@ -280,9 +270,7 @@ export default function Home() {
                   key={item.href}
                   href={item.href}
                   className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
-                    isActive
-                      ? "text-white"
-                      : "text-slate-400 hover:text-white"
+                    isActive ? "text-white" : "text-slate-400 hover:text-white"
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -291,7 +279,11 @@ export default function Home() {
                     <motion.span
                       layoutId="activeNav"
                       className="absolute inset-0 rounded-full bg-white/10"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
                     />
                   )}
                   <span className="relative z-10">{item.label}</span>
@@ -302,14 +294,113 @@ export default function Home() {
 
           <motion.a
             href="#contact"
-            whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(34,211,238,0.4)" }}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0 0 30px rgba(34,211,238,0.4)",
+            }}
             whileTap={{ scale: 0.95 }}
             className="hidden rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-2.5 text-sm font-semibold text-slate-900 transition-all md:inline-flex"
           >
             Үнийн санал авах
           </motion.a>
+
+          {/* Mobile hamburger button */}
+          <motion.button
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 md:hidden"
+            aria-label="Toggle menu"
+          >
+            <div className="flex w-5 flex-col gap-1.5">
+              <motion.span
+                animate={
+                  mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }
+                }
+                className="h-0.5 w-full bg-white"
+              />
+              <motion.span
+                animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+                className="h-0.5 w-full bg-white"
+              />
+              <motion.span
+                animate={
+                  mobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }
+                }
+                className="h-0.5 w-full bg-white"
+              />
+            </div>
+          </motion.button>
         </div>
       </motion.header>
+
+      {/* Mobile menu overlay */}
+      <motion.div
+        initial={false}
+        animate={
+          mobileMenuOpen
+            ? { opacity: 1, pointerEvents: "auto" as const }
+            : { opacity: 0, pointerEvents: "none" as const }
+        }
+        transition={{ duration: 0.2 }}
+        className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+        onClick={() => setMobileMenuOpen(false)}
+      />
+
+      {/* Mobile menu */}
+      <motion.nav
+        initial={false}
+        animate={mobileMenuOpen ? { x: 0 } : { x: "100%" }}
+        transition={{ type: "spring", damping: 30, stiffness: 300 }}
+        className="fixed bottom-0 right-0 top-0 z-40 w-72 border-l border-white/10 bg-[#0a0a0f]/95 backdrop-blur-xl md:hidden"
+      >
+        <div className="flex h-full flex-col px-6 pt-24">
+          <div className="flex flex-col gap-2">
+            {navItems.map((item, index) => {
+              const isActive = activeSection === item.href.slice(1);
+              return (
+                <motion.a
+                  key={item.href}
+                  href={item.href}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={
+                    mobileMenuOpen
+                      ? { opacity: 1, x: 0 }
+                      : { opacity: 0, x: 20 }
+                  }
+                  transition={{ delay: index * 0.05 }}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`rounded-xl px-4 py-3 text-base font-medium transition-colors ${
+                    isActive
+                      ? "bg-white/10 text-white"
+                      : "text-slate-400 hover:bg-white/5 hover:text-white"
+                  }`}
+                >
+                  {item.label}
+                </motion.a>
+              );
+            })}
+          </div>
+
+          <motion.a
+            href="#contact"
+            initial={{ opacity: 0, y: 20 }}
+            animate={
+              mobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
+            transition={{ delay: 0.3 }}
+            onClick={() => setMobileMenuOpen(false)}
+            className="mt-6 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-3 text-center text-base font-semibold text-slate-900"
+          >
+            Үнийн санал авах
+          </motion.a>
+
+          <div className="mt-auto pb-8">
+            <p className="text-xs text-slate-500">
+              © {new Date().getFullYear()} Анджинтранс ХХК
+            </p>
+          </div>
+        </div>
+      </motion.nav>
 
       <main className="relative z-10">
         {/* Hero Section */}
@@ -326,7 +417,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300"
+              className="mb-6 mt-16 inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300 md:mt-0"
             >
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75" />
@@ -339,7 +430,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
+              className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
             >
               <span className="text-white">Олон улсын</span>
               <br />
@@ -419,10 +510,12 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl">
+                  <div className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-2xl font-bold text-transparent sm:text-4xl md:text-5xl">
                     {stat.value}
                   </div>
-                  <div className="mt-2 text-sm text-slate-500">{stat.label}</div>
+                  <div className="mt-2 text-sm text-slate-500">
+                    {stat.label}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -453,7 +546,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="relative px-6 py-32">
+        <section id="about" className="relative px-6 py-16 md:py-24 lg:py-32">
           <div className="mx-auto max-w-7xl">
             <AnimatedSection>
               <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
@@ -464,7 +557,7 @@ export default function Home() {
                   >
                     Бидний тухай
                   </motion.span>
-                  <h2 className="mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl">
+                  <h2 className="mt-6 text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
                     2011 оноос хойш{" "}
                     <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                       найдвартай түнш
@@ -473,12 +566,13 @@ export default function Home() {
                   <p className="mt-6 text-lg leading-relaxed text-slate-400">
                     Анджинтранс ХХК нь ачааны төрөл, хэмжээ, хугацаа, температур
                     болон аюулын шаардлага, бичиг баримтын онцлогт тулгуурласан
-                    шийдэл-суурьтай логистикийн үйл ажиллагааг зохион байгуулдаг.
+                    шийдэл-суурьтай логистикийн үйл ажиллагааг зохион
+                    байгуулдаг.
                   </p>
                   <p className="mt-4 text-slate-500">
                     Агаар, далай, төмөр зам, авто тээврийг дангаар нь болон
-                    холимог хэлбэрээр уялдуулж, импорт, экспорт, транзит урсгалыг
-                    нэг төлөвлөгөө, нэг хариуцлагын хүрээнд удирддаг.
+                    холимог хэлбэрээр уялдуулж, импорт, экспорт, транзит
+                    урсгалыг нэг төлөвлөгөө, нэг хариуцлагын хүрээнд удирддаг.
                   </p>
                 </div>
 
@@ -523,16 +617,19 @@ export default function Home() {
         </section>
 
         {/* Services Section - Bento Grid */}
-        <section id="services" className="relative px-6 py-32">
+        <section
+          id="services"
+          className="relative px-6 py-16 md:py-24 lg:py-32"
+        >
           <div className="mx-auto max-w-7xl">
-            <AnimatedSection className="mb-16 text-center">
+            <AnimatedSection className="mb-8 text-center md:mb-16">
               <motion.span
                 className="inline-block rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 px-4 py-2 text-sm font-medium text-cyan-400"
                 whileHover={{ scale: 1.05 }}
               >
                 Бидний үйлчилгээ
               </motion.span>
-              <h2 className="mt-6 text-4xl font-bold text-white sm:text-5xl">
+              <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
                 Тээврийн{" "}
                 <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                   цогц шийдэл
@@ -544,30 +641,29 @@ export default function Home() {
               </p>
             </AnimatedSection>
 
-            {/* Bento Grid */}
-            <div className="grid gap-4 md:grid-cols-3 md:grid-rows-2">
+            {/* Services Grid */}
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => (
-                <ServiceCard
-                  key={service.title}
-                  {...service}
-                  index={index}
-                />
+                <ServiceCard key={service.title} {...service} index={index} />
               ))}
             </div>
           </div>
         </section>
 
         {/* Value Added Services */}
-        <section id="value-added" className="relative px-6 py-32">
+        <section
+          id="value-added"
+          className="relative px-6 py-16 md:py-24 lg:py-32"
+        >
           <div className="mx-auto max-w-7xl">
-            <AnimatedSection className="mb-16">
+            <AnimatedSection className="mb-8 text-center md:mb-16">
               <motion.span
                 className="inline-block rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-4 py-2 text-sm font-medium text-purple-400"
                 whileHover={{ scale: 1.05 }}
               >
                 Нэмэлт үйлчилгээ
               </motion.span>
-              <h2 className="mt-6 text-4xl font-bold text-white sm:text-5xl">
+              <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
                 Эрсдэлийг{" "}
                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   бууруулсан шийдэл
@@ -603,16 +699,19 @@ export default function Home() {
         </section>
 
         {/* Resources Section */}
-        <section id="resources" className="relative px-6 py-32">
+        <section
+          id="resources"
+          className="relative px-6 py-16 md:py-24 lg:py-32"
+        >
           <div className="mx-auto max-w-7xl">
-            <AnimatedSection className="mb-16 text-center">
+            <AnimatedSection className="mb-8 text-center md:mb-16">
               <motion.span
                 className="inline-block rounded-full bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 px-4 py-2 text-sm font-medium text-emerald-400"
                 whileHover={{ scale: 1.05 }}
               >
                 Танд хэрэгтэй
               </motion.span>
-              <h2 className="mt-6 text-4xl font-bold text-white sm:text-5xl">
+              <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
                 Мэдлэгийн{" "}
                 <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                   сан
@@ -672,7 +771,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="relative px-6 py-32">
+        <section id="contact" className="relative px-6 py-16 md:py-24 lg:py-32">
           <div className="mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 60 }}
@@ -692,7 +791,7 @@ export default function Home() {
                   >
                     Холбоо барих
                   </motion.span>
-                  <h2 className="mt-6 text-4xl font-bold text-white sm:text-5xl">
+                  <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
                     Бидэнтэй{" "}
                     <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                       холбогдох
