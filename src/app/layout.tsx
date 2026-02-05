@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="mn">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="relative min-h-screen overflow-hidden bg-[#0a0a0f] text-white">
+        <div className="relative min-h-screen overflow-hidden bg-[#0d0d14] text-white">
           <Background />
           <Header />
           <main className="relative z-10">{children}</main>

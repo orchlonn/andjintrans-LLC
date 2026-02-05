@@ -30,7 +30,7 @@ export default function Header() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed left-0 right-0 top-0 z-50 border-b border-white/5 bg-[#0a0a0f]/80 backdrop-blur-xl"
+        className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#151520]/75 backdrop-blur-xl"
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <motion.div whileHover={{ scale: 1.02 }}>
@@ -139,7 +139,7 @@ export default function Header() {
         initial={false}
         animate={mobileMenuOpen ? { x: 0 } : { x: "100%" }}
         transition={{ type: "spring", damping: 30, stiffness: 300 }}
-        className="fixed bottom-0 right-0 top-0 z-40 w-72 border-l border-white/10 bg-[#0a0a0f]/95 backdrop-blur-xl lg:hidden"
+        className="fixed bottom-0 right-0 top-0 z-40 w-72 border-l border-white/10 bg-[#151520]/95 backdrop-blur-xl lg:hidden"
       >
         <div className="flex h-full flex-col px-6 pt-24">
           <div className="flex flex-col gap-2">
