@@ -225,7 +225,9 @@ export default function ServicesPage() {
                       href={service.href}
                       className={`group relative block h-full overflow-hidden rounded-3xl border ${colors.border} bg-gradient-to-br ${colors.bg} to-transparent p-8 backdrop-blur-xl transition-all duration-500 ${colors.hover}`}
                     >
-                      <span className="text-4xl"><Icon className="h-10 w-10 text-current" /></span>
+                      <div className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${service.gradient} shadow-lg`}>
+                        <Icon className="h-7 w-7 text-slate-900" />
+                      </div>
                       <h3 className="mt-4 text-xl font-bold text-white">
                         {service.title}
                       </h3>
@@ -285,7 +287,9 @@ export default function ServicesPage() {
                     href={service.href}
                     className="group relative block h-full overflow-hidden rounded-3xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-transparent p-8 backdrop-blur-xl transition-all duration-500 hover:border-purple-400/50"
                   >
-                    <span className="text-4xl"><Icon className="h-10 w-10 text-current" /></span>
+                    <div className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${service.gradient} shadow-lg`}>
+                      <Icon className="h-7 w-7 text-slate-900" />
+                    </div>
                     <h3 className="mt-4 text-xl font-bold text-white">
                       {service.title}
                     </h3>
