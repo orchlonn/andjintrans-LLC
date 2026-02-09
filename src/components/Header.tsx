@@ -32,7 +32,7 @@ export default function Header() {
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#151520]/75 backdrop-blur-xl"
       >
-        <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-4 py-4 sm:px-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:grid lg:grid-cols-[1fr_auto_1fr]">
           <div className="flex justify-start">
             <motion.div whileHover={{ scale: 1.02 }}>
               <Link href="/" className="flex items-center">
@@ -81,11 +81,11 @@ export default function Header() {
             })}
           </nav>
 
-          <div className="flex justify-end">
+          <div className="flex justify-end lg:hidden">
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 lg:hidden"
+              className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5"
               aria-label="Toggle menu"
             >
               <div className="flex w-5 flex-col gap-1.5">
