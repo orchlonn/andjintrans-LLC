@@ -32,31 +32,34 @@ export default function Header() {
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#151520]/75 backdrop-blur-xl"
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <motion.div whileHover={{ scale: 1.02 }}>
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/logo.png"
-                alt="Andjintrans logo"
-                width={160}
-                height={48}
-                className="h-10 w-auto sm:h-12"
-              />
-            </Link>
-          </motion.div>
+        <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-4 py-4 sm:px-6">
+          <div className="flex justify-start">
+            <motion.div whileHover={{ scale: 1.02 }}>
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/logo.png"
+                  alt="Andjintrans logo"
+                  width={160}
+                  height={48}
+                  className="h-10 w-auto sm:h-12"
+                />
+              </Link>
+            </motion.div>
+          </div>
 
-          <nav className="hidden items-center gap-1 lg:flex">
+          <nav className="hidden min-w-0 items-center justify-center gap-0.5 lg:flex lg:gap-1">
             {navItems.map((item) => {
               const active = isActive(item.href);
               return (
                 <motion.div
                   key={item.href}
+                  className="shrink-0"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link
                     href={item.href}
-                    className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
+                    className={`relative whitespace-nowrap rounded-full px-2.5 py-2 text-xs transition-colors sm:px-3 sm:text-sm xl:px-4 ${
                       active ? "text-white" : "text-slate-400 hover:text-white"
                     }`}
                   >
@@ -78,46 +81,35 @@ export default function Header() {
             })}
           </nav>
 
-          <motion.div
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 0 30px rgba(34,211,238,0.4)",
-            }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Link
-              href="/contact"
-              className="hidden rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-2.5 text-sm font-semibold text-slate-900 transition-all lg:inline-flex"
+          <div className="flex justify-end">
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 lg:hidden"
+              aria-label="Toggle menu"
             >
-              Үнийн санал авах
-            </Link>
-          </motion.div>
-
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 lg:hidden"
-            aria-label="Toggle menu"
-          >
-            <div className="flex w-5 flex-col gap-1.5">
-              <motion.span
-                animate={
-                  mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }
-                }
-                className="h-0.5 w-full bg-white"
-              />
-              <motion.span
-                animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="h-0.5 w-full bg-white"
-              />
-              <motion.span
-                animate={
-                  mobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }
-                }
-                className="h-0.5 w-full bg-white"
-              />
-            </div>
-          </motion.button>
+              <div className="flex w-5 flex-col gap-1.5">
+                <motion.span
+                  animate={
+                    mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }
+                  }
+                  className="h-0.5 w-full bg-white"
+                />
+                <motion.span
+                  animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+                  className="h-0.5 w-full bg-white"
+                />
+                <motion.span
+                  animate={
+                    mobileMenuOpen
+                      ? { rotate: -45, y: -6 }
+                      : { rotate: 0, y: 0 }
+                  }
+                  className="h-0.5 w-full bg-white"
+                />
+              </div>
+            </motion.button>
+          </div>
         </div>
       </motion.header>
 
@@ -171,22 +163,6 @@ export default function Header() {
               );
             })}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={
-              mobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-            }
-            transition={{ delay: 0.3 }}
-          >
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="mt-6 block rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-3 text-center text-base font-semibold text-slate-900"
-            >
-              Үнийн санал авах
-            </Link>
-          </motion.div>
 
           <div className="mt-auto pb-8">
             <p className="text-xs text-slate-500">

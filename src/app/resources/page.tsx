@@ -56,7 +56,8 @@ function DocumentIcon({ className }: { className?: string }) {
 const resources = [
   {
     title: "Инкотермс 2020",
-    description: "Олон улсын худалдааны 11 нөхцөл, зардал/эрсдэлийн шилжилт, хариуцлагын хил",
+    description:
+      "Олон улсын худалдааны 11 нөхцөл, зардал/эрсдэлийн шилжилт, хариуцлагын хил",
     href: "/resources/incoterms",
     Icon: ClipboardIcon,
     color: "cyan",
@@ -64,7 +65,8 @@ const resources = [
   },
   {
     title: "Контейнерын төрөл",
-    description: "Dry, High Cube, Reefer, Open Top, Flat Rack, Tank гэх мэт 10 төрлийн контейнер",
+    description:
+      "Dry, High Cube, Reefer, Open Top, Flat Rack, Tank гэх мэт 10 төрлийн контейнер",
     href: "/resources/containers",
     Icon: BoxIcon,
     color: "blue",
@@ -72,7 +74,8 @@ const resources = [
   },
   {
     title: "Вагоны төрөл",
-    description: "Битүү, хагас, тавцант, цистерн, бункер, рефрижератор гэх мэт 9 төрлийн вагон",
+    description:
+      "Битүү, хагас, тавцант, цистерн, бункер, рефрижератор гэх мэт 9 төрлийн вагон",
     href: "/resources/wagons",
     Icon: TrainIcon,
     color: "purple",
@@ -88,7 +91,8 @@ const resources = [
   },
   {
     title: "Сав баглаа боодол",
-    description: "Primary/Secondary/Tertiary савлагаа, хамгаалалтын материал, стандарт",
+    description:
+      "Primary/Secondary/Tertiary савлагаа, хамгаалалтын материал, стандарт",
     href: "/resources/packaging",
     Icon: PackageIcon,
     color: "emerald",
@@ -96,7 +100,8 @@ const resources = [
   },
   {
     title: "Шаардлагатай баримт",
-    description: "Commercial Invoice, B/L, AWB, CMR, гаалийн бүрдүүлэлт, DG баримтууд",
+    description:
+      "Commercial Invoice, B/L, AWB, CMR, гаалийн бүрдүүлэлт, DG баримтууд",
     href: "/resources/documents",
     Icon: DocumentIcon,
     color: "pink",
@@ -104,7 +109,10 @@ const resources = [
   },
 ];
 
-const colorClasses: Record<string, { border: string; bg: string; hover: string }> = {
+const colorClasses: Record<
+  string,
+  { border: string; bg: string; hover: string }
+> = {
   cyan: {
     border: "border-cyan-500/30",
     bg: "from-cyan-500/10",
@@ -173,15 +181,31 @@ export default function ResourcesPage() {
                       href={resource.href}
                       className={`group relative block h-full overflow-hidden rounded-3xl border ${colors.border} bg-gradient-to-br ${colors.bg} to-transparent p-8 backdrop-blur-xl transition-all duration-500 ${colors.hover}`}
                     >
-                      <div className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${resource.gradient} shadow-lg`}>
+                      <div
+                        className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${resource.gradient} shadow-lg`}
+                      >
                         <Icon className="h-7 w-7 text-slate-900" />
                       </div>
-                      <h3 className="mt-6 text-xl font-bold text-white">{resource.title}</h3>
-                      <p className="mt-3 text-sm leading-relaxed text-slate-300">{resource.description}</p>
+                      <h3 className="mt-6 text-xl font-bold text-white">
+                        {resource.title}
+                      </h3>
+                      <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                        {resource.description}
+                      </p>
                       <span className="mt-6 inline-flex items-center text-sm text-emerald-400 group-hover:text-emerald-300">
                         Дэлгэрэнгүй
-                        <svg className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        <svg
+                          className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
                         </svg>
                       </span>
                     </Link>
@@ -203,15 +227,26 @@ export default function ResourcesPage() {
                 Асуултай байна уу?
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-slate-400">
-                Тээвэр, логистиктой холбоотой аливаа асуултад бид хариулахад бэлэн.
+                Тээвэр, логистиктой холбоотой аливаа асуултад бид хариулахад
+                бэлэн.
               </p>
               <Link
                 href="/contact"
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 to-cyan-500 px-8 py-4 text-base font-semibold text-slate-900 transition-all hover:shadow-[0_0_40px_rgba(52,211,153,0.5)]"
               >
                 Холбоо барих
-                <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <svg
+                  className="ml-2 h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
                 </svg>
               </Link>
             </div>
