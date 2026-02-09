@@ -52,6 +52,11 @@ export default function Footer() {
                   Транзит тээвэр
                 </Link>
               </li>
+              <li>
+                <Link href="/services/export" className="hover:text-cyan-400">
+                  Экспорт тээвэр
+                </Link>
+              </li>
             </ul>
           </div>
 

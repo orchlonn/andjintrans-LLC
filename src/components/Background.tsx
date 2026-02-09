@@ -1,60 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
-function FloatingOrb({
-  className,
-  delay = 0,
-}: {
-  className: string;
-  delay?: number;
-}) {
-  return (
-    <motion.div
-      className={className}
-      animate={{ y: [0, -20, 0], scale: [1, 1.05, 1] }}
-      transition={{ duration: 6, repeat: Infinity, delay, ease: "easeInOut" }}
-    />
-  );
-}
-
-function MovingIcon({
-  children,
-  direction = "left",
-  duration = 20,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  direction?: "left" | "right";
-  duration?: number;
-  className?: string;
-  delay?: number;
-}) {
-  const xValues =
-    direction === "left" ? ["100vw", "-20vw"] : ["-20vw", "100vw"];
-
-  return (
-    <motion.div
-      className={`absolute ${className}`}
-      initial={{ x: xValues[0], opacity: 0 }}
-      animate={{
-        x: xValues,
-        opacity: [0, 1, 1, 0],
-      }}
-      transition={{
-        duration,
-        repeat: Infinity,
-        delay,
-        ease: "linear",
-        times: [0, 0.1, 0.9, 1],
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 // Transport SVG Icons
 function PlaneIcon({ className }: { className?: string }) {
   return (
@@ -96,219 +39,104 @@ function ContainerIcon({ className }: { className?: string }) {
   );
 }
 
-// Animated dotted route line
-function RouteLine() {
-  return (
-    <svg
-      className="absolute inset-0 h-full w-full opacity-[0.03]"
-      viewBox="0 0 1200 800"
-    >
-      <motion.path
-        d="M0,400 Q300,200 600,400 T1200,400"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeDasharray="10 10"
-        className="text-cyan-400"
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-      />
-      <motion.path
-        d="M0,500 Q400,300 800,500 T1200,300"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeDasharray="10 10"
-        className="text-purple-400"
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={{ duration: 4, repeat: Infinity, ease: "linear", delay: 1 }}
-      />
-    </svg>
-  );
-}
-
-// World map dots pattern
-function WorldMapPattern() {
-  return (
-    <div className="absolute inset-0 opacity-[0.02]">
-      <svg viewBox="0 0 1000 500" className="h-full w-full">
-        {/* Simplified world map dots */}
-        <g fill="currentColor" className="text-cyan-400">
-          {/* North America */}
-          <circle cx="200" cy="150" r="3" />
-          <circle cx="220" cy="160" r="3" />
-          <circle cx="180" cy="170" r="3" />
-          <circle cx="240" cy="140" r="3" />
-          <circle cx="160" cy="180" r="3" />
-
-          {/* Europe */}
-          <circle cx="480" cy="130" r="3" />
-          <circle cx="500" cy="140" r="3" />
-          <circle cx="520" cy="120" r="3" />
-          <circle cx="460" cy="150" r="3" />
-
-          {/* Asia */}
-          <circle cx="700" cy="180" r="3" />
-          <circle cx="720" cy="160" r="3" />
-          <circle cx="750" cy="200" r="3" />
-          <circle cx="680" cy="150" r="3" />
-          <circle cx="800" cy="220" r="3" />
-
-          {/* Mongolia highlight */}
-          <motion.circle
-            cx="720"
-            cy="170"
-            r="8"
-            className="text-cyan-400"
-            animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-
-          {/* South America */}
-          <circle cx="280" cy="350" r="3" />
-          <circle cx="300" cy="380" r="3" />
-
-          {/* Africa */}
-          <circle cx="500" cy="280" r="3" />
-          <circle cx="520" cy="320" r="3" />
-
-          {/* Australia */}
-          <circle cx="820" cy="380" r="3" />
-          <circle cx="840" cy="360" r="3" />
-        </g>
-
-        {/* Connection lines */}
-        <motion.line
-          x1="200"
-          y1="150"
-          x2="480"
-          y2="130"
-          stroke="currentColor"
-          strokeWidth="1"
-          strokeDasharray="5 5"
-          className="text-cyan-400/30"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2, repeat: Infinity }}
-        />
-        <motion.line
-          x1="480"
-          y1="130"
-          x2="720"
-          y2="170"
-          stroke="currentColor"
-          strokeWidth="1"
-          strokeDasharray="5 5"
-          className="text-purple-400/30"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-        />
-      </svg>
-    </div>
-  );
-}
-
 export default function Background() {
   return (
     <>
       {/* Animated mesh gradient background */}
-      <div className="fixed inset-0 z-0 overflow-hidden">
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_120%_at_50%_-10%,rgba(56,189,248,0.2),rgba(56,189,248,0.03))]" />
 
-        {/* World map pattern */}
-        <WorldMapPattern />
+        {/* World map pattern - static */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <svg viewBox="0 0 1000 500" className="h-full w-full">
+            <g fill="currentColor" className="text-cyan-400">
+              <circle cx="200" cy="150" r="3" />
+              <circle cx="220" cy="160" r="3" />
+              <circle cx="180" cy="170" r="3" />
+              <circle cx="240" cy="140" r="3" />
+              <circle cx="160" cy="180" r="3" />
+              <circle cx="480" cy="130" r="3" />
+              <circle cx="500" cy="140" r="3" />
+              <circle cx="520" cy="120" r="3" />
+              <circle cx="460" cy="150" r="3" />
+              <circle cx="700" cy="180" r="3" />
+              <circle cx="720" cy="160" r="3" />
+              <circle cx="750" cy="200" r="3" />
+              <circle cx="680" cy="150" r="3" />
+              <circle cx="800" cy="220" r="3" />
+              {/* Mongolia highlight - CSS pulse */}
+              <circle cx="720" cy="170" r="8" className="animate-pulse text-cyan-400" />
+              <circle cx="280" cy="350" r="3" />
+              <circle cx="300" cy="380" r="3" />
+              <circle cx="500" cy="280" r="3" />
+              <circle cx="520" cy="320" r="3" />
+              <circle cx="820" cy="380" r="3" />
+              <circle cx="840" cy="360" r="3" />
+            </g>
 
-        {/* Route lines */}
-        <RouteLine />
+            {/* Connection lines - CSS animated */}
+            <line
+              x1="200" y1="150" x2="480" y2="130"
+              stroke="currentColor" strokeWidth="1" strokeDasharray="5 5"
+              className="animate-bg-dash text-cyan-400/30"
+            />
+            <line
+              x1="480" y1="130" x2="720" y2="170"
+              stroke="currentColor" strokeWidth="1" strokeDasharray="5 5"
+              className="animate-bg-dash-slow text-purple-400/30"
+            />
+          </svg>
+        </div>
 
-        {/* Floating gradient orbs */}
-        <FloatingOrb
-          className="absolute left-1/4 top-1/4 h-[600px] w-[600px] rounded-full bg-gradient-to-r from-cyan-500/25 to-blue-500/25 blur-[140px]"
-          delay={0}
-        />
-        <FloatingOrb
-          className="absolute right-1/4 top-1/2 h-[500px] w-[500px] rounded-full bg-gradient-to-r from-purple-500/25 to-pink-500/25 blur-[140px]"
-          delay={2}
-        />
-        <FloatingOrb
-          className="absolute bottom-1/4 left-1/3 h-[450px] w-[450px] rounded-full bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 blur-[120px]"
-          delay={4}
-        />
+        {/* Route lines - CSS animated */}
+        <svg className="absolute inset-0 h-full w-full opacity-[0.03]" viewBox="0 0 1200 800">
+          <path
+            d="M0,400 Q300,200 600,400 T1200,400"
+            fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="10 10"
+            className="animate-bg-dash text-cyan-400"
+          />
+          <path
+            d="M0,500 Q400,300 800,500 T1200,300"
+            fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="10 10"
+            className="animate-bg-dash-slow text-purple-400"
+          />
+        </svg>
 
-        {/* Moving transport icons */}
-        <MovingIcon
-          direction="right"
-          duration={25}
-          className="top-[15%]"
-          delay={0}
-        >
-          <PlaneIcon className="h-8 w-8 text-cyan-500/10 rotate-45" />
-        </MovingIcon>
+        {/* Floating gradient orbs - CSS animated */}
+        <div className="animate-bg-float absolute left-1/4 top-1/4 h-[600px] w-[600px] rounded-full bg-gradient-to-r from-cyan-500/25 to-blue-500/25 blur-[140px]" />
+        <div className="animate-bg-float-delayed absolute right-1/4 top-1/2 h-[500px] w-[500px] rounded-full bg-gradient-to-r from-purple-500/25 to-pink-500/25 blur-[140px]" />
+        <div className="animate-bg-float-slow absolute bottom-1/4 left-1/3 h-[450px] w-[450px] rounded-full bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 blur-[120px]" />
 
-        <MovingIcon
-          direction="left"
-          duration={35}
-          className="top-[35%]"
-          delay={5}
-        >
+        {/* Moving transport icons - CSS animated */}
+        <div className="absolute top-[15%] animate-bg-move-right" style={{ animationDuration: "25s" }}>
+          <PlaneIcon className="h-8 w-8 rotate-45 text-cyan-500/10" />
+        </div>
+        <div className="absolute top-[35%] animate-bg-move-left" style={{ animationDuration: "35s", animationDelay: "5s" }}>
           <ShipIcon className="h-10 w-10 text-blue-500/10" />
-        </MovingIcon>
-
-        <MovingIcon
-          direction="right"
-          duration={30}
-          className="top-[55%]"
-          delay={10}
-        >
+        </div>
+        <div className="absolute top-[55%] animate-bg-move-right" style={{ animationDuration: "30s", animationDelay: "10s" }}>
           <TrainIcon className="h-8 w-8 text-purple-500/10" />
-        </MovingIcon>
-
-        <MovingIcon
-          direction="left"
-          duration={22}
-          className="top-[75%]"
-          delay={3}
-        >
+        </div>
+        <div className="absolute top-[75%] animate-bg-move-left" style={{ animationDuration: "22s", animationDelay: "3s" }}>
           <TruckIcon className="h-8 w-8 text-emerald-500/10" />
-        </MovingIcon>
-
-        <MovingIcon
-          direction="right"
-          duration={40}
-          className="top-[45%]"
-          delay={15}
-        >
-          <ContainerIcon className="h-12 w-12 text-orange-500/8" />
-        </MovingIcon>
-
-        <MovingIcon
-          direction="left"
-          duration={28}
-          className="top-[25%]"
-          delay={8}
-        >
-          <PlaneIcon className="h-6 w-6 text-cyan-500/8 -rotate-12" />
-        </MovingIcon>
-
-        <MovingIcon
-          direction="right"
-          duration={32}
-          className="top-[65%]"
-          delay={12}
-        >
-          <ShipIcon className="h-8 w-8 text-blue-500/8" />
-        </MovingIcon>
+        </div>
+        <div className="absolute top-[45%] animate-bg-move-right" style={{ animationDuration: "40s", animationDelay: "15s" }}>
+          <ContainerIcon className="h-12 w-12 text-orange-500/[0.08]" />
+        </div>
+        <div className="absolute top-[25%] animate-bg-move-left" style={{ animationDuration: "28s", animationDelay: "8s" }}>
+          <PlaneIcon className="h-6 w-6 -rotate-12 text-cyan-500/[0.08]" />
+        </div>
+        <div className="absolute top-[65%] animate-bg-move-right" style={{ animationDuration: "32s", animationDelay: "12s" }}>
+          <ShipIcon className="h-8 w-8 text-blue-500/[0.08]" />
+        </div>
       </div>
 
       {/* Noise texture overlay */}
-      <div className="fixed inset-0 z-[1] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-30" />
+      <div className="pointer-events-none fixed inset-0 z-[1] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-30" />
 
       {/* Grid pattern overlay */}
       <div
-        className="fixed inset-0 z-[1] opacity-[0.02]"
+        className="pointer-events-none fixed inset-0 z-[1] opacity-[0.02]"
         style={{
           backgroundImage: `linear-gradient(rgba(56,189,248,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,0.3) 1px, transparent 1px)`,
           backgroundSize: "100px 100px",

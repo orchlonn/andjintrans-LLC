@@ -30,3 +30,50 @@ body {
     "Segoe UI",
     sans-serif;
 }
+
+/* Background CSS animations - GPU accelerated, off main thread */
+@keyframes bg-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+@keyframes bg-float-delayed {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+@keyframes bg-move-right {
+  0% { transform: translateX(-20vw); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(100vw); opacity: 0; }
+}
+@keyframes bg-move-left {
+  0% { transform: translateX(100vw); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(-20vw); opacity: 0; }
+}
+@keyframes bg-dash {
+  to { stroke-dashoffset: -100; }
+}
+
+.animate-bg-float {
+  animation: bg-float 6s ease-in-out infinite;
+}
+.animate-bg-float-delayed {
+  animation: bg-float 6s ease-in-out 2s infinite;
+}
+.animate-bg-float-slow {
+  animation: bg-float 6s ease-in-out 4s infinite;
+}
+.animate-bg-move-right {
+  animation: bg-move-right 25s linear infinite;
+}
+.animate-bg-move-left {
+  animation: bg-move-left 25s linear infinite;
+}
+.animate-bg-dash {
+  animation: bg-dash 3s linear infinite;
+}
+.animate-bg-dash-slow {
+  animation: bg-dash 4s linear 1s infinite;
+}

@@ -70,6 +70,14 @@ function DeliveryIcon({ className }: { className?: string }) {
   );
 }
 
+function ExportIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z" />
+    </svg>
+  );
+}
+
 const mainServices = [
   {
     title: "Агаарын тээвэр",
@@ -113,6 +121,15 @@ const mainServices = [
       "Гуравдагч орны ачааг Монгол Улсын нутгаар дамжуулан шилжүүлэн тээвэрлэх. Rail Transit, Road Transit, Multimodal Transit, Project & Special Cargo Transit.",
     href: "/services/transit",
     Icon: TransitIcon,
+    color: "orange",
+    gradient: "from-orange-400 to-red-500",
+  },
+  {
+    title: "Экспорт тээвэр",
+    description:
+      "Монгол Улсаас гадаад руу бараа, бүтээгдэхүүн экспортлоход шаардлагатай тээвэрлэлт, баримт бичиг бүрдүүлэлт, гаалийн зохион байгуулалтыг нэг цэгээс хийх.",
+    href: "/services/export",
+    Icon: ExportIcon,
     color: "orange",
     gradient: "from-orange-400 to-red-500",
   },

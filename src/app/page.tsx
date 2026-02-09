@@ -67,6 +67,14 @@ function TransitIcon({ className }: { className?: string }) {
   );
 }
 
+function ExportIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z" />
+    </svg>
+  );
+}
+
 const services = [
   {
     title: "Агаарын тээвэр",
@@ -101,6 +109,13 @@ const services = [
     description: "Гуравдагч орны ачааг Монголын нутгаар дамжуулан тээвэрлэх тусгай зохион байгуулалт.",
     href: "/services/transit",
     icon: TransitIcon,
+    gradient: "from-orange-400 to-red-500",
+  },
+  {
+    title: "Экспорт тээвэр",
+    description: "Монголоос гадаад руу бараа экспортлох тээвэрлэлт, баримт бичиг, гаалийн зохион байгуулалт.",
+    href: "/services/export",
+    icon: ExportIcon,
     gradient: "from-orange-400 to-red-500",
   },
 ];
