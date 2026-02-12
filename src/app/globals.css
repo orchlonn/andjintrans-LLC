@@ -33,27 +33,59 @@ body {
 
 /* Background CSS animations - GPU accelerated, off main thread */
 @keyframes bg-float {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-20px) scale(1.05); }
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
 }
 @keyframes bg-float-delayed {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-20px) scale(1.05); }
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
 }
 @keyframes bg-move-right {
-  0% { transform: translateX(-20vw); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateX(100vw); opacity: 0; }
+  0% {
+    transform: translateX(-20vw);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
 }
 @keyframes bg-move-left {
-  0% { transform: translateX(100vw); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateX(-20vw); opacity: 0; }
+  0% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-20vw);
+    opacity: 0;
+  }
 }
 @keyframes bg-dash {
-  to { stroke-dashoffset: -100; }
+  to {
+    stroke-dashoffset: -100;
+  }
 }
 
 .animate-bg-float {
@@ -76,4 +108,17 @@ body {
 }
 .animate-bg-dash-slow {
   animation: bg-dash 4s linear 1s infinite;
+}
+
+/* Partners marquee - infinite horizontal scroll */
+@keyframes partner-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-partner-scroll {
+  animation: partner-scroll 30s linear infinite;
 }

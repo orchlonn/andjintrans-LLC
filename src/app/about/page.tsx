@@ -1,7 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
+
+const partnerLogos = [
+  { src: "/Logo1.jpg", alt: "Partner 1" },
+  { src: "/Logo2.png", alt: "Partner 2" },
+  { src: "/Logo3.jpg", alt: "Partner 3" },
+  { src: "/Logo4.png", alt: "Partner 4" },
+  { src: "/Logo5.jpg", alt: "Partner 5" },
+  { src: "/Logo6.jpg", alt: "Partner 6" },
+];
 
 const values = [
   "Нэн тэргүүнд аюулгүй байдал",
@@ -147,6 +157,46 @@ export default function AboutPage() {
                   <p className="text-lg text-slate-200">{principle}</p>
                 </motion.div>
               ))}
+            </div>
+          </motion.section>
+
+          {/* Partners */}
+          <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <h2 className="text-2xl font-bold text-white md:text-3xl">Түншүүд</h2>
+            <p className="mt-3 text-slate-300">
+              Олон улсын болон дотоодын найдвартай түнш, хамтрагч байгууллагуудтай хамтран ажиллаж байна.
+            </p>
+            <div className="mt-10 overflow-hidden">
+              <div className="flex w-max animate-partner-scroll">
+                {[1, 2].map((copy) => (
+                  <div
+                    key={copy}
+                    className="flex shrink-0 items-center gap-4 md:gap-6"
+                  >
+                    {partnerLogos.map((partner) => (
+                      <div
+                        key={`${copy}-${partner.src}`}
+                        className="flex h-32 w-40 shrink-0 items-center justify-center overflow-hidden rounded-2xl md:h-40 md:w-52"
+                      >
+                        <div className="relative h-full w-full overflow-hidden rounded-2xl [&_img]:rounded-2xl">
+                          <Image
+                            src={partner.src}
+                            alt={partner.alt}
+                            fill
+                            className="object-contain object-center"
+                            sizes="208px"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.section>
 
