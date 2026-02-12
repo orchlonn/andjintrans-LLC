@@ -4,6 +4,8 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
+const MotionLink = motion(Link);
+
 function AnimatedSection({
   children,
   className,
@@ -359,33 +361,31 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <motion.div
+            <MotionLink
+              href="/contact"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 0 40px rgba(34,211,238,0.5)",
               }}
               whileTap={{ scale: 0.95 }}
+              transition={{ type: "tween", duration: 0.2 }}
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-base font-semibold text-slate-900 transition-colors hover:from-cyan-300 hover:to-blue-400"
             >
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-base font-semibold text-slate-900 transition-all"
+              Үнийн санал авах
+              <svg
+                className="ml-2 h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                Үнийн санал авах
-                <svg
-                  className="ml-2 h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </Link>
-            </motion.div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </MotionLink>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/services"
