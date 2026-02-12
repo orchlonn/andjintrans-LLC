@@ -8,7 +8,7 @@ const partnerLogos = [
   { src: "/Logo1.jpg", alt: "Partner 1" },
   { src: "/Logo2.png", alt: "Partner 2" },
   { src: "/Logo3.jpg", alt: "Partner 3" },
-  { src: "/Logo4.jpg", alt: "Partner 4" },
+  { src: "/logo4.jpg", alt: "Partner 4" },
   { src: "/Logo5.jpg", alt: "Partner 5" },
   { src: "/Logo6.jpg", alt: "Partner 6" },
 ];
