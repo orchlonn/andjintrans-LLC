@@ -150,8 +150,8 @@ export default function ResourcesPage() {
     <>
       <PageHeader
         badge="Танд хэрэгтэй"
-        title="Мэдлэгийн"
-        highlightedTitle="сан"
+        title="Танд"
+        highlightedTitle="хэрэгтэй"
         description="Олон улсын тээвэр, логистиктой холбоотой чухал мэдээлэл, стандарт, дүрэм журмуудын тайлбар."
         badgeColor="emerald"
       />
