@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 border-t border-white/5 bg-[#0a0a0f]/80 backdrop-blur-xl">
+    <footer className="relative z-10 border-t border-white/10 bg-[#16161f]/90 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
@@ -17,7 +17,7 @@ export default function Footer() {
               height={42}
               className="h-10 w-auto"
             />
-            <p className="mt-4 text-sm text-slate-400">
+            <p className="mt-4 text-sm text-slate-300">
               Олон улсын тээвэр зуучлалын найдвартай түнш. 2011 оноос хойш
               тасралтгүй үйл ажиллагаа.
             </p>
@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3 className="font-semibold text-white">Үйлчилгээ</h3>
-            <ul className="mt-4 space-y-2 text-sm text-slate-400">
+            <ul className="mt-4 space-y-2 text-sm text-slate-300">
               <li>
                 <Link href="/services/air" className="hover:text-cyan-400">
                   Агаарын тээвэр
@@ -63,7 +63,7 @@ export default function Footer() {
           {/* Resources */}
           <div>
             <h3 className="font-semibold text-white">Танд хэрэгтэй</h3>
-            <ul className="mt-4 space-y-2 text-sm text-slate-400">
+            <ul className="mt-4 space-y-2 text-sm text-slate-300">
               <li>
                 <Link
                   href="/resources/incoterms"
@@ -115,7 +115,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="font-semibold text-white">Холбоо барих</h3>
-            <ul className="mt-4 space-y-2 text-sm text-slate-400">
+            <ul className="mt-4 space-y-2 text-sm text-slate-300">
               <li>Улаанбаатар, СБД, 9-р хороо</li>
               <li>7-р хороолол, Алтайн гудамж</li>
               <li>Хоймор оффис, 207 тоот</li>
@@ -142,11 +142,11 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row">
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-400">
             © {new Date().getFullYear()} Анджинтранс ХХК. Бүх эрх хуулиар
             хамгаалагдсан.
           </p>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-slate-500">
             <a
               href="https://www.andjintrans.com"
               className="hover:text-cyan-400"

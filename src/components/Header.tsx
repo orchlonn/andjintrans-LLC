@@ -30,7 +30,7 @@ export default function Header() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#151520]/75 backdrop-blur-xl"
+        className="fixed left-0 right-0 top-0 z-50 border-b border-white/15 bg-[#1a1a28]/85 backdrop-blur-xl"
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:grid lg:grid-cols-[1fr_auto_1fr]">
           <div className="flex justify-start">
@@ -60,7 +60,7 @@ export default function Header() {
                   <Link
                     href={item.href}
                     className={`relative whitespace-nowrap rounded-full px-2.5 py-2 text-xs transition-colors sm:px-3 sm:text-sm xl:px-4 ${
-                      active ? "text-white" : "text-slate-400 hover:text-white"
+                      active ? "text-white" : "text-slate-300 hover:text-white"
                     }`}
                   >
                     {active && (

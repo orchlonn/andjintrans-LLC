@@ -119,7 +119,7 @@ export default function NewsPage() {
           >
             <div className="rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 via-slate-900/50 to-blue-500/10 p-8 text-center md:p-12">
               <h2 className="text-2xl font-bold text-white md:text-3xl">
-                Асуултай байна уу?
+               Танд санал хүсэлт байна уу?
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-slate-400">
                 Тээвэр логистикийн талаар дэлгэрэнгүй мэдээлэл авахыг хүсвэл бидэнтэй холбогдоно уу.

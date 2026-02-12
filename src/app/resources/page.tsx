@@ -224,7 +224,7 @@ export default function ResourcesPage() {
           >
             <div className="rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-slate-900/50 to-cyan-500/10 p-8 text-center md:p-12">
               <h2 className="text-2xl font-bold text-white md:text-3xl">
-                Асуултай байна уу?
+                Танд санал хүсэлт байна уу?
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-slate-400">
                 Тээвэр, логистиктой холбоотой аливаа асуултад бид хариулахад

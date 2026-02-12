@@ -362,7 +362,7 @@ export default function ContactPage() {
                         id="phone"
                         name="phone"
                         className="block w-full rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder-slate-500 backdrop-blur-sm transition-all duration-300 focus:border-orange-500/50 focus:bg-white/10 focus:outline-none focus:ring-4 focus:ring-orange-500/10"
-                        placeholder="99112233"
+                        placeholder="99******"
                       />
                     </div>
                   </div>
