@@ -81,7 +81,7 @@ export default function RailTransportPage() {
             className="mb-12 overflow-hidden rounded-3xl"
           >
             <Image
-              src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1200&q=80"
+              src="https://images.unsplash.com/photo-1725234839695-3b5f9af28a1d?w=1200&q=80"
               alt="Төмөр замын тээвэр"
               width={1200}
               height={800}
