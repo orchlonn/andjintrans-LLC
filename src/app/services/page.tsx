@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import PageHeader from "@/components/PageHeader";
 
@@ -207,6 +208,23 @@ export default function ServicesPage() {
         highlightedTitle="цогц шийдэл"
         description="Агаар, далай, төмөр зам, авто тээврээр импорт, экспорт, транзит тээврийг нэг цэгээс зохион байгуулж, маршрут–хугацаа–өртөг–эрсдэлийн тэнцвэр дээр үндэслэн шийдэл санал болгоно."
       />
+
+      {/* Hero image */}
+      <div className="px-6 pb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mx-auto max-w-5xl overflow-hidden rounded-3xl"
+        >
+          <Image
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80"
+            alt="Тээврийн цогц шийдэл"
+            width={1200}
+            height={800}
+            className="h-auto w-full"
+          />
+        </motion.div>
+      </div>
 
       <div className="px-6 pb-24">
         <div className="mx-auto max-w-6xl">

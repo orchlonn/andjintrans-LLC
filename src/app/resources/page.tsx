@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import PageHeader from "@/components/PageHeader";
 
@@ -155,6 +156,23 @@ export default function ResourcesPage() {
         description="Олон улсын тээвэр, логистиктой холбоотой чухал мэдээлэл, стандарт, дүрэм журмуудын тайлбар."
         badgeColor="emerald"
       />
+
+      {/* Hero image */}
+      <div className="px-6 pb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mx-auto max-w-5xl overflow-hidden rounded-3xl"
+        >
+          <Image
+            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80"
+            alt="Танд хэрэгтэй мэдээлэл"
+            width={1200}
+            height={800}
+            className="h-auto w-full"
+          />
+        </motion.div>
+      </div>
 
       <div className="px-6 pb-24">
         <div className="mx-auto max-w-6xl">

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import PageHeader from "@/components/PageHeader";
 
@@ -152,6 +153,23 @@ export default function ContactPage() {
         highlightedTitle="холбогдох"
         description="Тээвэр логистикийн аливаа асуудал, үнийн санал авах хүсэлтээ бидэнд илгээнэ үү."
       />
+
+      {/* Hero image */}
+      <div className="px-6 pb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mx-auto max-w-5xl overflow-hidden rounded-3xl"
+        >
+          <Image
+            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=80"
+            alt="Холбоо барих"
+            width={1200}
+            height={800}
+            className="h-auto w-full"
+          />
+        </motion.div>
+      </div>
 
       <div className="px-6 pb-24">
         <div className="mx-auto max-w-5xl">
