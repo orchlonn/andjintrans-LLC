@@ -11,7 +11,6 @@ const navItems = [
   { href: "/about", label: "Бидний тухай" },
   { href: "/services", label: "Үйлчилгээ" },
   { href: "/resources", label: "Танд хэрэгтэй" },
-  { href: "/news", label: "Мэдээ мэдээлэл" },
   { href: "/contact", label: "Холбоо барих" },
 ];
 

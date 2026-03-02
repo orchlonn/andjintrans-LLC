@@ -156,7 +156,7 @@ const resources = [
     href: "/resources/incoterms",
   },
   {
-    title: "Контейнерын төрөл",
+    title: "Чингэлэгийн төрөл",
     description: "Dry, Reefer, Open Top, Flat Rack...",
     href: "/resources/containers",
   },
@@ -176,7 +176,7 @@ const resources = [
     href: "/resources/packaging",
   },
   {
-    title: "Шаардлагатай баримт",
+    title: "Шаардлагатай баримт бичиг",
     description: "Invoice, B/L, AWB, CMR...",
     href: "/resources/documents",
   },
@@ -319,13 +319,11 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+            className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            <span className="text-white">Олон улсын тээвэр</span>
+            Олон улсын тээвэр
             <br />
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              зуучлалын найдвартай түнш
-            </span>
+            зуучлалын найдвартай түнш
           </motion.h1>
 
           <motion.p
@@ -450,7 +448,7 @@ export default function Home() {
       </section>
 
       {/* Services Overview */}
-      <section className="relative px-6 py-16 md:py-24 lg:py-32">
+      <section className="relative px-6 py-12 md:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <AnimatedSection className="mb-8 text-center md:mb-16">
             <motion.span className="inline-block rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 px-4 py-2 text-sm font-medium text-cyan-400">
@@ -523,7 +521,7 @@ export default function Home() {
       </section>
 
       {/* Additional Services */}
-      <section className="relative px-6 py-16 md:py-24">
+      <section className="relative px-6 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <AnimatedSection className="mb-8 text-center md:mb-16">
             <motion.span className="inline-block rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-4 py-2 text-sm font-medium text-purple-400">
@@ -532,7 +530,7 @@ export default function Home() {
             <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
               Эрсдэлийг{" "}
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                бууруулсан шийдэл
+                бууруулах шийдэл
               </span>
             </h2>
           </AnimatedSection>
@@ -582,7 +580,7 @@ export default function Home() {
       </section>
 
       {/* Resources Preview */}
-      <section className="relative px-6 py-16 md:py-24">
+      <section className="relative px-6 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <AnimatedSection className="mb-8 text-center md:mb-16">
             <motion.span className="inline-block rounded-full bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 px-4 py-2 text-sm font-medium text-emerald-400">
@@ -653,7 +651,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative px-6 py-16 md:py-24">
+      <section className="relative px-6 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 60 }}

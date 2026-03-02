@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 
 const services = [
@@ -108,6 +109,18 @@ export default function ExportServicePage() {
 
       <div className="px-6 pb-24">
         <div className="mx-auto max-w-5xl">
+          {/* Hero image */}
+          <div className="mb-12 overflow-hidden rounded-3xl">
+            <Image
+              src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=80"
+              alt="Экспорт тээвэр"
+              width={1200}
+              height={800}
+              className="h-auto w-full"
+              priority
+            />
+          </div>
+
           {/* Introduction */}
           <section className="mb-16">
             <h2 className="text-2xl font-bold text-white md:text-3xl">

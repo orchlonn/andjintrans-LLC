@@ -64,9 +64,9 @@ const resources = [
     gradient: "from-cyan-400 to-blue-500",
   },
   {
-    title: "Контейнерын төрөл",
+    title: "Чингэлэгийн төрөл",
     description:
-      "Dry, High Cube, Reefer, Open Top, Flat Rack, Tank гэх мэт 10 төрлийн контейнер",
+      "Dry, High Cube, Reefer, Open Top, Flat Rack, Tank гэх мэт 10 төрлийн чингэлэг",
     href: "/resources/containers",
     Icon: BoxIcon,
     color: "blue",
@@ -99,7 +99,7 @@ const resources = [
     gradient: "from-emerald-400 to-cyan-500",
   },
   {
-    title: "Шаардлагатай баримт",
+    title: "Шаардлагатай баримт бичиг",
     description:
       "Commercial Invoice, B/L, AWB, CMR, гаалийн бүрдүүлэлт, DG баримтууд",
     href: "/resources/documents",

@@ -227,7 +227,7 @@ export default function ContactPage() {
                     </svg>
                   </motion.div>
                   <h2 className="text-2xl font-bold text-white md:text-3xl">
-                    Мессеж илгээх
+                    Үнийн санал авах
                   </h2>
                   <p className="mt-3 text-slate-400">
                     Доорх маягтыг бөглөж бидэнтэй холбогдоно уу

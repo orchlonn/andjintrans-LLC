@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import PageHeader from "@/components/PageHeader";
 
@@ -73,6 +74,22 @@ export default function RailTransportPage() {
 
       <div className="px-6 pb-24">
         <div className="mx-auto max-w-5xl">
+          {/* Hero image */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-12 overflow-hidden rounded-3xl"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1200&q=80"
+              alt="Төмөр замын тээвэр"
+              width={1200}
+              height={800}
+              className="h-auto w-full"
+              priority
+            />
+          </motion.div>
+
           {/* Introduction */}
           <motion.section
             initial={{ opacity: 0, y: 40 }}

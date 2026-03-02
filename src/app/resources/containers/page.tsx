@@ -77,8 +77,8 @@ export default function ContainersPage() {
   return (
     <>
       <PageHeader
-        badge="Контейнерын төрөл"
-        title="Чингэлэг/Контейнерын"
+        badge="Чингэлэгийн төрөл"
+        title="Чингэлэгийн"
         highlightedTitle="10 төрөл"
         description="Ачааны хэмжээс, жин, ачих арга, температурын шаардлага, DG эсэх зэрэг шаардлагыг харгалзан зөв контейнер сонгох нь чухал."
         badgeColor="cyan"
@@ -93,10 +93,10 @@ export default function ContainersPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Контейнер сонгохдоо анхаарах зүйл</h2>
+            <h2 className="text-2xl font-bold text-white md:text-3xl">Чингэлэг сонгохдоо анхаарах зүйл</h2>
             <div className="mt-6 rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-transparent p-8">
               <p className="text-lg leading-relaxed text-slate-300">
-                Контейнерын төрлийг сонгохдоо ачааны хэмжээс (урт/өргөн/өндөр), жин, ачих арга (хажуугаас/дээрээс),
+                Чингэлэгийн төрлийг сонгохдоо ачааны хэмжээс (урт/өргөн/өндөр), жин, ачих арга (хажуугаас/дээрээс),
                 температурын шаардлага, чийг/доргилтын эрсдэл, мөн DG (аюултай) эсэх зэрэг шаардлагыг зэрэг харгалзана.
                 Зөв контейнер сонголт нь өртөг, аюулгүй ажиллагаа, саатал гарах эрсдэлд шууд нөлөөлдөг.
               </p>
@@ -110,7 +110,7 @@ export default function ContainersPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Контейнерын төрлүүд</h2>
+            <h2 className="text-2xl font-bold text-white md:text-3xl">Чингэлэгийн төрлүүд</h2>
             <div className="mt-8 space-y-6">
               {containerTypes.map((container, index) => (
                 <motion.div
@@ -148,7 +148,7 @@ export default function ContainersPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Контейнер сонгох &quot;түргэн зөвлөмж&quot;</h2>
+            <h2 className="text-2xl font-bold text-white md:text-3xl">Чингэлэг сонгох &quot;түргэн зөвлөмж&quot;</h2>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {quickTips.map((tip, index) => (
                 <motion.div

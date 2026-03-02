@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 border-t border-white/10 bg-[#16161f]/90 backdrop-blur-xl">
+    <footer className="relative z-10 border-t border-white/10 bg-[#1e1e30]/90 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
@@ -77,7 +77,7 @@ export default function Footer() {
                   href="/resources/containers"
                   className="hover:text-cyan-400"
                 >
-                  Контейнерын төрөл
+                  Чингэлэгийн төрөл
                 </Link>
               </li>
               <li>
@@ -106,7 +106,7 @@ export default function Footer() {
                   href="/resources/documents"
                   className="hover:text-cyan-400"
                 >
-                  Шаардлагатай баримт
+                  Шаардлагатай баримт бичиг
                 </Link>
               </li>
             </ul>

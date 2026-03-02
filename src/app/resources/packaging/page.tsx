@@ -88,7 +88,7 @@ export default function PackagingPage() {
       <PageHeader
         badge="Сав баглаа боодол"
         title="Ачааны сав баглаа"
-        highlightedTitle="боодолын төрөл"
+        highlightedTitle="боодлын төрөл"
         description="Сав баглаа боодол нь ачааг тээвэрлэлтийн явцад эрсдэлээс хамгаалж, ачих-буулгах ажиллагааг аюулгүй, үр ашигтай болгодог."
         badgeColor="emerald"
       />

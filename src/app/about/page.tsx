@@ -21,7 +21,7 @@ const values = [
   "Тасралтгүй сайжруулалт",
   "Бидний үнэнч хэрэглэгч",
   "Мэргэшсэн хамт олон",
-  "Аюулгүй ажиллагаа",
+  "Хамтын ажиллагаа",
   "Шаардлагад нийцсэн үйлчилгээ",
   "Хөгжил дэвшил",
 ];
@@ -37,10 +37,27 @@ export default function AboutPage() {
     <>
       <PageHeader
         badge="Бидний тухай"
-        title="2011 оноос хойш"
+        title="2011 оноос тасралтгүй үйл ажиллагаагаа явуулж байгаа"
         highlightedTitle="найдвартай түнш"
         description="Олон улсын болон дотоодын тээвэр зуучлалын үйл ажиллагаагаа тасралтгүй эрхэлж, шийдэл-суурьтай логистикийн үйл ажиллагааг зохион байгуулж ирсэн."
       />
+
+      {/* Transport image */}
+      <div className="px-6 pb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mx-auto max-w-5xl overflow-hidden rounded-3xl"
+        >
+          <Image
+            src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=80"
+            alt="Тээвэр логистикийн үйл ажиллагаа"
+            width={1200}
+            height={800}
+            className="h-auto w-full"
+          />
+        </motion.div>
+      </div>
 
       <div className="px-6 pb-24">
         <div className="mx-auto max-w-5xl">
