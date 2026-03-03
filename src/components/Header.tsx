@@ -1,22 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { usePathname } from "next/navigation";
-
-const navItems = [
-  { href: "/", label: "Нүүр" },
-  { href: "/about", label: "Бидний тухай" },
-  { href: "/services", label: "Үйлчилгээ" },
-  { href: "/resources", label: "Танд хэрэгтэй" },
-  { href: "/contact", label: "Холбоо барих" },
-];
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations("Nav");
+
+  const navItems = [
+    { href: "/" as const, label: t("home") },
+    { href: "/about" as const, label: t("about") },
+    { href: "/services" as const, label: t("services") },
+    { href: "/resources" as const, label: t("resources") },
+    { href: "/contact" as const, label: t("contact") },
+  ];
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -80,34 +82,39 @@ export default function Header() {
             })}
           </nav>
 
-          <div className="flex justify-end lg:hidden">
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50"
-              aria-label="Toggle menu"
-            >
-              <div className="flex w-5 flex-col gap-1.5">
-                <motion.span
-                  animate={
-                    mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }
-                  }
-                  className="h-0.5 w-full bg-slate-700"
-                />
-                <motion.span
-                  animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                  className="h-0.5 w-full bg-slate-700"
-                />
-                <motion.span
-                  animate={
-                    mobileMenuOpen
-                      ? { rotate: -45, y: -6 }
-                      : { rotate: 0, y: 0 }
-                  }
-                  className="h-0.5 w-full bg-slate-700"
-                />
-              </div>
-            </motion.button>
+          <div className="flex items-center justify-end gap-3">
+            <div className="hidden lg:block">
+              <LanguageSwitcher />
+            </div>
+            <div className="lg:hidden">
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50"
+                aria-label="Toggle menu"
+              >
+                <div className="flex w-5 flex-col gap-1.5">
+                  <motion.span
+                    animate={
+                      mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }
+                    }
+                    className="h-0.5 w-full bg-slate-700"
+                  />
+                  <motion.span
+                    animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+                    className="h-0.5 w-full bg-slate-700"
+                  />
+                  <motion.span
+                    animate={
+                      mobileMenuOpen
+                        ? { rotate: -45, y: -6 }
+                        : { rotate: 0, y: 0 }
+                    }
+                    className="h-0.5 w-full bg-slate-700"
+                  />
+                </div>
+              </motion.button>
+            </div>
           </div>
         </div>
       </motion.header>
@@ -163,9 +170,13 @@ export default function Header() {
             })}
           </div>
 
+          <div className="mt-6">
+            <LanguageSwitcher />
+          </div>
+
           <div className="mt-auto pb-8">
             <p className="text-xs text-slate-400">
-              © {new Date().getFullYear()} Анджинтранс ХХК
+              © {new Date().getFullYear()} {t("home") === "Home" ? "Andjintrans LLC" : "Анджинтранс ХХК"}
             </p>
           </div>
         </div>

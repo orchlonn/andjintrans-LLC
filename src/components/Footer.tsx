@@ -1,9 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+  const tc = useTranslations("Common");
+
   return (
     <footer className="relative z-10 border-t border-slate-200 bg-slate-50/90 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6 py-12">
@@ -18,43 +22,42 @@ export default function Footer() {
               className="h-10 w-auto"
             />
             <p className="mt-4 text-sm text-slate-500">
-              Олон улсын тээвэр зуучлалын найдвартай түнш. 2011 оноос хойш
-              тасралтгүй үйл ажиллагаа.
+              {t("description")}
             </p>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-slate-900">Үйлчилгээ</h3>
+            <h3 className="font-semibold text-slate-900">{t("services")}</h3>
             <ul className="mt-4 space-y-2 text-sm text-slate-500">
               <li>
                 <Link href="/services/air" className="hover:text-sky-600">
-                  Агаарын тээвэр
+                  {t("airTransport")}
                 </Link>
               </li>
               <li>
                 <Link href="/services/sea" className="hover:text-sky-600">
-                  Далайн тээвэр
+                  {t("seaTransport")}
                 </Link>
               </li>
               <li>
                 <Link href="/services/rail" className="hover:text-sky-600">
-                  Төмөр замын тээвэр
+                  {t("railTransport")}
                 </Link>
               </li>
               <li>
                 <Link href="/services/road" className="hover:text-sky-600">
-                  Авто замын тээвэр
+                  {t("roadTransport")}
                 </Link>
               </li>
               <li>
                 <Link href="/services/transit" className="hover:text-sky-600">
-                  Транзит тээвэр
+                  {t("transitTransport")}
                 </Link>
               </li>
               <li>
                 <Link href="/services/export" className="hover:text-sky-600">
-                  Экспорт тээвэр
+                  {t("exportTransport")}
                 </Link>
               </li>
             </ul>
@@ -62,14 +65,14 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold text-slate-900">Танд хэрэгтэй</h3>
+            <h3 className="font-semibold text-slate-900">{t("resources")}</h3>
             <ul className="mt-4 space-y-2 text-sm text-slate-500">
               <li>
                 <Link
                   href="/resources/incoterms"
                   className="hover:text-sky-600"
                 >
-                  Инкотермс 2020
+                  {t("incoterms")}
                 </Link>
               </li>
               <li>
@@ -77,12 +80,12 @@ export default function Footer() {
                   href="/resources/containers"
                   className="hover:text-sky-600"
                 >
-                  Чингэлэгийн төрөл
+                  {t("containers")}
                 </Link>
               </li>
               <li>
                 <Link href="/resources/wagons" className="hover:text-sky-600">
-                  Вагоны төрөл
+                  {t("wagons")}
                 </Link>
               </li>
               <li>
@@ -90,7 +93,7 @@ export default function Footer() {
                   href="/resources/dangerous-goods"
                   className="hover:text-sky-600"
                 >
-                  Аюултай ачаа (DG)
+                  {t("dangerousGoods")}
                 </Link>
               </li>
               <li>
@@ -98,7 +101,7 @@ export default function Footer() {
                   href="/resources/packaging"
                   className="hover:text-sky-600"
                 >
-                  Сав баглаа боодол
+                  {t("packaging")}
                 </Link>
               </li>
               <li>
@@ -106,7 +109,7 @@ export default function Footer() {
                   href="/resources/documents"
                   className="hover:text-sky-600"
                 >
-                  Шаардлагатай баримт бичиг
+                  {t("documents")}
                 </Link>
               </li>
             </ul>
@@ -114,11 +117,11 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-slate-900">Холбоо барих</h3>
+            <h3 className="font-semibold text-slate-900">{t("contact")}</h3>
             <ul className="mt-4 space-y-2 text-sm text-slate-500">
-              <li>Улаанбаатар, СБД, 9-р хороо</li>
-              <li>7-р хороолол, Алтайн гудамж</li>
-              <li>Хоймор оффис, 207 тоот</li>
+              <li>{t("address1")}</li>
+              <li>{t("address2")}</li>
+              <li>{t("address3")}</li>
               <li className="pt-2">
                 <a href="tel:+97670117127" className="hover:text-sky-600">
                   976-7011-7127
@@ -143,8 +146,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-8 sm:flex-row">
           <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} Анджинтранс ХХК. Бүх эрх хуулиар
-            хамгаалагдсан.
+            © {new Date().getFullYear()} {tc("copyright")}
           </p>
           <p className="text-sm text-slate-400">
             <a
