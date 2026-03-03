@@ -93,9 +93,9 @@ export default function ContainersPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Чингэлэг сонгохдоо анхаарах зүйл</h2>
-            <div className="mt-6 rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-transparent p-8">
-              <p className="text-lg leading-relaxed text-slate-300">
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Чингэлэг сонгохдоо анхаарах зүйл</h2>
+            <div className="mt-6 rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-transparent p-8 shadow-sm">
+              <p className="text-lg leading-relaxed text-slate-500">
                 Чингэлэгийн төрлийг сонгохдоо ачааны хэмжээс (урт/өргөн/өндөр), жин, ачих арга (хажуугаас/дээрээс),
                 температурын шаардлага, чийг/доргилтын эрсдэл, мөн DG (аюултай) эсэх зэрэг шаардлагыг зэрэг харгалзана.
                 Зөв контейнер сонголт нь өртөг, аюулгүй ажиллагаа, саатал гарах эрсдэлд шууд нөлөөлдөг.
@@ -110,7 +110,7 @@ export default function ContainersPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Чингэлэгийн төрлүүд</h2>
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Чингэлэгийн төрлүүд</h2>
             <div className="mt-8 space-y-6">
               {containerTypes.map((container, index) => (
                 <motion.div
@@ -119,20 +119,20 @@ export default function ContainersPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-6"
+                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500">
-                      <span className="text-sm font-bold text-slate-900">{index + 1}</span>
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-blue-500">
+                      <span className="text-sm font-bold text-white">{index + 1}</span>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-white">{container.title}</h3>
-                      <div className="mt-3 space-y-2 text-sm text-slate-400">
-                        <p><span className="text-cyan-400">Хэрэглээ:</span> {container.usage}</p>
-                        {container.sizes && <p><span className="text-cyan-400">Түгээмэл хэмжээ:</span> {container.sizes}</p>}
-                        {container.advantage && <p><span className="text-emerald-400">Давуу тал:</span> {container.advantage}</p>}
-                        {container.feature && <p><span className="text-purple-400">Онцлог:</span> {container.feature}</p>}
-                        {container.note && <p><span className="text-orange-400">Анхаарах:</span> {container.note}</p>}
+                      <h3 className="text-lg font-semibold text-slate-900">{container.title}</h3>
+                      <div className="mt-3 space-y-2 text-sm text-slate-500">
+                        <p><span className="text-sky-600">Хэрэглээ:</span> {container.usage}</p>
+                        {container.sizes && <p><span className="text-sky-600">Түгээмэл хэмжээ:</span> {container.sizes}</p>}
+                        {container.advantage && <p><span className="text-sky-600">Давуу тал:</span> {container.advantage}</p>}
+                        {container.feature && <p><span className="text-sky-600">Онцлог:</span> {container.feature}</p>}
+                        {container.note && <p><span className="text-amber-600">Анхаарах:</span> {container.note}</p>}
                       </div>
                     </div>
                   </div>
@@ -148,7 +148,7 @@ export default function ContainersPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Чингэлэг сонгох &quot;түргэн зөвлөмж&quot;</h2>
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Чингэлэг сонгох &quot;түргэн зөвлөмж&quot;</h2>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {quickTips.map((tip, index) => (
                 <motion.div
@@ -157,10 +157,10 @@ export default function ContainersPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4"
+                  className="rounded-xl border border-sky-200 bg-sky-50 p-4 shadow-sm"
                 >
-                  <p className="text-sm text-slate-400">{tip.type}</p>
-                  <p className="mt-1 font-semibold text-emerald-400">{tip.recommendation}</p>
+                  <p className="text-sm text-slate-500">{tip.type}</p>
+                  <p className="mt-1 font-semibold text-sky-600">{tip.recommendation}</p>
                 </motion.div>
               ))}
             </div>
@@ -175,7 +175,7 @@ export default function ContainersPage() {
           >
             <Link
               href="/resources"
-              className="inline-flex items-center text-cyan-400 hover:text-cyan-300"
+              className="inline-flex items-center text-sky-600 hover:text-sky-500"
             >
               <svg className="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

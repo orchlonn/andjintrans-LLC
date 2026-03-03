@@ -86,14 +86,14 @@ export default function TransitTransportPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <div className="rounded-3xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-transparent p-8">
-              <p className="text-lg leading-relaxed text-slate-300">
+            <div className="rounded-3xl border border-sky-200 bg-sky-50 p-8">
+              <p className="text-lg leading-relaxed text-slate-600">
                 Маршрут, хугацаа, баримт бичиг, хил-терминалын уялдаа хамгийн өндөр түвшинд шаарддаг тээврийн хэлбэр юм.
                 Анджинтранс ХХК нь төмөр зам, авто зам болон холимог (multimodal) тээврийн боломжуудыг ашиглан транзит урсгалыг
                 төлөвлөж, терминал дахь шилжүүлэн ачилт, хил дамжлага, гаалийн горим, ачааны хөдөлгөөний хяналт зэрэг бүх үе
                 шатыг нэг цэгээс удирдан зохион байгуулна.
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-slate-300">
+              <p className="mt-4 text-lg leading-relaxed text-slate-600">
                 Транзит тээвэрт саатал гарах эрсдэл нь ихэвчлэн бичиг баримтын алдаа, терминал дээрх хүлээлт, хил дээрх
                 зохицуулалтын хоцролтоос үүсдэг тул бид өгөгдөл, баримтын &quot;урьдчилсан шалгалт&quot; болон маршрут-хуваарийн
                 төлөвлөлтийг хамгийн түрүүнд хийдэг. Мөн шаардлагатай тохиолдолд хамгаалалт, даатгал, мониторинг, last-mile
@@ -109,7 +109,7 @@ export default function TransitTransportPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Үйлчилгээний хэлбэрүүд</h2>
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Үйлчилгээний хэлбэрүүд</h2>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {serviceTypes.map((service, index) => (
                 <motion.div
@@ -118,15 +118,15 @@ export default function TransitTransportPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-6"
+                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-orange-400 to-red-500">
-                    <svg className="h-5 w-5 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-blue-500">
+                    <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="font-semibold text-white">{service.title}</h3>
-                  <p className="mt-2 text-sm text-slate-400">{service.description}</p>
+                  <h3 className="font-semibold text-slate-900">{service.title}</h3>
+                  <p className="mt-2 text-sm text-slate-500">{service.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -139,7 +139,7 @@ export default function TransitTransportPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Ажиллах процесс</h2>
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Ажиллах процесс</h2>
             <div className="mt-8 space-y-4">
               {processSteps.map((item, index) => (
                 <motion.div
@@ -148,14 +148,14 @@ export default function TransitTransportPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-4 rounded-2xl border border-orange-500/20 bg-orange-500/5 p-6"
+                  className="flex items-start gap-4 rounded-2xl border border-sky-200 bg-sky-50 p-6"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-orange-400 to-red-500">
-                    <span className="text-lg font-bold text-slate-900">{item.step}</span>
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-blue-500">
+                    <span className="text-lg font-bold text-white">{item.step}</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                    <p className="mt-1 text-slate-400">{item.description}</p>
+                    <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                    <p className="mt-1 text-slate-500">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -168,17 +168,17 @@ export default function TransitTransportPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-3xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 via-slate-900/50 to-red-500/10 p-8 text-center md:p-12">
-              <h2 className="text-2xl font-bold text-white md:text-3xl">
+            <div className="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-blue-50 p-8 text-center shadow-sm md:p-12">
+              <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
                 Транзит тээврийн үнийн санал авах
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-slate-400">
+              <p className="mx-auto mt-4 max-w-2xl text-slate-500">
                 Маршрут, хил/терминал, хугацаа-өртөг-эрсдэлийн 2–3 хувилбартай санал аваарай.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-400 to-red-500 px-8 py-4 text-base font-semibold text-slate-900 transition-all hover:shadow-[0_0_40px_rgba(251,146,60,0.5)]"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-400 to-blue-500 px-8 py-4 text-base font-semibold text-white transition-all hover:shadow-lg hover:shadow-sky-100"
                 >
                   Холбоо барих
                   <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -187,7 +187,7 @@ export default function TransitTransportPage() {
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-4 text-base font-semibold text-slate-900 shadow-sm transition-all hover:border-slate-300 hover:bg-slate-50"
                 >
                   Бүх үйлчилгээ
                 </Link>

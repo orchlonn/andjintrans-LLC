@@ -87,9 +87,9 @@ export default function WagonsPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Вагон сонгохдоо анхаарах зүйл</h2>
-            <div className="mt-6 rounded-3xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-transparent p-8">
-              <p className="text-lg leading-relaxed text-slate-300">
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Вагон сонгохдоо анхаарах зүйл</h2>
+            <div className="mt-6 rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-transparent p-8 shadow-sm">
+              <p className="text-lg leading-relaxed text-slate-500">
                 Вагоны төрлийг сонгохдоо ачааны төрөл, жин/эзэлхүүн, ачих-буулгах арга (кран, сэрээт өргөгч, конвейер гэх мэт),
                 цаг агаарын хамгаалалт шаардлага, чийг/температурын нөхцөл, мөн аюултай ачаа (DG) эсэх-ийг зэрэг харгалзана.
                 Зөв вагон сонголт нь аюулгүй ажиллагаа, саатал, гэмтэл болон нэмэлт зардлын эрсдэлийг бууруулдаг.
@@ -104,7 +104,7 @@ export default function WagonsPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Вагоны төрлүүд</h2>
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Вагоны төрлүүд</h2>
             <div className="mt-8 space-y-6">
               {wagonTypes.map((wagon, index) => (
                 <motion.div
@@ -113,19 +113,19 @@ export default function WagonsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-6"
+                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-purple-400 to-pink-500">
-                      <span className="text-sm font-bold text-slate-900">{index + 1}</span>
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-sky-600">
+                      <span className="text-sm font-bold text-white">{index + 1}</span>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-white">{wagon.title}</h3>
-                      <div className="mt-3 space-y-2 text-sm text-slate-400">
-                        <p><span className="text-purple-400">Хэрэглээ:</span> {wagon.usage}</p>
-                        {wagon.advantage && <p><span className="text-emerald-400">Давуу тал:</span> {wagon.advantage}</p>}
-                        {wagon.suitable && <p><span className="text-cyan-400">Тохиромжтой ачаа:</span> {wagon.suitable}</p>}
-                        {wagon.note && <p><span className="text-orange-400">Анхаарах:</span> {wagon.note}</p>}
+                      <h3 className="text-lg font-semibold text-slate-900">{wagon.title}</h3>
+                      <div className="mt-3 space-y-2 text-sm text-slate-500">
+                        <p><span className="text-sky-600">Хэрэглээ:</span> {wagon.usage}</p>
+                        {wagon.advantage && <p><span className="text-sky-600">Давуу тал:</span> {wagon.advantage}</p>}
+                        {wagon.suitable && <p><span className="text-sky-600">Тохиромжтой ачаа:</span> {wagon.suitable}</p>}
+                        {wagon.note && <p><span className="text-amber-600">Анхаарах:</span> {wagon.note}</p>}
                       </div>
                     </div>
                   </div>
@@ -141,7 +141,7 @@ export default function WagonsPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Вагоны сонголтын &quot;түргэн зөвлөмж&quot;</h2>
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Вагоны сонголтын &quot;түргэн зөвлөмж&quot;</h2>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {quickTips.map((tip, index) => (
                 <motion.div
@@ -150,10 +150,10 @@ export default function WagonsPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4"
+                  className="rounded-xl border border-sky-200 bg-sky-50 p-4 shadow-sm"
                 >
-                  <p className="text-sm text-slate-400">{tip.type}</p>
-                  <p className="mt-1 font-semibold text-emerald-400">{tip.recommendation}</p>
+                  <p className="text-sm text-slate-500">{tip.type}</p>
+                  <p className="mt-1 font-semibold text-sky-600">{tip.recommendation}</p>
                 </motion.div>
               ))}
             </div>
@@ -168,7 +168,7 @@ export default function WagonsPage() {
           >
             <Link
               href="/resources"
-              className="inline-flex items-center text-purple-400 hover:text-purple-300"
+              className="inline-flex items-center text-sky-600 hover:text-sky-500"
             >
               <svg className="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

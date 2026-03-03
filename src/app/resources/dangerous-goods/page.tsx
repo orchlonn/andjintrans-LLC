@@ -87,8 +87,8 @@ export default function DangerousGoodsPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <div className="rounded-3xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-transparent p-8">
-              <p className="text-lg leading-relaxed text-slate-300">
+            <div className="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-transparent p-8 shadow-sm">
+              <p className="text-lg leading-relaxed text-slate-500">
                 Аюултай ачаа (Dangerous Goods, DG) гэдэг нь тээвэрлэлтийн явцад хүний эрүүл мэнд, өмч хөрөнгө, байгаль
                 орчинд эрсдэл учруулж болзошгүй тул тусгай ангилал, сав баглаа боодол, шошгололт, бичиг баримт шаарддаг
                 бодис, бүтээгдэхүүнийг хэлнэ. DG ачаа нь олон улсын түвшинд UN-ийн 9 ангилал (Class 1–9)-д хуваагддаг
@@ -104,7 +104,7 @@ export default function DangerousGoodsPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">DG-ийн 9 ангилал</h2>
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">DG-ийн 9 ангилал</h2>
             <div className="mt-8 space-y-4">
               {dgClasses.map((dg, index) => (
                 <motion.div
@@ -113,15 +113,15 @@ export default function DangerousGoodsPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-6"
+                  className="rounded-2xl border border-sky-200 bg-sky-50 p-6 shadow-sm"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-orange-400 to-red-500">
-                      <span className="text-xs font-bold text-slate-900">{dg.class}</span>
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-blue-500">
+                      <span className="text-xs font-bold text-white">{dg.class}</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">{dg.title}</h3>
-                      <p className="mt-2 text-slate-400">{dg.description}</p>
+                      <h3 className="text-lg font-semibold text-slate-900">{dg.title}</h3>
+                      <p className="mt-2 text-slate-500">{dg.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -136,8 +136,8 @@ export default function DangerousGoodsPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">DG ачаанд хамгийн их шаардагдах мэдээлэл</h2>
-            <p className="mt-4 text-slate-400">
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">DG ачаанд хамгийн их шаардагдах мэдээлэл</h2>
+            <p className="mt-4 text-slate-500">
               Үнийн санал, зөв ангилал, зөв савлалт/шошгололт хийхэд ихэвчлэн дараах &quot;минимум өгөгдөл&quot; хэрэгтэй:
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -148,10 +148,10 @@ export default function DangerousGoodsPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="rounded-xl border border-white/10 bg-white/5 p-4"
+                  className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
                 >
-                  <h4 className="font-semibold text-orange-400">{info.item}</h4>
-                  <p className="mt-1 text-sm text-slate-400">{info.description}</p>
+                  <h4 className="font-semibold text-sky-600">{info.item}</h4>
+                  <p className="mt-1 text-sm text-slate-500">{info.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -164,7 +164,7 @@ export default function DangerousGoodsPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Практик зөвлөмж</h2>
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Практик зөвлөмж</h2>
             <div className="mt-8 space-y-4">
               {practicalTips.map((tip, index) => (
                 <motion.div
@@ -173,14 +173,14 @@ export default function DangerousGoodsPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-4 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-6"
+                  className="flex items-start gap-4 rounded-2xl border border-sky-200 bg-sky-50 p-6 shadow-sm"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-500">
-                    <svg className="h-5 w-5 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-blue-500">
+                    <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <p className="pt-2 text-slate-300">{tip}</p>
+                  <p className="pt-2 text-slate-500">{tip}</p>
                 </motion.div>
               ))}
             </div>
@@ -195,7 +195,7 @@ export default function DangerousGoodsPage() {
           >
             <Link
               href="/resources"
-              className="inline-flex items-center text-orange-400 hover:text-orange-300"
+              className="inline-flex items-center text-sky-600 hover:text-sky-500"
             >
               <svg className="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

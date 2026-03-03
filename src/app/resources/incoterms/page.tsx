@@ -99,15 +99,15 @@ export default function IncotermsPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Инкотермс гэж юу вэ?</h2>
-            <div className="mt-6 rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-transparent p-8">
-              <p className="text-lg leading-relaxed text-slate-300">
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Инкотермс гэж юу вэ?</h2>
+            <div className="mt-6 rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-transparent p-8 shadow-sm">
+              <p className="text-lg leading-relaxed text-slate-500">
                 Инкотермс® (International Commercial Terms) нь Олон улсын худалдааны танхим (ICC)-аас боловсруулсан, олон
                 улсын худалдаанд түгээмэл хэрэглэгддэг дүрэм бөгөөд худалдагч ба худалдан авагчийн хооронд хаана зардал шилжих,
                 хаана эрсдэл шилжих, мөн хэний хариуцах үүрэг (тээвэр зохион байгуулалт, даатгал, гааль гэх мэт) ямар байхыг нэг
                 мөр болгодог.
               </p>
-              <p className="mt-4 text-lg font-semibold text-cyan-400">
+              <p className="mt-4 text-lg font-semibold text-sky-600">
                 Инкотермс нь үнэ (price) биш — харин хариуцлагын хил юм.
               </p>
             </div>
@@ -120,7 +120,7 @@ export default function IncotermsPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Бүх төрлийн тээвэрт хэрэглэгддэг (Any mode)</h2>
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Бүх төрлийн тээвэрт хэрэглэгддэг (Any mode)</h2>
             <div className="mt-8 space-y-4">
               {anyModeTerms.map((term, index) => (
                 <motion.div
@@ -129,15 +129,15 @@ export default function IncotermsPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-6"
+                  className="rounded-2xl border border-sky-200 bg-sky-50 p-6 shadow-sm"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500">
-                      <span className="text-sm font-bold text-slate-900">{term.code}</span>
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-blue-500">
+                      <span className="text-sm font-bold text-white">{term.code}</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">{term.name}</h3>
-                      <p className="mt-2 text-slate-400">{term.description}</p>
+                      <h3 className="text-lg font-semibold text-slate-900">{term.name}</h3>
+                      <p className="mt-2 text-slate-500">{term.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -152,7 +152,7 @@ export default function IncotermsPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Далайн/усан замд хэрэглэгддэг (Sea & Inland waterway only)</h2>
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Далайн/усан замд хэрэглэгддэг (Sea & Inland waterway only)</h2>
             <div className="mt-8 space-y-4">
               {seaTerms.map((term, index) => (
                 <motion.div
@@ -161,15 +161,15 @@ export default function IncotermsPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="rounded-2xl border border-blue-500/20 bg-blue-500/5 p-6"
+                  className="rounded-2xl border border-sky-200 bg-sky-50 p-6 shadow-sm"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-400 to-purple-500">
-                      <span className="text-sm font-bold text-slate-900">{term.code}</span>
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-blue-600">
+                      <span className="text-sm font-bold text-white">{term.code}</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">{term.name}</h3>
-                      <p className="mt-2 text-slate-400">{term.description}</p>
+                      <h3 className="text-lg font-semibold text-slate-900">{term.name}</h3>
+                      <p className="mt-2 text-slate-500">{term.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -184,7 +184,7 @@ export default function IncotermsPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Түгээмэл сонголтын зөвлөмж (практик)</h2>
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Түгээмэл сонголтын зөвлөмж (практик)</h2>
             <div className="mt-8 space-y-4">
               {recommendations.map((rec, index) => (
                 <motion.div
@@ -193,10 +193,10 @@ export default function IncotermsPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-6"
+                  className="rounded-2xl border border-sky-200 bg-sky-50 p-6 shadow-sm"
                 >
-                  <h3 className="font-semibold text-emerald-400">{rec.title}</h3>
-                  <p className="mt-2 text-slate-300">{rec.description}</p>
+                  <h3 className="font-semibold text-sky-600">{rec.title}</h3>
+                  <p className="mt-2 text-slate-500">{rec.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -211,7 +211,7 @@ export default function IncotermsPage() {
           >
             <Link
               href="/resources"
-              className="inline-flex items-center text-cyan-400 hover:text-cyan-300"
+              className="inline-flex items-center text-sky-600 hover:text-sky-500"
             >
               <svg className="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

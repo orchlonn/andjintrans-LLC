@@ -99,24 +99,24 @@ const colorClasses: Record<
   { border: string; bg: string; icon: string }
 > = {
   cyan: {
-    border: "border-cyan-500/30",
-    bg: "from-cyan-500/10",
-    icon: "from-cyan-400 to-blue-500",
+    border: "border-sky-200",
+    bg: "from-sky-50",
+    icon: "from-sky-400 to-blue-500",
   },
   emerald: {
-    border: "border-emerald-500/30",
-    bg: "from-emerald-500/10",
-    icon: "from-emerald-400 to-cyan-500",
+    border: "border-sky-200",
+    bg: "from-sky-50",
+    icon: "from-sky-500 to-blue-500",
   },
   purple: {
-    border: "border-purple-500/30",
-    bg: "from-purple-500/10",
-    icon: "from-purple-400 to-pink-500",
+    border: "border-sky-200",
+    bg: "from-sky-50",
+    icon: "from-sky-400 to-sky-600",
   },
   orange: {
-    border: "border-orange-500/30",
-    bg: "from-orange-500/10",
-    icon: "from-orange-400 to-red-500",
+    border: "border-amber-200",
+    bg: "from-amber-50",
+    icon: "from-amber-400 to-amber-500",
   },
 };
 
@@ -190,17 +190,17 @@ export default function ContactPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className={`rounded-3xl border ${colors.border} bg-gradient-to-br ${colors.bg} to-transparent p-8`}
+                    className={`rounded-3xl border ${colors.border} bg-gradient-to-br ${colors.bg} to-transparent p-8 shadow-sm`}
                   >
                     <div
                       className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${colors.icon}`}
                     >
-                      <span className="text-slate-900">{info.icon}</span>
+                      <span className="text-white">{info.icon}</span>
                     </div>
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="text-lg font-semibold text-slate-900">
                       {info.title}
                     </h3>
-                    <p className="mt-2 whitespace-pre-line text-slate-300">
+                    <p className="mt-2 whitespace-pre-line text-slate-600">
                       {info.content}
                     </p>
                   </motion.div>
@@ -216,10 +216,10 @@ export default function ContactPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-cyan-500/20 bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-slate-800/50 p-8 backdrop-blur-xl md:p-12">
+            <div className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white p-8 shadow-sm md:p-12">
               {/* Decorative elements */}
-              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-[100px]" />
-              <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-purple-500/10 blur-[100px]" />
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-sky-200/40 blur-[100px]" />
+              <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-blue-200/40 blur-[100px]" />
 
               <div className="relative">
                 {/* Header */}
@@ -228,10 +228,10 @@ export default function ContactPage() {
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
-                    className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 shadow-lg shadow-cyan-500/25"
+                    className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 shadow-lg shadow-sky-500/25"
                   >
                     <svg
-                      className="h-8 w-8 text-slate-900"
+                      className="h-8 w-8 text-white"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -244,10 +244,10 @@ export default function ContactPage() {
                       />
                     </svg>
                   </motion.div>
-                  <h2 className="text-2xl font-bold text-white md:text-3xl">
+                  <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
                     Үнийн санал авах
                   </h2>
-                  <p className="mt-3 text-slate-400">
+                  <p className="mt-3 text-slate-500">
                     Доорх маягтыг бөглөж бидэнтэй холбогдоно уу
                   </p>
                 </div>
@@ -263,10 +263,10 @@ export default function ContactPage() {
                     <div className="group">
                       <label
                         htmlFor="name"
-                        className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-300"
+                        className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-600"
                       >
                         <svg
-                          className="h-4 w-4 text-cyan-400"
+                          className="h-4 w-4 text-sky-600"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -285,10 +285,10 @@ export default function ContactPage() {
                           type="text"
                           id="name"
                           name="name"
-                          className="block w-full rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder-slate-500 backdrop-blur-sm transition-all duration-300 focus:border-cyan-500/50 focus:bg-white/10 focus:outline-none focus:ring-4 focus:ring-cyan-500/10"
+                          className="block w-full rounded-2xl border border-slate-300 bg-slate-50 px-5 py-4 text-slate-900 placeholder-slate-400 transition-all duration-300 focus:border-sky-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-sky-500/10"
                           placeholder="Таны нэр"
                         />
-                        <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500/0 via-cyan-500/0 to-cyan-500/0 opacity-0 transition-opacity duration-300 group-focus-within:opacity-100" />
+                        <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-sky-500/0 via-sky-500/0 to-sky-500/0 opacity-0 transition-opacity duration-300 group-focus-within:opacity-100" />
                       </div>
                     </div>
 
@@ -296,10 +296,10 @@ export default function ContactPage() {
                     <div className="group">
                       <label
                         htmlFor="company"
-                        className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-300"
+                        className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-600"
                       >
                         <svg
-                          className="h-4 w-4 text-purple-400"
+                          className="h-4 w-4 text-sky-600"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -317,7 +317,7 @@ export default function ContactPage() {
                         type="text"
                         id="company"
                         name="company"
-                        className="block w-full rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder-slate-500 backdrop-blur-sm transition-all duration-300 focus:border-purple-500/50 focus:bg-white/10 focus:outline-none focus:ring-4 focus:ring-purple-500/10"
+                        className="block w-full rounded-2xl border border-slate-300 bg-slate-50 px-5 py-4 text-slate-900 placeholder-slate-400 transition-all duration-300 focus:border-sky-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-sky-500/10"
                         placeholder="Байгууллагын нэр"
                       />
                     </div>
@@ -328,10 +328,10 @@ export default function ContactPage() {
                     <div className="group">
                       <label
                         htmlFor="email"
-                        className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-300"
+                        className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-600"
                       >
                         <svg
-                          className="h-4 w-4 text-emerald-400"
+                          className="h-4 w-4 text-sky-600"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -349,7 +349,7 @@ export default function ContactPage() {
                         type="email"
                         id="email"
                         name="email"
-                        className="block w-full rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder-slate-500 backdrop-blur-sm transition-all duration-300 focus:border-emerald-500/50 focus:bg-white/10 focus:outline-none focus:ring-4 focus:ring-emerald-500/10"
+                        className="block w-full rounded-2xl border border-slate-300 bg-slate-50 px-5 py-4 text-slate-900 placeholder-slate-400 transition-all duration-300 focus:border-sky-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-sky-500/10"
                         placeholder="example@email.com"
                       />
                     </div>
@@ -358,10 +358,10 @@ export default function ContactPage() {
                     <div className="group">
                       <label
                         htmlFor="phone"
-                        className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-300"
+                        className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-600"
                       >
                         <svg
-                          className="h-4 w-4 text-orange-400"
+                          className="h-4 w-4 text-amber-600"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -379,7 +379,7 @@ export default function ContactPage() {
                         type="tel"
                         id="phone"
                         name="phone"
-                        className="block w-full rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder-slate-500 backdrop-blur-sm transition-all duration-300 focus:border-orange-500/50 focus:bg-white/10 focus:outline-none focus:ring-4 focus:ring-orange-500/10"
+                        className="block w-full rounded-2xl border border-slate-300 bg-slate-50 px-5 py-4 text-slate-900 placeholder-slate-400 transition-all duration-300 focus:border-sky-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-sky-500/10"
                         placeholder="99******"
                       />
                     </div>
@@ -389,10 +389,10 @@ export default function ContactPage() {
                   <div className="group">
                     <label
                       htmlFor="service"
-                      className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-300"
+                      className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-600"
                     >
                       <svg
-                        className="h-4 w-4 text-blue-400"
+                        className="h-4 w-4 text-sky-600"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -410,36 +410,36 @@ export default function ContactPage() {
                       <select
                         id="service"
                         name="service"
-                        className="block w-full appearance-none rounded-2xl border border-white/10 bg-white/5 px-5 py-4 pr-12 text-white backdrop-blur-sm transition-all duration-300 focus:border-blue-500/50 focus:bg-white/10 focus:outline-none focus:ring-4 focus:ring-blue-500/10"
+                        className="block w-full appearance-none rounded-2xl border border-slate-300 bg-slate-50 px-5 py-4 pr-12 text-slate-900 transition-all duration-300 focus:border-sky-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-sky-500/10"
                       >
-                        <option value="" className="bg-slate-900">
+                        <option value="" className="bg-white">
                           Сонгоно уу
                         </option>
-                        <option value="air" className="bg-slate-900">
+                        <option value="air" className="bg-white">
                           Агаарын тээвэр
                         </option>
-                        <option value="sea" className="bg-slate-900">
+                        <option value="sea" className="bg-white">
                           Далайн тээвэр
                         </option>
-                        <option value="rail" className="bg-slate-900">
+                        <option value="rail" className="bg-white">
                           Төмөр замын тээвэр
                         </option>
-                        <option value="road" className="bg-slate-900">
+                        <option value="road" className="bg-white">
                           Авто замын тээвэр
                         </option>
-                        <option value="transit" className="bg-slate-900">
+                        <option value="transit" className="bg-white">
                           Транзит тээвэр
                         </option>
-                        <option value="insurance" className="bg-slate-900">
+                        <option value="insurance" className="bg-white">
                           Ачааны даатгал
                         </option>
-                        <option value="customs" className="bg-slate-900">
+                        <option value="customs" className="bg-white">
                           Гаалийн бүрдүүлэлт
                         </option>
-                        <option value="domestic" className="bg-slate-900">
+                        <option value="domestic" className="bg-white">
                           Дотоодын хүргэлт
                         </option>
-                        <option value="other" className="bg-slate-900">
+                        <option value="other" className="bg-white">
                           Бусад
                         </option>
                       </select>
@@ -465,10 +465,10 @@ export default function ContactPage() {
                   <div className="group">
                     <label
                       htmlFor="message"
-                      className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-300"
+                      className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-600"
                     >
                       <svg
-                        className="h-4 w-4 text-pink-400"
+                        className="h-4 w-4 text-sky-600"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -486,7 +486,7 @@ export default function ContactPage() {
                       id="message"
                       name="message"
                       rows={5}
-                      className="block w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder-slate-500 backdrop-blur-sm transition-all duration-300 focus:border-pink-500/50 focus:bg-white/10 focus:outline-none focus:ring-4 focus:ring-pink-500/10"
+                      className="block w-full resize-none rounded-2xl border border-slate-300 bg-slate-50 px-5 py-4 text-slate-900 placeholder-slate-400 transition-all duration-300 focus:border-sky-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-sky-500/10"
                       placeholder="Таны хүсэлт, асуулт..."
                     />
                   </div>
@@ -499,9 +499,9 @@ export default function ContactPage() {
                   >
                     <button
                       type="submit"
-                      className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-[2px] transition-all duration-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.4)]"
+                      className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-sky-400 via-blue-500 to-blue-600 p-[2px] transition-all duration-300 hover:shadow-[0_0_40px_rgba(14,165,233,0.4)]"
                     >
-                      <span className="flex w-full items-center justify-center gap-3 rounded-[14px] bg-slate-900 px-8 py-4 text-base font-semibold text-white transition-all duration-300 group-hover:bg-transparent">
+                      <span className="flex w-full items-center justify-center gap-3 rounded-[14px] bg-white px-8 py-4 text-base font-semibold text-slate-900 transition-all duration-300 group-hover:bg-transparent group-hover:text-white">
                         <span>Илгээх</span>
                         <svg
                           className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
@@ -530,20 +530,20 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 via-slate-900/50 to-blue-500/10 p-8 md:p-12">
-              <h2 className="text-2xl font-bold text-white md:text-3xl">
+            <div className="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-blue-50 p-8 shadow-sm md:p-12">
+              <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
                 Ажлын цаг
               </h2>
               <div className="mt-6 grid gap-4 md:grid-cols-2">
-                <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                   <p className="text-sm text-slate-400">Даваа – Баасан</p>
-                  <p className="mt-1 text-lg font-semibold text-white">
+                  <p className="mt-1 text-lg font-semibold text-slate-900">
                     09:00 – 18:00
                   </p>
                 </div>
-                <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                   <p className="text-sm text-slate-400">Бямба – Ням</p>
-                  <p className="mt-1 text-lg font-semibold text-white">
+                  <p className="mt-1 text-lg font-semibold text-slate-900">
                     Амарна
                   </p>
                 </div>

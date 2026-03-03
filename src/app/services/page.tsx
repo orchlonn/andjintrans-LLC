@@ -87,7 +87,7 @@ const mainServices = [
     href: "/services/air",
     Icon: PlaneIcon,
     color: "cyan",
-    gradient: "from-cyan-400 to-blue-500",
+    gradient: "from-sky-400 to-blue-500",
   },
   {
     title: "Далайн тээвэр",
@@ -96,7 +96,7 @@ const mainServices = [
     href: "/services/sea",
     Icon: ShipIcon,
     color: "blue",
-    gradient: "from-blue-400 to-indigo-500",
+    gradient: "from-sky-500 to-blue-600",
   },
   {
     title: "Төмөр замын тээвэр",
@@ -105,7 +105,7 @@ const mainServices = [
     href: "/services/rail",
     Icon: TrainIcon,
     color: "purple",
-    gradient: "from-purple-400 to-pink-500",
+    gradient: "from-sky-400 to-sky-600",
   },
   {
     title: "Авто замын тээвэр",
@@ -114,7 +114,7 @@ const mainServices = [
     href: "/services/road",
     Icon: TruckIcon,
     color: "emerald",
-    gradient: "from-emerald-400 to-cyan-500",
+    gradient: "from-sky-500 to-blue-500",
   },
   {
     title: "Транзит тээвэр",
@@ -122,8 +122,8 @@ const mainServices = [
       "Гуравдагч орны ачааг Монгол Улсын нутгаар дамжуулан шилжүүлэн тээвэрлэх. Rail Transit, Road Transit, Multimodal Transit, Project & Special Cargo Transit.",
     href: "/services/transit",
     Icon: TransitIcon,
-    color: "orange",
-    gradient: "from-orange-400 to-red-500",
+    color: "cyan",
+    gradient: "from-sky-400 to-blue-500",
   },
   {
     title: "Экспорт тээвэр",
@@ -131,8 +131,8 @@ const mainServices = [
       "Монгол Улсаас гадаад руу бараа, бүтээгдэхүүн экспортлоход шаардлагатай тээвэрлэлт, баримт бичиг бүрдүүлэлт, гаалийн зохион байгуулалтыг нэг цэгээс хийх.",
     href: "/services/export",
     Icon: ExportIcon,
-    color: "orange",
-    gradient: "from-orange-400 to-red-500",
+    color: "cyan",
+    gradient: "from-sky-400 to-blue-500",
   },
 ];
 
@@ -143,7 +143,7 @@ const additionalServices = [
       "Тээвэрлэлтийн явцад үүсч болзошгүй гэмтэл, алдагдал, хулгай, осол, байгалийн эрсдэлээс хамгаалах All Risks, Named Perils, ICC A/B/C даатгалын шийдэл.",
     href: "/services/insurance",
     Icon: ShieldIcon,
-    gradient: "from-purple-400 to-pink-500",
+    gradient: "from-sky-400 to-sky-600",
   },
   {
     title: "Гаалийн бүрдүүлэлт",
@@ -151,7 +151,7 @@ const additionalServices = [
       "Импорт, экспорт, транзит тээврийн гаалийн мэдүүлэг, HS код, татвар/хураамжийн тооцоолол, шалгалт/хяналтын процесс зохион байгуулах үйлчилгээ.",
     href: "/services/customs",
     Icon: DocumentIcon,
-    gradient: "from-cyan-400 to-blue-500",
+    gradient: "from-sky-400 to-blue-500",
   },
   {
     title: "Дотоодын хүргэлт",
@@ -159,7 +159,7 @@ const additionalServices = [
       "Улаанбаатар хот болон орон нутагт бараа, тоног төхөөрөмж, түүхий эд, контейнер болон задгай ачааг агуулах–терминал–үйлдвэр–харилцагч хооронд хүргэх.",
     href: "/services/domestic",
     Icon: DeliveryIcon,
-    gradient: "from-emerald-400 to-cyan-500",
+    gradient: "from-sky-500 to-blue-500",
   },
 ];
 
@@ -168,34 +168,34 @@ const colorClasses: Record<
   { border: string; bg: string; hover: string }
 > = {
   cyan: {
-    border: "border-cyan-500/30",
-    bg: "from-cyan-500/10",
+    border: "border-sky-200",
+    bg: "from-sky-50",
     hover:
-      "hover:border-cyan-400/50 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]",
+      "hover:border-sky-300 hover:shadow-lg hover:shadow-sky-100",
   },
   blue: {
-    border: "border-blue-500/30",
-    bg: "from-blue-500/10",
+    border: "border-sky-200",
+    bg: "from-sky-50",
     hover:
-      "hover:border-blue-400/50 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]",
+      "hover:border-sky-300 hover:shadow-lg hover:shadow-sky-100",
   },
   purple: {
-    border: "border-purple-500/30",
-    bg: "from-purple-500/10",
+    border: "border-sky-200",
+    bg: "from-sky-50",
     hover:
-      "hover:border-purple-400/50 hover:shadow-[0_0_40px_rgba(168,85,247,0.15)]",
+      "hover:border-sky-300 hover:shadow-lg hover:shadow-sky-100",
   },
   emerald: {
-    border: "border-emerald-500/30",
-    bg: "from-emerald-500/10",
+    border: "border-sky-200",
+    bg: "from-sky-50",
     hover:
-      "hover:border-emerald-400/50 hover:shadow-[0_0_40px_rgba(52,211,153,0.15)]",
+      "hover:border-sky-300 hover:shadow-lg hover:shadow-sky-100",
   },
   orange: {
-    border: "border-orange-500/30",
-    bg: "from-orange-500/10",
+    border: "border-amber-200",
+    bg: "from-amber-50",
     hover:
-      "hover:border-orange-400/50 hover:shadow-[0_0_40px_rgba(251,146,60,0.15)]",
+      "hover:border-amber-300 hover:shadow-lg hover:shadow-amber-100",
   },
 };
 
@@ -235,10 +235,10 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
               Үндсэн тээврийн үйлчилгээ
             </h2>
-            <p className="mt-4 text-slate-400">
+            <p className="mt-4 text-slate-500">
               Дэлхийн аль ч өнцгөөс тээвэрлэлт хийх боломжтой агент/түншийн
               сүлжээ, туршлагатай багийн зохион байгуулалт.
             </p>
@@ -258,18 +258,18 @@ export default function ServicesPage() {
                   >
                     <Link
                       href={service.href}
-                      className={`group relative block h-full overflow-hidden rounded-3xl border ${colors.border} bg-gradient-to-br ${colors.bg} to-transparent p-8 backdrop-blur-xl transition-all duration-500 ${colors.hover}`}
+                      className={`group relative block h-full overflow-hidden rounded-3xl border ${colors.border} bg-white p-8 shadow-sm transition-all duration-500 ${colors.hover}`}
                     >
                       <div className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${service.gradient} shadow-lg`}>
-                        <Icon className="h-7 w-7 text-slate-900" />
+                        <Icon className="h-7 w-7 text-white" />
                       </div>
-                      <h3 className="mt-4 text-xl font-bold text-white">
+                      <h3 className="mt-4 text-xl font-bold text-slate-900">
                         {service.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                      <p className="mt-3 text-sm leading-relaxed text-slate-500">
                         {service.description}
                       </p>
-                      <span className="mt-6 inline-flex items-center text-sm text-cyan-400 group-hover:text-cyan-300">
+                      <span className="mt-6 inline-flex items-center text-sm text-sky-600 group-hover:text-sky-600">
                         Дэлгэрэнгүй
                         <svg
                           className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -298,10 +298,10 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
               Нэмэлт үйлчилгээ
             </h2>
-            <p className="mt-4 text-slate-400">
+            <p className="mt-4 text-slate-500">
               Тээвэрлэлттэй холбоотой эрсдэлийг бууруулах, саатлаас сэргийлэх
               дэмжлэг үйлчилгээ.
             </p>
@@ -320,18 +320,18 @@ export default function ServicesPage() {
                 >
                   <Link
                     href={service.href}
-                    className="group relative block h-full overflow-hidden rounded-3xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-transparent p-8 backdrop-blur-xl transition-all duration-500 hover:border-purple-400/50"
+                    className="group relative block h-full overflow-hidden rounded-3xl border border-sky-200 bg-white p-8 shadow-sm transition-all duration-500 hover:border-sky-300 hover:shadow-lg hover:shadow-sky-100"
                   >
                     <div className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${service.gradient} shadow-lg`}>
-                      <Icon className="h-7 w-7 text-slate-900" />
+                      <Icon className="h-7 w-7 text-white" />
                     </div>
-                    <h3 className="mt-4 text-xl font-bold text-white">
+                    <h3 className="mt-4 text-xl font-bold text-slate-900">
                       {service.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                    <p className="mt-3 text-sm leading-relaxed text-slate-500">
                       {service.description}
                     </p>
-                    <span className="mt-6 inline-flex items-center text-sm text-purple-400 group-hover:text-purple-300">
+                    <span className="mt-6 inline-flex items-center text-sm text-sky-600 group-hover:text-sky-600">
                       Дэлгэрэнгүй
                       <svg
                         className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -360,17 +360,17 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             className="mt-20"
           >
-            <div className="rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 via-slate-900/50 to-purple-500/10 p-8 text-center md:p-12">
-              <h2 className="text-2xl font-bold text-white md:text-3xl">
+            <div className="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-sky-50 p-8 text-center shadow-sm md:p-12">
+              <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
                 Үнийн санал авах
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-slate-400">
+              <p className="mx-auto mt-4 max-w-2xl text-slate-500">
                 Ачааны төрөл, хэмжээ, хугацаа, маршрутын шаардлагад тохируулсан
                 үнийн санал авахыг хүсвэл бидэнтэй холбогдоно уу.
               </p>
               <Link
                 href="/contact"
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-base font-semibold text-slate-900 transition-all hover:shadow-[0_0_40px_rgba(34,211,238,0.5)]"
+                className="mt-8 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-400 to-blue-500 px-8 py-4 text-base font-semibold text-white transition-all hover:shadow-lg hover:shadow-sky-100"
               >
                 Холбоо барих
                 <svg

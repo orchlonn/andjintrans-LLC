@@ -62,7 +62,7 @@ const resources = [
     href: "/resources/incoterms",
     Icon: ClipboardIcon,
     color: "cyan",
-    gradient: "from-cyan-400 to-blue-500",
+    gradient: "from-sky-400 to-blue-500",
   },
   {
     title: "Чингэлэгийн төрөл",
@@ -71,7 +71,7 @@ const resources = [
     href: "/resources/containers",
     Icon: BoxIcon,
     color: "blue",
-    gradient: "from-blue-400 to-indigo-500",
+    gradient: "from-sky-500 to-blue-600",
   },
   {
     title: "Вагоны төрөл",
@@ -80,15 +80,15 @@ const resources = [
     href: "/resources/wagons",
     Icon: TrainIcon,
     color: "purple",
-    gradient: "from-purple-400 to-pink-500",
+    gradient: "from-sky-400 to-sky-600",
   },
   {
     title: "Аюултай ачаа (DG)",
     description: "UN Class 1-9 ангилал, SDS/MSDS шаардлага, шошгололт, савлалт",
     href: "/resources/dangerous-goods",
     Icon: WarningIcon,
-    color: "orange",
-    gradient: "from-orange-400 to-red-500",
+    color: "cyan",
+    gradient: "from-sky-400 to-blue-500",
   },
   {
     title: "Сав баглаа боодол",
@@ -97,7 +97,7 @@ const resources = [
     href: "/resources/packaging",
     Icon: PackageIcon,
     color: "emerald",
-    gradient: "from-emerald-400 to-cyan-500",
+    gradient: "from-sky-500 to-blue-500",
   },
   {
     title: "Шаардлагатай баримт бичиг",
@@ -106,7 +106,7 @@ const resources = [
     href: "/resources/documents",
     Icon: DocumentIcon,
     color: "pink",
-    gradient: "from-pink-400 to-rose-500",
+    gradient: "from-sky-400 to-blue-500",
   },
 ];
 
@@ -115,34 +115,34 @@ const colorClasses: Record<
   { border: string; bg: string; hover: string }
 > = {
   cyan: {
-    border: "border-cyan-500/30",
-    bg: "from-cyan-500/10",
-    hover: "hover:border-cyan-400/50",
+    border: "border-sky-200",
+    bg: "from-sky-50",
+    hover: "hover:border-sky-300",
   },
   blue: {
-    border: "border-blue-500/30",
-    bg: "from-blue-500/10",
-    hover: "hover:border-blue-400/50",
+    border: "border-sky-200",
+    bg: "from-sky-50",
+    hover: "hover:border-sky-300",
   },
   purple: {
-    border: "border-purple-500/30",
-    bg: "from-purple-500/10",
-    hover: "hover:border-purple-400/50",
+    border: "border-sky-200",
+    bg: "from-sky-50",
+    hover: "hover:border-sky-300",
   },
   orange: {
-    border: "border-orange-500/30",
-    bg: "from-orange-500/10",
-    hover: "hover:border-orange-400/50",
+    border: "border-amber-200",
+    bg: "from-amber-50",
+    hover: "hover:border-amber-300",
   },
   emerald: {
-    border: "border-emerald-500/30",
-    bg: "from-emerald-500/10",
-    hover: "hover:border-emerald-400/50",
+    border: "border-sky-200",
+    bg: "from-sky-50",
+    hover: "hover:border-sky-300",
   },
   pink: {
-    border: "border-pink-500/30",
-    bg: "from-pink-500/10",
-    hover: "hover:border-pink-400/50",
+    border: "border-sky-200",
+    bg: "from-sky-50",
+    hover: "hover:border-sky-300",
   },
 };
 
@@ -197,20 +197,20 @@ export default function ResourcesPage() {
                   >
                     <Link
                       href={resource.href}
-                      className={`group relative block h-full overflow-hidden rounded-3xl border ${colors.border} bg-gradient-to-br ${colors.bg} to-transparent p-8 backdrop-blur-xl transition-all duration-500 ${colors.hover}`}
+                      className={`group relative block h-full overflow-hidden rounded-3xl border ${colors.border} bg-gradient-to-br ${colors.bg} to-transparent p-8 shadow-sm transition-all duration-500 ${colors.hover}`}
                     >
                       <div
                         className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${resource.gradient} shadow-lg`}
                       >
-                        <Icon className="h-7 w-7 text-slate-900" />
+                        <Icon className="h-7 w-7 text-white" />
                       </div>
-                      <h3 className="mt-6 text-xl font-bold text-white">
+                      <h3 className="mt-6 text-xl font-bold text-slate-900">
                         {resource.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                      <p className="mt-3 text-sm leading-relaxed text-slate-500">
                         {resource.description}
                       </p>
-                      <span className="mt-6 inline-flex items-center text-sm text-emerald-400 group-hover:text-emerald-300">
+                      <span className="mt-6 inline-flex items-center text-sm text-sky-600 group-hover:text-sky-500">
                         Дэлгэрэнгүй
                         <svg
                           className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -240,17 +240,17 @@ export default function ResourcesPage() {
             viewport={{ once: true }}
             className="mt-20"
           >
-            <div className="rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-slate-900/50 to-cyan-500/10 p-8 text-center md:p-12">
-              <h2 className="text-2xl font-bold text-white md:text-3xl">
+            <div className="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-blue-50 p-8 text-center shadow-sm md:p-12">
+              <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
                 Танд санал хүсэлт байна уу?
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-slate-400">
+              <p className="mx-auto mt-4 max-w-2xl text-slate-500">
                 Тээвэр, логистиктой холбоотой аливаа асуултад бид хариулахад
                 бэлэн.
               </p>
               <Link
                 href="/contact"
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 to-cyan-500 px-8 py-4 text-base font-semibold text-slate-900 transition-all hover:shadow-[0_0_40px_rgba(52,211,153,0.5)]"
+                className="mt-8 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-blue-500 px-8 py-4 text-base font-semibold text-white transition-all hover:shadow-[0_0_40px_rgba(56,189,248,0.4)]"
               >
                 Холбоо барих
                 <svg

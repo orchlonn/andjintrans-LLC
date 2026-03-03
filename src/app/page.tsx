@@ -84,7 +84,7 @@ const services = [
       "Яаралтай, өндөр үнэ цэнтэй ачаанд тохиромжтой. Airport-to-Airport, Door-to-Door, Express горимтой.",
     href: "/services/air",
     icon: PlaneIcon,
-    gradient: "from-cyan-400 to-blue-500",
+    gradient: "from-sky-400 to-blue-500",
   },
   {
     title: "Далайн тээвэр",
@@ -92,7 +92,7 @@ const services = [
       "Их хэмжээний ачаанд өртөг оновчтой. FCL/LCL, тусгай тоноглол, төсөл ачаа.",
     href: "/services/sea",
     icon: ShipIcon,
-    gradient: "from-blue-400 to-indigo-500",
+    gradient: "from-sky-500 to-blue-600",
   },
   {
     title: "Төмөр замын тээвэр",
@@ -100,7 +100,7 @@ const services = [
       "Их жин, их эзэлхүүнтэй ачаанд тогтвортой хугацаатай сонголт. Контейнер, вагон тээвэр.",
     href: "/services/rail",
     icon: TrainIcon,
-    gradient: "from-purple-400 to-pink-500",
+    gradient: "from-sky-400 to-sky-600",
   },
   {
     title: "Авто замын тээвэр",
@@ -108,7 +108,7 @@ const services = [
       "Хил дамнасан болон дотоод хүргэлтийн уян хатан шийдэл. LTL/FTL ачаа.",
     href: "/services/road",
     icon: TruckIcon,
-    gradient: "from-emerald-400 to-cyan-500",
+    gradient: "from-sky-500 to-blue-500",
   },
   {
     title: "Транзит тээвэр",
@@ -116,7 +116,7 @@ const services = [
       "Гуравдагч орны ачааг Монголын нутгаар дамжуулан тээвэрлэх тусгай зохион байгуулалт.",
     href: "/services/transit",
     icon: TransitIcon,
-    gradient: "from-orange-400 to-red-500",
+    gradient: "from-sky-400 to-blue-500",
   },
   {
     title: "Экспорт тээвэр",
@@ -124,7 +124,7 @@ const services = [
       "Монголоос гадаад руу бараа экспортлох тээвэрлэлт, баримт бичиг, гаалийн зохион байгуулалт.",
     href: "/services/export",
     icon: ExportIcon,
-    gradient: "from-orange-400 to-red-500",
+    gradient: "from-sky-500 to-blue-600",
   },
 ];
 
@@ -198,106 +198,6 @@ export default function Home() {
         ref={heroRef}
         className="relative flex min-h-screen items-center justify-center px-6 pt-20"
       >
-        {/* Animated transport route lines */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <svg
-            className="absolute inset-0 h-full w-full"
-            viewBox="0 0 1200 800"
-            preserveAspectRatio="xMidYMid slice"
-          >
-            {/* Curved route paths */}
-            <motion.path
-              d="M-100,400 Q300,200 600,350 T1300,300"
-              fill="none"
-              stroke="url(#routeGradient1)"
-              strokeWidth="2"
-              strokeDasharray="8 8"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 0.3 }}
-              transition={{ duration: 3, ease: "easeInOut" }}
-            />
-            <motion.path
-              d="M-100,500 Q400,600 700,400 T1300,450"
-              fill="none"
-              stroke="url(#routeGradient2)"
-              strokeWidth="2"
-              strokeDasharray="8 8"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 0.2 }}
-              transition={{ duration: 3.5, ease: "easeInOut", delay: 0.5 }}
-            />
-
-            {/* Gradient definitions */}
-            <defs>
-              <linearGradient
-                id="routeGradient1"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="0%"
-              >
-                <stop offset="0%" stopColor="rgb(34,211,238)" stopOpacity="0" />
-                <stop
-                  offset="50%"
-                  stopColor="rgb(34,211,238)"
-                  stopOpacity="1"
-                />
-                <stop
-                  offset="100%"
-                  stopColor="rgb(168,85,247)"
-                  stopOpacity="0"
-                />
-              </linearGradient>
-              <linearGradient
-                id="routeGradient2"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="0%"
-              >
-                <stop offset="0%" stopColor="rgb(168,85,247)" stopOpacity="0" />
-                <stop
-                  offset="50%"
-                  stopColor="rgb(236,72,153)"
-                  stopOpacity="1"
-                />
-                <stop
-                  offset="100%"
-                  stopColor="rgb(251,146,60)"
-                  stopOpacity="0"
-                />
-              </linearGradient>
-            </defs>
-
-            {/* Moving dots along paths */}
-            <motion.circle
-              r="4"
-              fill="rgb(34,211,238)"
-              initial={{ offsetDistance: "0%" }}
-              animate={{ offsetDistance: "100%" }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              style={{
-                offsetPath: "path('M-100,400 Q300,200 600,350 T1300,300')",
-              }}
-            />
-            <motion.circle
-              r="3"
-              fill="rgb(168,85,247)"
-              initial={{ offsetDistance: "0%" }}
-              animate={{ offsetDistance: "100%" }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "linear",
-                delay: 2,
-              }}
-              style={{
-                offsetPath: "path('M-100,500 Q400,600 700,400 T1300,450')",
-              }}
-            />
-          </svg>
-        </div>
-
         <motion.div
           style={{ y: heroY, opacity: heroOpacity }}
           className="relative z-10 mx-auto max-w-5xl text-center"
@@ -306,11 +206,11 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="mb-6 mt-16 inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300 md:mt-0"
+            className="mb-6 mt-16 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm text-sky-600 md:mt-0"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-500" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-500" />
             </span>
             15+ жилийн туршлагатай баг
           </motion.div>
@@ -319,7 +219,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+            className="text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl"
           >
             Олон улсын тээвэр
             <br />
@@ -330,11 +230,11 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mx-auto mt-8 max-w-3xl text-lg text-slate-400 sm:text-xl"
+            className="mx-auto mt-8 max-w-3xl text-lg text-slate-500 sm:text-xl"
           >
             Бид Агаар • Далай • Төмөр зам • Авто тээврээр импорт, экспорт,
             транзит тээврийг{" "}
-            <span className="text-cyan-300">нэг цэгээс зохион байгуулж</span>,
+            <span className="text-sky-600 font-medium">нэг цэгээс зохион байгуулж</span>,
             цаг хугацаа – зардлыг зөв оновчлон, мэдээллийн ил тод байдлыг
             хангана.
           </motion.p>
@@ -344,9 +244,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mx-auto mt-6 max-w-2xl rounded-2xl border border-orange-500/30 bg-orange-500/10 p-4"
+            className="mx-auto mt-6 max-w-2xl rounded-2xl border border-amber-200 bg-amber-50 p-4"
           >
-            <p className="text-sm text-orange-300">
+            <p className="text-sm text-amber-700">
               <strong>Онцлох чиглэл:</strong> Химийн болон аюултай ачаа
               (Dangerous Goods)-ны тээвэрлэлтийн ангилал, шошгололт, SDS/MSDS
               баримт бичиг, савлагаа, маршрутын эрсдэлийн удирдлагад мэргэшсэн.
@@ -363,11 +263,11 @@ export default function Home() {
               href="/contact"
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 0 40px rgba(34,211,238,0.5)",
+                boxShadow: "0 0 40px rgba(14,165,233,0.3)",
               }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "tween", duration: 0.2 }}
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-base font-semibold text-slate-900 transition-colors hover:from-cyan-300 hover:to-blue-400"
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-blue-600 px-8 py-4 text-base font-semibold text-white transition-colors hover:from-sky-400 hover:to-blue-500"
             >
               Үнийн санал авах
               <svg
@@ -387,7 +287,7 @@ export default function Home() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-700 transition-all hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700"
               >
                 Тээврийн шийдлүүд
               </Link>
@@ -414,10 +314,10 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-2xl font-bold text-transparent sm:text-4xl md:text-5xl">
+                <div className="bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-2xl font-bold text-transparent sm:text-4xl md:text-5xl">
                   {stat.value}
                 </div>
-                <div className="mt-2 text-sm text-slate-500">{stat.label}</div>
+                <div className="mt-2 text-sm text-slate-400">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -435,12 +335,12 @@ export default function Home() {
             transition={{ duration: 1.5, repeat: Infinity }}
             className="flex flex-col items-center gap-2"
           >
-            <span className="text-xs text-slate-500">Доош гүйлгэх</span>
-            <div className="h-12 w-6 rounded-full border border-white/20 p-1">
+            <span className="text-xs text-slate-400">Доош гүйлгэх</span>
+            <div className="h-12 w-6 rounded-full border border-slate-300 p-1">
               <motion.div
                 animate={{ y: [0, 16, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
-                className="h-2 w-full rounded-full bg-cyan-400"
+                className="h-2 w-full rounded-full bg-sky-500"
               />
             </div>
           </motion.div>
@@ -451,16 +351,16 @@ export default function Home() {
       <section className="relative px-6 py-12 md:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <AnimatedSection className="mb-8 text-center md:mb-16">
-            <motion.span className="inline-block rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 px-4 py-2 text-sm font-medium text-cyan-400">
+            <motion.span className="inline-block rounded-full bg-sky-50 px-4 py-2 text-sm font-medium text-sky-600">
               Бидний үйлчилгээ
             </motion.span>
-            <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
+            <h2 className="mt-6 text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl">
               Тээврийн{" "}
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-transparent">
                 цогц шийдэл
               </span>
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-400">
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-500">
               Маршрут, хугацаа, өртөг, эрсдэлийн тэнцвэр дээр суурилсан
               хувилбаруудыг санал болгоно.
             </p>
@@ -480,22 +380,22 @@ export default function Home() {
                 >
                   <Link
                     href={service.href}
-                    className="group relative block h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-800/40 p-6 backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/50 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]"
+                    className="group relative block h-full overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-500 hover:border-sky-300 hover:shadow-lg hover:shadow-sky-100"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-sky-50 via-transparent to-blue-50 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                     <div className="relative z-10">
                       <div
                         className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${service.gradient} shadow-lg`}
                       >
-                        <IconComponent className="h-7 w-7 text-slate-900" />
+                        <IconComponent className="h-7 w-7 text-white" />
                       </div>
-                      <h3 className="mt-4 text-lg font-semibold text-white">
+                      <h3 className="mt-4 text-lg font-semibold text-slate-900">
                         {service.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                      <p className="mt-3 text-sm leading-relaxed text-slate-500">
                         {service.description}
                       </p>
-                      <span className="mt-4 inline-flex items-center text-sm text-cyan-400 group-hover:text-cyan-300">
+                      <span className="mt-4 inline-flex items-center text-sm text-sky-600 group-hover:text-sky-500">
                         Дэлгэрэнгүй
                         <svg
                           className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -524,12 +424,12 @@ export default function Home() {
       <section className="relative px-6 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <AnimatedSection className="mb-8 text-center md:mb-16">
-            <motion.span className="inline-block rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-4 py-2 text-sm font-medium text-purple-400">
+            <motion.span className="inline-block rounded-full bg-amber-50 px-4 py-2 text-sm font-medium text-amber-600">
               Нэмэлт үйлчилгээ
             </motion.span>
-            <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
+            <h2 className="mt-6 text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
               Эрсдэлийг{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">
                 бууруулах шийдэл
               </span>
             </h2>
@@ -547,15 +447,15 @@ export default function Home() {
               >
                 <Link
                   href={service.href}
-                  className="group relative block h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-800/40 p-8 backdrop-blur-xl transition-all hover:border-purple-400/50"
+                  className="group relative block h-full overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:border-amber-300 hover:shadow-lg hover:shadow-amber-50"
                 >
-                  <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 blur-3xl transition-all group-hover:scale-150" />
+                  <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-amber-100 to-amber-50 blur-3xl transition-all group-hover:scale-150" />
                   <div className="relative">
-                    <h3 className="text-xl font-semibold text-white">
+                    <h3 className="text-xl font-semibold text-slate-900">
                       {service.title}
                     </h3>
-                    <p className="mt-4 text-slate-400">{service.description}</p>
-                    <span className="mt-4 inline-flex items-center text-sm text-purple-400 group-hover:text-purple-300">
+                    <p className="mt-4 text-slate-500">{service.description}</p>
+                    <span className="mt-4 inline-flex items-center text-sm text-amber-600 group-hover:text-amber-500">
                       Дэлгэрэнгүй
                       <svg
                         className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -583,12 +483,12 @@ export default function Home() {
       <section className="relative px-6 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <AnimatedSection className="mb-8 text-center md:mb-16">
-            <motion.span className="inline-block rounded-full bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 px-4 py-2 text-sm font-medium text-emerald-400">
+            <motion.span className="inline-block rounded-full bg-sky-50 px-4 py-2 text-sm font-medium text-sky-600">
               Танд хэрэгтэй
             </motion.span>
-            <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
+            <h2 className="mt-6 text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
               Мэдлэгийн{" "}
-              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-transparent">
                 сан
               </span>
             </h2>
@@ -606,18 +506,18 @@ export default function Home() {
               >
                 <Link
                   href={item.href}
-                  className="group flex h-full items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-emerald-500/30"
+                  className="group flex h-full items-start gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-sky-300 hover:shadow-lg hover:shadow-sky-50"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-500">
-                    <span className="text-lg font-bold text-slate-900">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-blue-500">
+                    <span className="text-lg font-bold text-white">
                       {index + 1}
                     </span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="text-lg font-semibold text-slate-900">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm text-slate-400">
+                    <p className="mt-2 text-sm text-slate-500">
                       {item.description}
                     </p>
                   </div>
@@ -629,7 +529,7 @@ export default function Home() {
           <div className="mt-10 text-center">
             <Link
               href="/resources"
-              className="inline-flex items-center text-emerald-400 hover:text-emerald-300"
+              className="inline-flex items-center text-sky-600 hover:text-sky-500"
             >
               Бүх мэдээллийг харах
               <svg
@@ -657,15 +557,15 @@ export default function Home() {
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-[2.5rem] border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 via-slate-900/80 to-purple-500/10 p-8 text-center backdrop-blur-xl sm:p-12"
+            className="relative overflow-hidden rounded-[2.5rem] border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-blue-50 p-8 text-center sm:p-12"
           >
-            <div className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-cyan-500/30 blur-[120px]" />
-            <div className="absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-purple-500/30 blur-[120px]" />
+            <div className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-sky-200/40 blur-[120px]" />
+            <div className="absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-blue-200/40 blur-[120px]" />
             <div className="relative">
-              <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
+              <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
                 Таны ачаанд тохирсон шийдлийг хамтдаа төлөвлөе
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-slate-400">
+              <p className="mx-auto mt-4 max-w-xl text-slate-500">
                 Дэлхийн аль ч өнцгөөс тээвэрлэлт хийх боломжтой агент/түншийн
                 сүлжээ, туршлагатай багийн зохион байгуулалтаар таны ачааг
                 байгаа газраас нь авч, эцсийн цэг хүртэл удирдан зохион
@@ -674,7 +574,7 @@ export default function Home() {
               <div className="mt-8">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-base font-semibold text-slate-900 transition-all hover:shadow-[0_0_40px_rgba(34,211,238,0.5)]"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-blue-600 px-8 py-4 text-base font-semibold text-white transition-all hover:shadow-[0_0_40px_rgba(14,165,233,0.3)]"
                 >
                   Холбоо барих
                   <svg

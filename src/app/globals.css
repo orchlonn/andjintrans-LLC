@@ -12,13 +12,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -50,43 +43,6 @@ body {
     transform: translateY(-20px) scale(1.05);
   }
 }
-@keyframes bg-move-right {
-  0% {
-    transform: translateX(-20vw);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(100vw);
-    opacity: 0;
-  }
-}
-@keyframes bg-move-left {
-  0% {
-    transform: translateX(100vw);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-20vw);
-    opacity: 0;
-  }
-}
-@keyframes bg-dash {
-  to {
-    stroke-dashoffset: -100;
-  }
-}
 
 .animate-bg-float {
   animation: bg-float 6s ease-in-out infinite;
@@ -96,18 +52,6 @@ body {
 }
 .animate-bg-float-slow {
   animation: bg-float 6s ease-in-out 4s infinite;
-}
-.animate-bg-move-right {
-  animation: bg-move-right 25s linear infinite;
-}
-.animate-bg-move-left {
-  animation: bg-move-left 25s linear infinite;
-}
-.animate-bg-dash {
-  animation: bg-dash 3s linear infinite;
-}
-.animate-bg-dash-slow {
-  animation: bg-dash 4s linear 1s infinite;
 }
 
 /* Partners marquee - infinite horizontal scroll */

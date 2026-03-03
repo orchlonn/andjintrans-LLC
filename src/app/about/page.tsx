@@ -68,10 +68,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
               Танилцуулга
             </h2>
-            <div className="mt-6 space-y-4 text-slate-300">
+            <div className="mt-6 space-y-4 text-slate-600">
               <p>
                 Анджинтранс ХХК нь 2011 оноос хойш олон улсын болон дотоодын
                 тээвэр зуучлалын үйл ажиллагаагаа тасралтгүй эрхэлж,
@@ -98,10 +98,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="mb-20 grid gap-8 md:grid-cols-2"
           >
-            <div className="rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-transparent p-8">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500">
+            <div className="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-transparent p-8 shadow-sm">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500">
                 <svg
-                  className="h-6 w-6 text-slate-900"
+                  className="h-6 w-6 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -114,18 +114,18 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white">Эрхэм зорилго</h3>
-              <p className="mt-4 text-slate-300">
+              <h3 className="text-xl font-bold text-slate-900">Эрхэм зорилго</h3>
+              <p className="mt-4 text-slate-600">
                 Харилцагчдын ачааг аюулгүй, хугацаанд нь, оновчтой зардлаар
                 хүргэх тээвэр-логистикийн шийдлийг өндөр хариуцлага, ил тод
                 ажиллагаагаар хэрэгжүүлэх.
               </p>
             </div>
 
-            <div className="rounded-3xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-transparent p-8">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-400 to-pink-500">
+            <div className="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-transparent p-8 shadow-sm">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-400 to-sky-600">
                 <svg
-                  className="h-6 w-6 text-slate-900"
+                  className="h-6 w-6 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -144,8 +144,8 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white">Алсын хараа</h3>
-              <p className="mt-4 text-slate-300">
+              <h3 className="text-xl font-bold text-slate-900">Алсын хараа</h3>
+              <p className="mt-4 text-slate-600">
                 Химийн болон тусгай нөхцөл шаардсан ачааны тээвэрлэлтийн
                 чиглэлээр Монголын зах зээлд найдвартай стандарт тогтоогч болж,
                 олон улсын худалдаа, логистикийн шилдэг практикийг нэвтрүүлэх.
@@ -160,7 +160,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
               Үнэт зүйлс
             </h2>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -171,11 +171,11 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4"
+                  className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
                 >
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-sky-400 to-blue-500">
                     <svg
-                      className="h-4 w-4 text-slate-900"
+                      className="h-4 w-4 text-white"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -188,7 +188,7 @@ export default function AboutPage() {
                       />
                     </svg>
                   </div>
-                  <span className="text-sm text-slate-300">{value}</span>
+                  <span className="text-sm text-slate-600">{value}</span>
                 </motion.div>
               ))}
             </div>
@@ -201,7 +201,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
               Баримтлах зарчим
             </h2>
             <div className="mt-8 space-y-4">
@@ -212,14 +212,14 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-4 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6"
+                  className="flex items-start gap-4 rounded-2xl border border-sky-200 bg-sky-50 p-6 shadow-sm"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-500">
-                    <span className="font-bold text-slate-900">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-blue-500">
+                    <span className="font-bold text-white">
                       {index + 1}
                     </span>
                   </div>
-                  <p className="text-lg text-slate-200">{principle}</p>
+                  <p className="text-lg text-slate-600">{principle}</p>
                 </motion.div>
               ))}
             </div>
@@ -232,10 +232,10 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
               Түншүүд
             </h2>
-            <p className="mt-3 text-slate-300">
+            <p className="mt-3 text-slate-600">
               Олон улсын болон дотоодын найдвартай түнш, хамтрагч
               байгууллагуудтай хамтран ажиллаж байна.
             </p>
@@ -273,12 +273,12 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-3xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 via-slate-900/50 to-red-500/10 p-8"
+            className="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-sky-50 p-8 shadow-sm"
           >
-            <h2 className="text-2xl font-bold text-white md:text-3xl">
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
               Химийн болон аюултай ачааны (DG) мэргэшил
             </h2>
-            <p className="mt-6 text-slate-300">
+            <p className="mt-6 text-slate-600">
               Манай компани нь 2011 оноос хойш тасралтгүй үйл ажиллагаагаа
               эрхлэн явуулж байгаа бөгөөд химийн болон аюултай ачаа (Dangerous
               Goods)-ны тээвэрлэлтийн үеийн ангилал, шошгололт, баримт бичиг
@@ -294,9 +294,9 @@ export default function AboutPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="rounded-xl bg-orange-500/20 p-4 text-center"
+                  className="rounded-xl bg-sky-50 p-4 text-center shadow-sm"
                 >
-                  <span className="text-sm font-medium text-orange-300">
+                  <span className="text-sm font-medium text-sky-600">
                     {item}
                   </span>
                 </div>

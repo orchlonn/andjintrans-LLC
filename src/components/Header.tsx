@@ -29,7 +29,7 @@ export default function Header() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed left-0 right-0 top-0 z-50 border-b border-white/15 bg-[#1a1a28]/85 backdrop-blur-xl"
+        className="fixed left-0 right-0 top-0 z-50 border-b border-slate-200 bg-white/85 backdrop-blur-xl"
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:grid lg:grid-cols-[1fr_auto_1fr]">
           <div className="flex justify-start">
@@ -59,13 +59,13 @@ export default function Header() {
                   <Link
                     href={item.href}
                     className={`relative whitespace-nowrap rounded-full px-2.5 py-2 text-xs transition-colors sm:px-3 sm:text-sm xl:px-4 ${
-                      active ? "text-white" : "text-slate-300 hover:text-white"
+                      active ? "text-sky-700 font-medium" : "text-slate-600 hover:text-sky-600"
                     }`}
                   >
                     {active && (
                       <motion.span
                         layoutId="activeNav"
-                        className="absolute inset-0 rounded-full bg-white/10"
+                        className="absolute inset-0 rounded-full bg-sky-50"
                         transition={{
                           type: "spring",
                           stiffness: 380,
@@ -84,7 +84,7 @@ export default function Header() {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5"
+              className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50"
               aria-label="Toggle menu"
             >
               <div className="flex w-5 flex-col gap-1.5">
@@ -92,11 +92,11 @@ export default function Header() {
                   animate={
                     mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }
                   }
-                  className="h-0.5 w-full bg-white"
+                  className="h-0.5 w-full bg-slate-700"
                 />
                 <motion.span
                   animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                  className="h-0.5 w-full bg-white"
+                  className="h-0.5 w-full bg-slate-700"
                 />
                 <motion.span
                   animate={
@@ -104,7 +104,7 @@ export default function Header() {
                       ? { rotate: -45, y: -6 }
                       : { rotate: 0, y: 0 }
                   }
-                  className="h-0.5 w-full bg-white"
+                  className="h-0.5 w-full bg-slate-700"
                 />
               </div>
             </motion.button>
@@ -121,7 +121,7 @@ export default function Header() {
             : { opacity: 0, pointerEvents: "none" as const }
         }
         transition={{ duration: 0.2 }}
-        className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
+        className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm lg:hidden"
         onClick={() => setMobileMenuOpen(false)}
       />
 
@@ -130,7 +130,7 @@ export default function Header() {
         initial={false}
         animate={mobileMenuOpen ? { x: 0 } : { x: "100%" }}
         transition={{ type: "spring", damping: 30, stiffness: 300 }}
-        className="fixed bottom-0 right-0 top-0 z-40 w-72 border-l border-white/10 bg-[#151520]/95 backdrop-blur-xl lg:hidden"
+        className="fixed bottom-0 right-0 top-0 z-40 w-72 border-l border-slate-200 bg-white/95 backdrop-blur-xl lg:hidden"
       >
         <div className="flex h-full flex-col px-6 pt-24">
           <div className="flex flex-col gap-2">
@@ -152,8 +152,8 @@ export default function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block rounded-xl px-4 py-3 text-base font-medium transition-colors ${
                       active
-                        ? "bg-white/10 text-white"
-                        : "text-slate-400 hover:bg-white/5 hover:text-white"
+                        ? "bg-sky-50 text-sky-700"
+                        : "text-slate-600 hover:bg-slate-50 hover:text-sky-600"
                     }`}
                   >
                     {item.label}
@@ -164,7 +164,7 @@ export default function Header() {
           </div>
 
           <div className="mt-auto pb-8">
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-400">
               © {new Date().getFullYear()} Анджинтранс ХХК
             </p>
           </div>

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 border-t border-white/10 bg-[#1e1e30]/90 backdrop-blur-xl">
+    <footer className="relative z-10 border-t border-slate-200 bg-slate-50/90 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
@@ -17,7 +17,7 @@ export default function Footer() {
               height={42}
               className="h-10 w-auto"
             />
-            <p className="mt-4 text-sm text-slate-300">
+            <p className="mt-4 text-sm text-slate-500">
               Олон улсын тээвэр зуучлалын найдвартай түнш. 2011 оноос хойш
               тасралтгүй үйл ажиллагаа.
             </p>
@@ -25,35 +25,35 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-white">Үйлчилгээ</h3>
-            <ul className="mt-4 space-y-2 text-sm text-slate-300">
+            <h3 className="font-semibold text-slate-900">Үйлчилгээ</h3>
+            <ul className="mt-4 space-y-2 text-sm text-slate-500">
               <li>
-                <Link href="/services/air" className="hover:text-cyan-400">
+                <Link href="/services/air" className="hover:text-sky-600">
                   Агаарын тээвэр
                 </Link>
               </li>
               <li>
-                <Link href="/services/sea" className="hover:text-cyan-400">
+                <Link href="/services/sea" className="hover:text-sky-600">
                   Далайн тээвэр
                 </Link>
               </li>
               <li>
-                <Link href="/services/rail" className="hover:text-cyan-400">
+                <Link href="/services/rail" className="hover:text-sky-600">
                   Төмөр замын тээвэр
                 </Link>
               </li>
               <li>
-                <Link href="/services/road" className="hover:text-cyan-400">
+                <Link href="/services/road" className="hover:text-sky-600">
                   Авто замын тээвэр
                 </Link>
               </li>
               <li>
-                <Link href="/services/transit" className="hover:text-cyan-400">
+                <Link href="/services/transit" className="hover:text-sky-600">
                   Транзит тээвэр
                 </Link>
               </li>
               <li>
-                <Link href="/services/export" className="hover:text-cyan-400">
+                <Link href="/services/export" className="hover:text-sky-600">
                   Экспорт тээвэр
                 </Link>
               </li>
@@ -62,12 +62,12 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold text-white">Танд хэрэгтэй</h3>
-            <ul className="mt-4 space-y-2 text-sm text-slate-300">
+            <h3 className="font-semibold text-slate-900">Танд хэрэгтэй</h3>
+            <ul className="mt-4 space-y-2 text-sm text-slate-500">
               <li>
                 <Link
                   href="/resources/incoterms"
-                  className="hover:text-cyan-400"
+                  className="hover:text-sky-600"
                 >
                   Инкотермс 2020
                 </Link>
@@ -75,20 +75,20 @@ export default function Footer() {
               <li>
                 <Link
                   href="/resources/containers"
-                  className="hover:text-cyan-400"
+                  className="hover:text-sky-600"
                 >
                   Чингэлэгийн төрөл
                 </Link>
               </li>
               <li>
-                <Link href="/resources/wagons" className="hover:text-cyan-400">
+                <Link href="/resources/wagons" className="hover:text-sky-600">
                   Вагоны төрөл
                 </Link>
               </li>
               <li>
                 <Link
                   href="/resources/dangerous-goods"
-                  className="hover:text-cyan-400"
+                  className="hover:text-sky-600"
                 >
                   Аюултай ачаа (DG)
                 </Link>
@@ -96,7 +96,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/resources/packaging"
-                  className="hover:text-cyan-400"
+                  className="hover:text-sky-600"
                 >
                   Сав баглаа боодол
                 </Link>
@@ -104,7 +104,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/resources/documents"
-                  className="hover:text-cyan-400"
+                  className="hover:text-sky-600"
                 >
                   Шаардлагатай баримт бичиг
                 </Link>
@@ -114,25 +114,25 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-white">Холбоо барих</h3>
-            <ul className="mt-4 space-y-2 text-sm text-slate-300">
+            <h3 className="font-semibold text-slate-900">Холбоо барих</h3>
+            <ul className="mt-4 space-y-2 text-sm text-slate-500">
               <li>Улаанбаатар, СБД, 9-р хороо</li>
               <li>7-р хороолол, Алтайн гудамж</li>
               <li>Хоймор оффис, 207 тоот</li>
               <li className="pt-2">
-                <a href="tel:+97670117127" className="hover:text-cyan-400">
+                <a href="tel:+97670117127" className="hover:text-sky-600">
                   976-7011-7127
                 </a>
               </li>
               <li>
-                <a href="tel:+97670117129" className="hover:text-cyan-400">
+                <a href="tel:+97670117129" className="hover:text-sky-600">
                   976-7011-7129
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:info@andjintrans.com"
-                  className="hover:text-cyan-400"
+                  className="hover:text-sky-600"
                 >
                   info@andjintrans.com
                 </a>
@@ -141,15 +141,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-8 sm:flex-row">
           <p className="text-sm text-slate-400">
             © {new Date().getFullYear()} Анджинтранс ХХК. Бүх эрх хуулиар
             хамгаалагдсан.
           </p>
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-400">
             <a
               href="https://www.andjintrans.com"
-              className="hover:text-cyan-400"
+              className="hover:text-sky-600"
             >
               www.andjintrans.com
             </a>
