@@ -5,70 +5,15 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import PageHeader from "@/components/PageHeader";
 
-const documentCategories = [
-  {
-    titleKey: "cat1Title" as const,
-    items: [
-      { name: "Commercial Invoice (Инвойс)", description: "Үнэ, валют, худалдагч/худалдан авагч, нөхцөл" },
-      { name: "Packing List (Савлагааны жагсаалт)", description: "Тоо ширхэг, савлагааны төрөл, жин/хэмжээс" },
-      { name: "Sales Contract / PO (Гэрээ/захиалга)", description: "Шаардлагатай үед" },
-      { name: "Certificate of Origin (Гарал үүслийн гэрчилгээ)", description: "Шаардлага тавигдвал" },
-    ],
-  },
-  {
-    titleKey: "cat2Title" as const,
-    items: [
-      { name: "Air Waybill (AWB / e-AWB)", description: "Агаарын тээвэр" },
-      { name: "Bill of Lading (B/L)", description: "Далайн тээвэр" },
-      { name: "CMR / Road Consignment Note", description: "Авто замын тээвэр" },
-      { name: "Rail Waybill", description: "Төмөр замын тээвэр" },
-      { name: "Multimodal Transport Document (MTD)", description: "Холимог тээвэр" },
-    ],
-  },
-  {
-    titleKey: "cat3Title" as const,
-    items: [
-      { name: "Customs Declaration (Гаалийн мэдүүлэг)", description: "Импорт/экспортод" },
-      { name: "HS code ба ангиллын мэдээлэл", description: "Барааны код, нэршил, тайлбар" },
-      { name: "Импортын татвар/НӨАТ тооцоонд шаардлагатай мэдээлэл", description: "Инвойс, тээврийн зардал гэх мэт" },
-      { name: "Тусгай зөвшөөрөл/лиценз", description: "Зохицуулалттай бараанд" },
-    ],
-  },
-  {
-    titleKey: "cat4Title" as const,
-    items: [
-      { name: "Certificate of Conformity / Compliance (тохирлын)", description: "Бүтээгдэхүүнээс хамаарна" },
-      { name: "Quality Certificate / Test Report (чанарын/туршилтын)", description: "Бүтээгдэхүүнээс хамаарна" },
-      { name: "Sanitary/Phytosanitary (эрүүл ахуй/ургамлын хорио цээр)", description: "Хүнс, ургамалд" },
-      { name: "Veterinary (мал эмнэлэг)", description: "Шаардлагатай үед" },
-    ],
-  },
-  {
-    titleKey: "cat5Title" as const,
-    items: [
-      { name: "Cargo Insurance Certificate/Policy (ачааны даатгал)", description: "Хийсэн бол" },
-      { name: "Payment documents (төлбөрийн баримт, банкны бичиг)", description: "Шаардлагатай үед" },
-      { name: "Letter of Credit (L/C) docs", description: "Аккредитивтэй хэлцэлд" },
-    ],
-  },
-  {
-    titleKey: "cat6Title" as const,
-    items: [
-      { name: "SDS/MSDS", description: "Аюулгүй ажиллагааны мэдээллийн хуудас" },
-      { name: "UN number, Proper Shipping Name, Class, Packing Group", description: "DG ангиллын мэдээлэл" },
-      { name: "DG Declaration", description: "Тээврийн төрлөөс хамаарч" },
-      { name: "Temperature/handling instructions", description: "Тусгай горимтой ачаанд" },
-    ],
-  },
-  {
-    titleKey: "cat7Title" as const,
-    items: [
-      { name: "Shipping Instructions", description: "B/L мэдээлэл бөглөх өгөгдөл" },
-      { name: "VGM (Verified Gross Mass)", description: "Шаардлагатай тохиолдолд" },
-      { name: "Container/Seal details", description: "Чингэлэг, лацны дугаар" },
-    ],
-  },
-];
+const categories = [
+  { key: "cat1", items: ["d1", "d2", "d3", "d4"] },
+  { key: "cat2", items: ["d1", "d2", "d3", "d4", "d5"] },
+  { key: "cat3", items: ["d1", "d2", "d3", "d4"] },
+  { key: "cat4", items: ["d1", "d2", "d3", "d4"] },
+  { key: "cat5", items: ["d1", "d2", "d3"] },
+  { key: "cat6", items: ["d1", "d2", "d3", "d4"] },
+  { key: "cat7", items: ["d1", "d2", "d3"] },
+] as const;
 
 export default function DocumentsPage() {
   const t = useTranslations("ResourcesDocuments");
@@ -87,20 +32,20 @@ export default function DocumentsPage() {
       <div className="px-6 pb-24">
         <div className="mx-auto max-w-5xl">
           {/* Document Categories */}
-          {documentCategories.map((category, categoryIndex) => (
+          {categories.map((category, categoryIndex) => (
             <motion.section
-              key={category.titleKey}
+              key={category.key}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: categoryIndex * 0.1 }}
               className="mb-12"
             >
-              <h2 className="text-xl font-bold text-slate-900 md:text-2xl">{t(category.titleKey)}</h2>
+              <h2 className="text-xl font-bold text-slate-900 md:text-2xl">{t(`${category.key}Title`)}</h2>
               <div className="mt-6 space-y-3">
-                {category.items.map((item, itemIndex) => (
+                {category.items.map((itemKey, itemIndex) => (
                   <motion.div
-                    key={item.name}
+                    key={itemKey}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -113,8 +58,8 @@ export default function DocumentsPage() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900">{item.name}</h4>
-                      <p className="mt-1 text-sm text-slate-500">{item.description}</p>
+                      <h4 className="font-semibold text-slate-900">{t(`${category.key}.${itemKey}.name`)}</h4>
+                      <p className="mt-1 text-sm text-slate-500">{t(`${category.key}.${itemKey}.description`)}</p>
                     </div>
                   </motion.div>
                 ))}

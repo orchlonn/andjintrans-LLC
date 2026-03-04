@@ -5,72 +5,15 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import PageHeader from "@/components/PageHeader";
 
-const dgClasses = [
-  {
-    class: "Class 1",
-    title: "Тэсрэх бодис, эдлэл (Explosives)",
-    description: "Дэлбэрэх, хүчтэй тэсрэлт үүсгэх эрсдэлтэй бодис/эдлэл.",
-  },
-  {
-    class: "Class 2",
-    title: "Хий (Gases)",
-    description: "Шахсан, шингэрүүлсэн, ууссан хий; шатамхай, шатамхай бус, хорт хий зэрэг дэд төрлүүдтэй.",
-  },
-  {
-    class: "Class 3",
-    title: "Шатамхай шингэн (Flammable Liquids)",
-    description: "Амархан дөл авалцах (flammable) шингэнүүд.",
-  },
-  {
-    class: "Class 4",
-    title: "Шатамхай хатуу ба холбоотой бодисууд",
-    description: "4.1 Шатамхай хатуу, өөрөө урвалд ордог бодис | 4.2 Өөрөө шатах (spontaneously combustible) | 4.3 Усанд хүрэхэд шатамхай хий ялгаруулдаг (dangerous when wet)",
-  },
-  {
-    class: "Class 5",
-    title: "Исэлдүүлэгч бодис ба органик пероксид",
-    description: "5.1 Исэлдүүлэгч (гал авалцахыг дэмждэг) | 5.2 Органик пероксид (дулаан/цохилтод мэдрэмтгий байж болно)",
-  },
-  {
-    class: "Class 6",
-    title: "Хортой ба халдварт бодис",
-    description: "6.1 Хортой бодис | 6.2 Халдварт бодис (эмнэлгийн/биологийн тусгай горим шаарддаг)",
-  },
-  {
-    class: "Class 7",
-    title: "Цацраг идэвхт материал (Radioactive Material)",
-    description: "Цацрагийн эрсдэлтэй, нарийн зөвшөөрөл ба хяналт шаарддаг.",
-  },
-  {
-    class: "Class 8",
-    title: "Идэмхий бодис (Corrosives)",
-    description: "Арьс, металл, материал идэх (зэврүүлэх) шинжтэй хүчил/шүлт зэрэг.",
-  },
-  {
-    class: "Class 9",
-    title: "Бусад аюултай бодис, эдлэл (Miscellaneous)",
-    description: "Бусад ангилалд багтахгүй ч тээвэрлэлтийн эрсдэлтэй (жишээ: литийн зай/баттерей, хуурай мөс, зарим соронзон материал гэх мэт) бүтээгдэхүүнүүд.",
-  },
-];
-
-const requiredInfo = [
-  { item: "UN number (UN дугаар)", description: "Бодис/бүтээгдэхүүнийг олон улсын түвшинд ялгах дугаар" },
-  { item: "Proper Shipping Name (PSN)", description: "Албан нэршил" },
-  { item: "Class / Division", description: "Ангилал/дэд ангилал" },
-  { item: "Packing Group (PG)", description: "I/II/III — эрсдэлийн түвшин" },
-  { item: "SDS/MSDS", description: "Аюулгүй ажиллагааны мэдээллийн хуудас" },
-  { item: "Quantity & packaging", description: "Тоо хэмжээ, савлалт" },
-];
-
-const practicalTips = [
-  "DG эсэх нь тодорхойгүй бол эхлээд SDS/MSDS-ээ шалгаж UN мэдээллээ баталгаажуулах нь зөв.",
-  "DG ачааны саатлын түгээмэл шалтгаан: ангиллын алдаа, шошго/маркировк дутуу, савлалт стандарт зөрчих, баримтын мэдээлэл зөрөх.",
-  "Тээврийн төрлөөс хамаараад шаардлага өөр байж болох тул ачилтаас өмнө урьдчилан зөвлөгөө авах нь үр дүнтэй.",
-];
+const classKeys = ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9"] as const;
+const classLabels = ["Class 1", "Class 2", "Class 3", "Class 4", "Class 5", "Class 6", "Class 7", "Class 8", "Class 9"];
+const requiredKeys = ["r1", "r2", "r3", "r4", "r5", "r6"] as const;
 
 export default function DangerousGoodsPage() {
   const t = useTranslations("ResourcesDangerousGoods");
   const tc = useTranslations("Common");
+
+  const practicalTips = t.raw("practicalTips") as string[];
 
   return (
     <>
@@ -93,10 +36,7 @@ export default function DangerousGoodsPage() {
           >
             <div className="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-transparent p-8 shadow-sm">
               <p className="text-lg leading-relaxed text-slate-500">
-                Аюултай ачаа (Dangerous Goods, DG) гэдэг нь тээвэрлэлтийн явцад хүний эрүүл мэнд, өмч хөрөнгө, байгаль
-                орчинд эрсдэл учруулж болзошгүй тул тусгай ангилал, сав баглаа боодол, шошгололт, бичиг баримт шаарддаг
-                бодис, бүтээгдэхүүнийг хэлнэ. DG ачаа нь олон улсын түвшинд UN-ийн 9 ангилал (Class 1–9)-д хуваагддаг
-                бөгөөд агаар, далай, авто, төмөр зам бүрд мөрдөх дүрэм/шаардлага нь ялгаатай байж болно.
+                {t("whatIsDG")}
               </p>
             </div>
           </motion.section>
@@ -110,9 +50,9 @@ export default function DangerousGoodsPage() {
           >
             <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">{t("classesTitle")}</h2>
             <div className="mt-8 space-y-4">
-              {dgClasses.map((dg, index) => (
+              {classKeys.map((key, index) => (
                 <motion.div
-                  key={dg.class}
+                  key={key}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -121,11 +61,11 @@ export default function DangerousGoodsPage() {
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-blue-500">
-                      <span className="text-xs font-bold text-white">{dg.class}</span>
+                      <span className="text-xs font-bold text-white">{classLabels[index]}</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-slate-900">{dg.title}</h3>
-                      <p className="mt-2 text-slate-500">{dg.description}</p>
+                      <h3 className="text-lg font-semibold text-slate-900">{t(`classes.${key}.title`)}</h3>
+                      <p className="mt-2 text-slate-500">{t(`classes.${key}.description`)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -142,20 +82,20 @@ export default function DangerousGoodsPage() {
           >
             <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">{t("requiredTitle")}</h2>
             <p className="mt-4 text-slate-500">
-              Үнийн санал, зөв ангилал, зөв савлалт/шошгололт хийхэд ихэвчлэн дараах &quot;минимум өгөгдөл&quot; хэрэгтэй:
+              {t("requiredDescription")}
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {requiredInfo.map((info, index) => (
+              {requiredKeys.map((key, index) => (
                 <motion.div
-                  key={info.item}
+                  key={key}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
                   className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
                 >
-                  <h4 className="font-semibold text-sky-600">{info.item}</h4>
-                  <p className="mt-1 text-sm text-slate-500">{info.description}</p>
+                  <h4 className="font-semibold text-sky-600">{t(`requiredInfo.${key}.item`)}</h4>
+                  <p className="mt-1 text-sm text-slate-500">{t(`requiredInfo.${key}.description`)}</p>
                 </motion.div>
               ))}
             </div>
@@ -172,7 +112,7 @@ export default function DangerousGoodsPage() {
             <div className="mt-8 space-y-4">
               {practicalTips.map((tip, index) => (
                 <motion.div
-                  key={tip}
+                  key={index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}

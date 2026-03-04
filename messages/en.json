@@ -905,9 +905,31 @@
     "highlightedTitle": "Trade Terms",
     "description": "Incoterms® standardize where costs transfer, where risk transfers, and what responsibilities each party bears between buyer and seller.",
     "whatTitle": "What are Incoterms?",
+    "whatDescription": "Incoterms® (International Commercial Terms) are rules developed by the International Chamber of Commerce (ICC), widely used in international trade, that standardize where costs transfer, where risk transfers, and what responsibilities (transport arrangements, insurance, customs, etc.) each party bears between buyer and seller.",
+    "whatHighlight": "Incoterms are not about price — they define the boundaries of responsibility.",
     "anyModeTitle": "Any Mode of Transport",
+    "anyMode": {
+      "EXW": { "name": "Ex Works", "description": "The seller makes the goods available at their premises; the buyer bears most responsibilities from that point." },
+      "FCA": { "name": "Free Carrier", "description": "The seller handles export clearance and delivers the goods to the carrier (or buyer's representative) at the named place." },
+      "CPT": { "name": "Carriage Paid To", "description": "The seller pays for main carriage, but risk transfers once goods are handed to the carrier." },
+      "CIP": { "name": "Carriage and Insurance Paid To", "description": "Same as CPT, but the seller also arranges transport insurance (usually at a higher level)." },
+      "DAP": { "name": "Delivered at Place", "description": "The seller delivers to the named place; unloading is not included." },
+      "DPU": { "name": "Delivered at Place Unloaded", "description": "The seller delivers and unloads at the named place." },
+      "DDP": { "name": "Delivered Duty Paid", "description": "The seller handles import customs, taxes/duties and delivers 'duty paid'." }
+    },
     "seaTitle": "Sea & Inland Waterway Only",
-    "recommendationsTitle": "Common Selection Recommendations (Practical)"
+    "sea": {
+      "FAS": { "name": "Free Alongside Ship", "description": "The seller delivers the goods alongside the vessel (at the port area)." },
+      "FOB": { "name": "Free On Board", "description": "The seller loads the goods onto the vessel." },
+      "CFR": { "name": "Cost and Freight", "description": "The seller pays for freight; risk transfers after loading on board." },
+      "CIF": { "name": "Cost, Insurance and Freight", "description": "Same as CFR, but the seller also arranges insurance." }
+    },
+    "recommendationsTitle": "Common Selection Recommendations (Practical)",
+    "recommendations": {
+      "r1": { "title": "Container Transport", "description": "For container transport through port terminals, FOB may not meet requirements in some cases, so FCA/CPT/CIP is often more suitable." },
+      "r2": { "title": "DAP vs DPU", "description": "The key difference is who handles unloading (DPU includes unloading)." },
+      "r3": { "title": "DDP Selection", "description": "Import tax, customs, and documentation risks are high, so it's advisable to choose DDP only when an experienced party can fully manage it." }
+    }
   },
   "ResourcesContainers": {
     "badge": "Container Types",
@@ -915,8 +937,34 @@
     "highlightedTitle": "Containers",
     "description": "Choosing the right container based on cargo dimensions, weight, loading method, temperature requirements, and DG status is crucial.",
     "selectionTitle": "Key Factors When Choosing a Container",
+    "selectionDescription": "When selecting a container type, consider cargo dimensions (length/width/height), weight, loading method (from side/top), temperature requirements, moisture/vibration risks, and whether the cargo is DG (dangerous). The right container selection directly impacts cost, safety, and delay risks.",
     "typesTitle": "Container Types",
-    "quickTipsTitle": "Quick Tips for Container Selection"
+    "labelUsage": "Usage",
+    "labelSizes": "Common sizes",
+    "labelAdvantage": "Advantage",
+    "labelFeature": "Feature",
+    "labelNote": "Note",
+    "containers": {
+      "c1": { "title": "Standard Dry Container", "usage": "General cargo, boxed goods, equipment, palletized cargo.", "sizes": "20', 40'", "advantage": "Widest network availability, relatively affordable cost, available on most routes." },
+      "c2": { "title": "High Cube Container (HC)", "usage": "High-volume but relatively light cargo (e.g., packaged products, light industrial goods).", "sizes": "40'HC, 45'HC", "advantage": "Taller than standard 40', providing more capacity." },
+      "c3": { "title": "Reefer Container", "usage": "Food, pharmaceuticals, and some chemical products requiring temperature control.", "feature": "Temperature control, air circulation, and in some cases humidity control.", "note": "Pre-planning of set point, packaging, ventilation requirements, and plug-in availability is needed." },
+      "c4": { "title": "Open Top Container", "usage": "Tall/oversized cargo that needs to be loaded from above by crane/hoist.", "feature": "Roof is covered with tarpaulin/cover.", "note": "Securing (lashing) and protection from water/moisture is important." },
+      "c5": { "title": "Open Side Container (Side Door)", "usage": "Cargo that needs to be loaded lengthwise from the side, long parts/equipment, special loading conditions.", "advantage": "Makes loading/unloading more flexible (availability depends on route)." },
+      "c6": { "title": "Flat Rack Container", "usage": "Wide/long oversized machinery, equipment, project cargo (OOG).", "feature": "No sides or roof (or foldable sides), suitable for oversized cargo.", "note": "Securing, balancing, and protection solutions (securing/lashing) are essential." },
+      "c7": { "title": "Platform Container", "usage": "Very heavy, very large oversized cargo (when flat rack is not sufficient).", "feature": "Base platform structure only.", "note": "Permits, route studies, and special securing are usually required." },
+      "c8": { "title": "Tank Container", "usage": "Liquid cargo, chemical products, food-grade liquids (depends on cargo type and requirements).", "feature": "Metal tank with protective frame.", "note": "DG requirements, tank cleaning, temperature conditions, proper filling/safety procedures are important." },
+      "c9": { "title": "Ventilated Container", "usage": "Certain goods requiring air exchange (e.g., certain grains, agricultural products — case dependent).", "note": "Moisture, odor, and condensation risks need to be considered." },
+      "c10": { "title": "Insulated Container (Thermal)", "usage": "Cargo requiring protection from temperature fluctuations (without refrigeration system).", "note": "Selected based on seasonal conditions and transit time." }
+    },
+    "quickTipsTitle": "Quick Tips for Container Selection",
+    "quickTips": {
+      "t1": { "type": "General cargo", "recommendation": "Dry 20'/40'" },
+      "t2": { "type": "High volume", "recommendation": "40'HC / 45'HC" },
+      "t3": { "type": "Cold chain required", "recommendation": "Reefer" },
+      "t4": { "type": "Tall oversized (top loading)", "recommendation": "Open Top" },
+      "t5": { "type": "Wide/long oversized", "recommendation": "Flat Rack / Platform" },
+      "t6": { "type": "Liquid/some chemicals", "recommendation": "Tank container" }
+    }
   },
   "ResourcesWagons": {
     "badge": "Wagon Types",
@@ -924,17 +972,66 @@
     "highlightedTitle": "Railway Wagons",
     "description": "Selecting the right wagon based on cargo type, weight/volume, loading/unloading method, weather protection, and DG status is important.",
     "selectionTitle": "Key Factors When Choosing a Wagon",
+    "selectionDescription": "When selecting a wagon type, consider cargo type, weight/volume, loading/unloading method (crane, forklift, conveyor, etc.), weather protection requirements, moisture/temperature conditions, and whether the cargo is DG (dangerous). The right wagon selection reduces risks of safety incidents, delays, damage, and additional costs.",
     "typesTitle": "Wagon Types",
-    "quickTipsTitle": "Quick Tips for Wagon Selection"
+    "labelUsage": "Usage",
+    "labelAdvantage": "Advantage",
+    "labelSuitable": "Suitable cargo",
+    "labelNote": "Note",
+    "wagons": {
+      "w1": { "title": "Box / Covered Wagon", "usage": "General cargo requiring weather protection, boxed goods, equipment.", "advantage": "Good protection from rain, snow, and dust.", "suitable": "Spare parts, electronics, packaged products, fragile cargo (with packaging)." },
+      "w2": { "title": "Gondola / Open Wagon", "usage": "Roofless, mostly for bulk and weather-insensitive cargo.", "advantage": "Fast loading/unloading, high capacity.", "suitable": "Coal, ore, stone, some construction materials." },
+      "w3": { "title": "Flat Wagon / Platform Wagon", "usage": "Containers, wheeled machinery, long parts, equipment.", "advantage": "Suitable for container transport and quick transfer loading at crane terminals." },
+      "w4": { "title": "Tank Wagon", "usage": "Liquids and gases, petroleum products, some chemicals.", "advantage": "Designed for safe large-volume liquid transport." },
+      "w5": { "title": "Hopper Wagon", "usage": "Bulk/granular cargo — grain, cement, fertilizer, powder materials.", "advantage": "Bottom discharge capability, fast operation." },
+      "w6": { "title": "Insulated / Temperature-Controlled Wagon", "usage": "Cargo sensitive to temperature fluctuations (case dependent).", "advantage": "Provides increased protection during seasonal conditions and long transit." },
+      "w7": { "title": "Refrigerator Wagon", "usage": "Food requiring cold chain, some pharmaceuticals/medical products (where available)." },
+      "w8": { "title": "Heavy-duty Transporter Wagon", "usage": "Extremely heavy, long/oversized project cargo, large factory equipment.", "advantage": "Very high capacity, special construction." },
+      "w9": { "title": "Special Wagons", "usage": "Cars, timber, steel, coils, vehicles and other cargo with special transport needs." }
+    },
+    "quickTipsTitle": "Quick Tips for Wagon Selection",
+    "quickTips": {
+      "t1": { "type": "Weather protection needed", "recommendation": "Box Wagon" },
+      "t2": { "type": "Bulk/granular cargo", "recommendation": "Gondola / Hopper Wagon" },
+      "t3": { "type": "Containers, equipment", "recommendation": "Flat Wagon" },
+      "t4": { "type": "Liquid/some chemicals", "recommendation": "Tank Wagon" },
+      "t5": { "type": "Very heavy/oversized project cargo", "recommendation": "Transporter Wagon" }
+    }
   },
   "ResourcesDangerousGoods": {
     "badge": "Dangerous Goods (DG)",
     "title": "UN's",
     "highlightedTitle": "9 Classifications",
     "description": "Dangerous Goods (DG) are substances and products that may pose risks to human health, property, and the environment during transportation.",
+    "whatIsDG": "Dangerous Goods (DG) are substances and products that require special classification, packaging, labeling, and documentation because they may pose risks to human health, property, and the environment during transportation. DG cargo is classified into 9 UN classes (Class 1–9) internationally, and rules/requirements may differ for air, sea, road, and rail transport.",
     "classesTitle": "9 DG Classifications",
+    "classes": {
+      "c1": { "title": "Explosives", "description": "Substances/articles with risk of explosion or powerful blast." },
+      "c2": { "title": "Gases", "description": "Compressed, liquefied, dissolved gases; includes flammable, non-flammable, and toxic sub-categories." },
+      "c3": { "title": "Flammable Liquids", "description": "Liquids that easily catch fire (flammable)." },
+      "c4": { "title": "Flammable Solids & Related Substances", "description": "4.1 Flammable solids, self-reactive substances | 4.2 Spontaneously combustible | 4.3 Dangerous when wet (emits flammable gas)" },
+      "c5": { "title": "Oxidizing Substances & Organic Peroxides", "description": "5.1 Oxidizers (promote fire) | 5.2 Organic peroxides (may be sensitive to heat/shock)" },
+      "c6": { "title": "Toxic & Infectious Substances", "description": "6.1 Toxic substances | 6.2 Infectious substances (require special medical/biological protocols)" },
+      "c7": { "title": "Radioactive Material", "description": "Radiation risk, requires strict permits and controls." },
+      "c8": { "title": "Corrosives", "description": "Acids/alkalis and similar substances that corrode skin, metals, and materials." },
+      "c9": { "title": "Miscellaneous Dangerous Goods", "description": "Products that don't fit other classes but pose transport risks (e.g., lithium batteries, dry ice, certain magnetic materials)." }
+    },
     "requiredTitle": "Essential Information for DG Cargo",
-    "practicalTitle": "Practical Tips"
+    "requiredDescription": "The following minimum data is usually needed for quotes, proper classification, and correct packaging/labeling:",
+    "requiredInfo": {
+      "r1": { "item": "UN Number", "description": "International identification number for the substance/product" },
+      "r2": { "item": "Proper Shipping Name (PSN)", "description": "Official name" },
+      "r3": { "item": "Class / Division", "description": "Classification/sub-classification" },
+      "r4": { "item": "Packing Group (PG)", "description": "I/II/III — risk level" },
+      "r5": { "item": "SDS/MSDS", "description": "Safety Data Sheet" },
+      "r6": { "item": "Quantity & Packaging", "description": "Amount and packaging type" }
+    },
+    "practicalTitle": "Practical Tips",
+    "practicalTips": [
+      "If unsure whether cargo is DG, first check the SDS/MSDS to verify UN information.",
+      "Common causes of DG cargo delays: classification errors, missing labels/markings, packaging standard violations, document information discrepancies.",
+      "Requirements may vary by transport mode, so getting advance consultation before loading is effective."
+    ]
   },
   "ResourcesPackaging": {
     "badge": "Packaging",
@@ -942,12 +1039,50 @@
     "highlightedTitle": "Types",
     "description": "Packaging protects cargo from risks during transport and makes loading/unloading operations safe and efficient.",
     "whyTitle": "Why is Packaging Important?",
+    "whyDescription": "Packaging protects cargo from vibration, impact, moisture, dust, and temperature changes during transport, making loading/unloading operations safe and efficient. Proper packaging significantly reduces the risk of damage, returns, insurance disputes, delays, and additional costs.",
     "primaryTitle": "1) Primary Packaging",
+    "primaryDescription": "Packaging in direct contact with the product.",
+    "primary_0_title": "Bottle/Jar/Can", "primary_0_desc": "Glass, plastic, metal containers",
+    "primary_1_title": "Bag/Sachet", "primary_1_desc": "Small bags, vacuum bags",
+    "primary_2_title": "Bottle/Canister/Jerrycan", "primary_2_desc": "For liquid products",
+    "primary_3_title": "Small Drum", "primary_3_desc": "Small-packaged chemical/liquid products",
     "secondaryTitle": "2) Secondary Packaging",
+    "secondaryDescription": "Packaging that groups and protects primary-packaged products.",
+    "secondary_0_title": "Carton/Box", "secondary_0_desc": "Most common",
+    "secondary_1_title": "Double-wall Carton", "secondary_1_desc": "More durable",
+    "secondary_2_title": "Cushioning/Dunnage", "secondary_2_desc": "Foam, paper, air pillows, cotton, etc.",
+    "secondary_3_title": "Shrink Wrap", "secondary_3_desc": "Bundle securing, contamination protection",
+    "secondary_4_title": "Stretch Film", "secondary_4_desc": "Wrapping palletized cargo",
     "tertiaryTitle": "3) Tertiary / Transport Packaging",
+    "tertiaryDescription": "Transport unit packaging for shipping, warehousing, and loading/unloading.",
+    "tertiary_0_title": "Pallet", "tertiary_0_desc": "Wooden, plastic, metal pallets",
+    "tertiary_1_title": "Pallet Box / Pallet Container", "tertiary_1_desc": "Box mounted on a pallet base",
+    "tertiary_2_title": "Crate / Wooden Case", "tertiary_2_desc": "For equipment and fragile cargo",
+    "tertiary_3_title": "Fumigated Wood (ISPM 15)", "tertiary_3_desc": "Required for international shipments",
+    "tertiary_4_title": "Strapping/Banding", "tertiary_4_desc": "PP/PET/steel straps",
+    "tertiary_5_title": "Corner Protector / Edge Board", "tertiary_5_desc": "Prevents box crushing",
+    "tertiary_6_title": "Palletizing", "tertiary_6_desc": "Bundling and securing on pallets",
     "commonTitle": "4) Common Packaging Types",
+    "common_0_category": "Box Types",
+    "common_0_items": ["Corrugated Carton", "Heavy-duty Carton", "Wooden Case", "Wooden Crate – lattice/frame type"],
+    "common_1_category": "Bag Types",
+    "common_1_items": ["Woven PP Bag", "PE Bag/Liner", "Jumbo Bag / Big Bag (FIBC) – for ~500–2000kg bulk cargo", "Vacuum Bag – reduces moisture/oxidation risk"],
+    "common_2_category": "Container/Drum/IBC",
+    "common_2_items": ["Drum – steel/plastic (liquid, powder, chemical)", "IBC (Intermediate Bulk Container) – 800–1000L, liquid/some chemicals", "Canister/Jerrycan – ~5–30L", "Gas Cylinder – gas container (special requirements)"],
+    "common_3_category": "Roll Types",
+    "common_3_items": ["Roll – fabric, paper, film", "Coil – steel coil (requires special securing)"],
     "protectiveTitle": "5) Protective Materials for Transport",
-    "quickTipsTitle": "6) Quick Tips"
+    "protective_0_title": "Desiccant", "protective_0_desc": "For container condensation risk",
+    "protective_1_title": "Moisture Barrier Bag/Foil", "protective_1_desc": "For moisture-sensitive goods",
+    "protective_2_title": "Foam/Air Pillows/Bubble Wrap", "protective_2_desc": "Impact protection",
+    "protective_3_title": "Dunnage", "protective_3_desc": "Wooden blocks, cardboard, inflatable bags",
+    "protective_4_title": "Slip Sheet", "protective_4_desc": "Thin base used when loading without pallets",
+    "quickTipsTitle": "6) Quick Tips",
+    "tip_0_type": "General Cargo", "tip_0_rec": "Carton box + pallet + stretch film",
+    "tip_1_type": "Fragile/Valuable", "tip_1_rec": "Crate/wooden case + cushioning + \"Fragile\" marking",
+    "tip_2_type": "Bulk Cargo", "tip_2_rec": "FIBC (jumbo bag) or hopper-suitable packaging",
+    "tip_3_type": "Liquid/Chemical", "tip_3_rec": "Drum/IBC/canister (UN standard if required)",
+    "tip_4_type": "High-moisture Route", "tip_4_rec": "Desiccant + moisture barrier + proper ventilation"
   },
   "ResourcesDocuments": {
     "badge": "Required Documents",
@@ -955,11 +1090,52 @@
     "highlightedTitle": "Documentation",
     "description": "List and description of documents required for international transport and customs clearance.",
     "cat1Title": "1) Core Commercial Documents",
+    "cat1": {
+      "d1": { "name": "Commercial Invoice", "description": "Price, currency, seller/buyer, terms" },
+      "d2": { "name": "Packing List", "description": "Quantity, packaging type, weight/dimensions" },
+      "d3": { "name": "Sales Contract / PO", "description": "When required" },
+      "d4": { "name": "Certificate of Origin", "description": "When required" }
+    },
     "cat2Title": "2) Transport Documents (varies by mode)",
+    "cat2": {
+      "d1": { "name": "Air Waybill (AWB / e-AWB)", "description": "Air transport" },
+      "d2": { "name": "Bill of Lading (B/L)", "description": "Sea transport" },
+      "d3": { "name": "CMR / Road Consignment Note", "description": "Road transport" },
+      "d4": { "name": "Rail Waybill", "description": "Rail transport" },
+      "d5": { "name": "Multimodal Transport Document (MTD)", "description": "Multimodal transport" }
+    },
     "cat3Title": "3) Customs Clearance Related",
+    "cat3": {
+      "d1": { "name": "Customs Declaration", "description": "For import/export" },
+      "d2": { "name": "HS Code and Classification Info", "description": "Product code, name, description" },
+      "d3": { "name": "Import Tax/VAT Calculation Info", "description": "Invoice, transport costs, etc." },
+      "d4": { "name": "Special Permits/Licenses", "description": "For regulated goods" }
+    },
     "cat4Title": "4) Standards, Quality & Compliance Documents",
+    "cat4": {
+      "d1": { "name": "Certificate of Conformity / Compliance", "description": "Depends on product" },
+      "d2": { "name": "Quality Certificate / Test Report", "description": "Depends on product" },
+      "d3": { "name": "Sanitary/Phytosanitary Certificate", "description": "For food, plants" },
+      "d4": { "name": "Veterinary Certificate", "description": "When required" }
+    },
     "cat5Title": "5) Insurance & Financial Documents",
+    "cat5": {
+      "d1": { "name": "Cargo Insurance Certificate/Policy", "description": "If arranged" },
+      "d2": { "name": "Payment Documents / Bank Letters", "description": "When required" },
+      "d3": { "name": "Letter of Credit (L/C) Documents", "description": "For L/C transactions" }
+    },
     "cat6Title": "6) Additional for Special Cargo (especially Chemical/DG)",
-    "cat7Title": "7) Common Additions for Sea Containers"
+    "cat6": {
+      "d1": { "name": "SDS/MSDS", "description": "Safety Data Sheet" },
+      "d2": { "name": "UN Number, Proper Shipping Name, Class, Packing Group", "description": "DG classification info" },
+      "d3": { "name": "DG Declaration", "description": "Varies by transport mode" },
+      "d4": { "name": "Temperature/Handling Instructions", "description": "For cargo with special handling requirements" }
+    },
+    "cat7Title": "7) Common Additions for Sea Containers",
+    "cat7": {
+      "d1": { "name": "Shipping Instructions", "description": "Data for completing B/L" },
+      "d2": { "name": "VGM (Verified Gross Mass)", "description": "When required" },
+      "d3": { "name": "Container/Seal Details", "description": "Container and seal numbers" }
+    }
   }
 }
