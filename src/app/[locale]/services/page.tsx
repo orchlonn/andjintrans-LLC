@@ -203,7 +203,7 @@ export default function ServicesPage() {
           className="mx-auto max-w-5xl overflow-hidden rounded-3xl"
         >
           <Image
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80"
+            src="/service.jpeg"
             alt={t("imageAlt")}
             width={1200}
             height={800}

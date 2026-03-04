@@ -8,11 +8,11 @@
     "about": "About Us",
     "services": "Services",
     "resources": "Resources",
-    "contact": "Contact"
+    "contact": "Get Quote"
   },
   "Common": {
     "learnMore": "Learn More",
-    "contactUs": "Contact Us",
+    "contactUs": "Get a Quote",
     "allServices": "All Services",
     "getQuote": "Get a Quote",
     "backToResources": "Back to Resources",
@@ -42,7 +42,7 @@
     "dangerousGoods": "Dangerous Goods (DG)",
     "packaging": "Packaging",
     "documents": "Required Documents",
-    "contact": "Contact",
+    "contact": "Get Quote",
     "address1": "Ulaanbaatar, SBD, 9th khoroo",
     "address2": "7th khoroolol, Altai Street",
     "address3": "Khoimor Office, Room 207"
@@ -56,11 +56,10 @@
     "heroDescriptionEnd": ", optimizing time and cost while ensuring full transparency.",
     "dgSpecialization": "Specialization:",
     "dgDescription": "Specialized in classification, labeling, SDS/MSDS documentation, packaging, and route risk management for chemical and dangerous goods (DG) transportation.",
-    "stats": {
-      "experience": "Years of Experience",
-      "modes": "Transport Modes",
-      "monitoring": "Monitoring",
-      "transparency": "Transparency"
+    "features": {
+      "ocean": { "title": "Ocean Freight", "description": "Reliable container and cargo shipping worldwide" },
+      "network": { "title": "Global Network", "description": "Extensive warehouses and distribution centers" },
+      "custom": { "title": "Custom Solutions", "description": "Tailored shipping services for your needs" }
     },
     "servicesSection": {
       "badge": "Our Services",
@@ -128,7 +127,7 @@
     "dgItems": ["UN Classification", "SDS/MSDS Documents", "Special Packaging", "Risk Management"]
   },
   "Contact": {
-    "badge": "Contact",
+    "badge": "Get Quote",
     "title": "Get in",
     "highlightedTitle": "Touch",
     "description": "Send us your transport logistics inquiries and quote requests.",

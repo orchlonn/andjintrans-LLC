@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -90,7 +91,14 @@ export default function Home() {
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  const serviceKeys = ["air", "sea", "rail", "road", "transit", "export"] as const;
+  const serviceKeys = [
+    "air",
+    "sea",
+    "rail",
+    "road",
+    "transit",
+    "export",
+  ] as const;
   const serviceIcons = {
     air: PlaneIcon,
     sea: ShipIcon,
@@ -139,7 +147,14 @@ export default function Home() {
     href: additionalServiceHrefs[key],
   }));
 
-  const resourceKeys = ["incoterms", "containers", "wagons", "dangerousGoods", "packaging", "documents"] as const;
+  const resourceKeys = [
+    "incoterms",
+    "containers",
+    "wagons",
+    "dangerousGoods",
+    "packaging",
+    "documents",
+  ] as const;
   const resourceHrefs = {
     incoterms: "/resources/incoterms",
     containers: "/resources/containers",
@@ -161,8 +176,20 @@ export default function Home() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative flex min-h-screen items-center justify-center px-6 pt-20"
+        className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20"
       >
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/about_us.jpeg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/50 to-slate-900/80" />
+        </div>
+
         <motion.div
           style={{ y: heroY, opacity: heroOpacity }}
           className="relative z-10 mx-auto max-w-5xl text-center"
@@ -171,11 +198,11 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="mb-6 mt-16 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm text-sky-600 md:mt-0"
+            className="mb-6 mt-16 inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-900/40 px-4 py-2 text-sm text-sky-300 backdrop-blur-sm md:mt-0"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-500" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-400" />
             </span>
             {t("badge")}
           </motion.div>
@@ -184,21 +211,23 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl"
+            className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
             {t("heroTitle1")}
             <br />
-            {t("heroTitle2")}
+            <span className="text-cyan-400">{t("heroTitle2")}</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mx-auto mt-8 max-w-3xl text-lg text-slate-500 sm:text-xl"
+            className="mx-auto mt-8 max-w-3xl text-lg text-slate-200 sm:text-xl"
           >
             {t("heroDescription")}{" "}
-            <span className="text-sky-600 font-medium">{t("heroHighlight")}</span>
+            <span className="font-medium text-white">
+              {t("heroHighlight")}
+            </span>
             {t("heroDescriptionEnd")}
           </motion.p>
 
@@ -207,9 +236,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mx-auto mt-6 max-w-2xl rounded-2xl border border-amber-200 bg-amber-50 p-4"
+            className="mx-auto mt-6 max-w-2xl rounded-2xl border border-amber-400/30 bg-amber-900/30 p-4 backdrop-blur-sm"
           >
-            <p className="text-sm text-amber-700">
+            <p className="text-sm text-amber-200">
               <strong>{t("dgSpecialization")}</strong> {t("dgDescription")}
             </p>
           </motion.div>
@@ -248,7 +277,7 @@ export default function Home() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-700 transition-all hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700"
+                className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20"
               >
                 {tc("transportSolutions")}
               </Link>
@@ -275,10 +304,10 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-2xl font-bold text-transparent sm:text-4xl md:text-5xl">
+                <div className="text-2xl font-bold text-cyan-400 sm:text-4xl md:text-5xl">
                   {stat.value}
                 </div>
-                <div className="mt-2 text-sm text-slate-400">{stat.label}</div>
+                <div className="mt-2 text-sm text-slate-300">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -289,15 +318,15 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+          className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
             className="flex flex-col items-center gap-2"
           >
-            <span className="text-xs text-slate-400">{tc("scrollDown")}</span>
-            <div className="h-12 w-6 rounded-full border border-slate-300 p-1">
+            <span className="text-xs text-slate-300">{tc("scrollDown")}</span>
+            <div className="h-12 w-6 rounded-full border border-white/30 p-1">
               <motion.div
                 animate={{ y: [0, 16, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
