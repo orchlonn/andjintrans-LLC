@@ -56,6 +56,12 @@
     "heroDescriptionEnd": ", optimizing time and cost while ensuring full transparency.",
     "dgSpecialization": "Specialization:",
     "dgDescription": "Specialized in classification, labeling, SDS/MSDS documentation, packaging, and route risk management for chemical and dangerous goods (DG) transportation.",
+    "stats": {
+      "experience": "Years of Experience",
+      "modes": "Transport Modes",
+      "monitoring": "Monitoring",
+      "transparency": "Transparency"
+    },
     "features": {
       "ocean": { "title": "Ocean Freight", "description": "Reliable container and cargo shipping worldwide" },
       "network": { "title": "Global Network", "description": "Extensive warehouses and distribution centers" },

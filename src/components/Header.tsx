@@ -2,15 +2,24 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const t = useTranslations("Nav");
+  const tc = useTranslations("Common");
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { href: "/" as const, label: t("home") },
@@ -31,7 +40,11 @@ export default function Header() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed left-0 right-0 top-0 z-50 border-b border-slate-200 bg-white/85 backdrop-blur-xl"
+        className={`fixed left-0 right-0 top-0 z-50 backdrop-blur-xl transition-colors duration-300 ${
+          scrolled
+            ? "border-b border-slate-200 bg-white/85"
+            : "border-b border-white/10 bg-slate-900/50"
+        }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:grid lg:grid-cols-[1fr_auto_1fr]">
           <div className="flex justify-start">
@@ -60,14 +73,22 @@ export default function Header() {
                 >
                   <Link
                     href={item.href}
-                    className={`relative whitespace-nowrap rounded-full px-2.5 py-2 text-xs transition-colors sm:px-3 sm:text-sm xl:px-4 ${
-                      active ? "text-sky-700 font-medium" : "text-slate-600 hover:text-sky-600"
+                    className={`relative whitespace-nowrap rounded-full px-2.5 py-2 text-xs transition-colors duration-300 sm:px-3 sm:text-sm xl:px-4 ${
+                      active
+                        ? scrolled
+                          ? "text-sky-700 font-medium"
+                          : "text-white font-medium"
+                        : scrolled
+                          ? "text-slate-600 hover:text-sky-600"
+                          : "text-slate-300 hover:text-white"
                     }`}
                   >
                     {active && (
                       <motion.span
                         layoutId="activeNav"
-                        className="absolute inset-0 rounded-full bg-sky-50"
+                        className={`absolute inset-0 rounded-full transition-colors duration-300 ${
+                          scrolled ? "bg-sky-50" : "bg-white/10"
+                        }`}
                         transition={{
                           type: "spring",
                           stiffness: 380,
@@ -84,13 +105,23 @@ export default function Header() {
 
           <div className="flex items-center justify-end gap-3">
             <div className="hidden lg:block">
-              <LanguageSwitcher />
+              <LanguageSwitcher scrolled={scrolled} />
             </div>
+            <Link
+              href="/contact"
+              className="hidden rounded-lg bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-600 lg:inline-flex"
+            >
+              {tc("getQuote")}
+            </Link>
             <div className="lg:hidden">
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50"
+                className={`relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border transition-colors duration-300 ${
+                  scrolled
+                    ? "border-slate-200 bg-slate-50"
+                    : "border-white/20 bg-white/10"
+                }`}
                 aria-label="Toggle menu"
               >
                 <div className="flex w-5 flex-col gap-1.5">
@@ -98,11 +129,15 @@ export default function Header() {
                     animate={
                       mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }
                     }
-                    className="h-0.5 w-full bg-slate-700"
+                    className={`h-0.5 w-full transition-colors duration-300 ${
+                      scrolled ? "bg-slate-700" : "bg-white"
+                    }`}
                   />
                   <motion.span
                     animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                    className="h-0.5 w-full bg-slate-700"
+                    className={`h-0.5 w-full transition-colors duration-300 ${
+                      scrolled ? "bg-slate-700" : "bg-white"
+                    }`}
                   />
                   <motion.span
                     animate={
@@ -110,7 +145,9 @@ export default function Header() {
                         ? { rotate: -45, y: -6 }
                         : { rotate: 0, y: 0 }
                     }
-                    className="h-0.5 w-full bg-slate-700"
+                    className={`h-0.5 w-full transition-colors duration-300 ${
+                      scrolled ? "bg-slate-700" : "bg-white"
+                    }`}
                   />
                 </div>
               </motion.button>
@@ -171,7 +208,17 @@ export default function Header() {
           </div>
 
           <div className="mt-6">
-            <LanguageSwitcher />
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block rounded-lg bg-orange-500 px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-orange-600"
+            >
+              {tc("getQuote")}
+            </Link>
+          </div>
+
+          <div className="mt-6">
+            <LanguageSwitcher scrolled />
           </div>
 
           <div className="mt-auto pb-8">
