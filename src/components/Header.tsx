@@ -26,8 +26,12 @@ export default function Header() {
     { href: "/about" as const, label: t("about") },
     { href: "/services" as const, label: t("services") },
     { href: "/resources" as const, label: t("resources") },
-    { href: "/contact" as const, label: t("contact") },
   ];
+
+  const isHome = pathname === "/";
+
+  // On non-home pages, always use the bright (scrolled) style
+  const isDark = isHome && !scrolled;
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -41,9 +45,9 @@ export default function Header() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed left-0 right-0 top-0 z-50 backdrop-blur-xl transition-colors duration-300 ${
-          scrolled
-            ? "border-b border-slate-200 bg-white/85"
-            : "border-b border-white/10 bg-slate-900/50"
+          isDark
+            ? "border-b border-transparent"
+            : "border-b border-slate-200 bg-white/85"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:grid lg:grid-cols-[1fr_auto_1fr]">
@@ -75,19 +79,19 @@ export default function Header() {
                     href={item.href}
                     className={`relative whitespace-nowrap rounded-full px-2.5 py-2 text-xs transition-colors duration-300 sm:px-3 sm:text-sm xl:px-4 ${
                       active
-                        ? scrolled
-                          ? "text-sky-700 font-medium"
-                          : "text-white font-medium"
-                        : scrolled
-                          ? "text-slate-600 hover:text-sky-600"
-                          : "text-slate-300 hover:text-white"
+                        ? isDark
+                          ? "text-white font-medium"
+                          : "text-sky-700 font-medium"
+                        : isDark
+                          ? "text-slate-300 hover:text-white"
+                          : "text-slate-600 hover:text-sky-600"
                     }`}
                   >
                     {active && (
                       <motion.span
                         layoutId="activeNav"
                         className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-                          scrolled ? "bg-sky-50" : "bg-white/10"
+                          isDark ? "bg-white/10" : "bg-sky-50"
                         }`}
                         transition={{
                           type: "spring",
@@ -105,7 +109,7 @@ export default function Header() {
 
           <div className="flex items-center justify-end gap-3">
             <div className="hidden lg:block">
-              <LanguageSwitcher scrolled={scrolled} />
+              <LanguageSwitcher scrolled={!isDark} />
             </div>
             <Link
               href="/contact"
@@ -118,9 +122,9 @@ export default function Header() {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className={`relative z-50 flex h-10 w-10 items-center justify-center rounded-xl border transition-colors duration-300 ${
-                  scrolled
-                    ? "border-slate-200 bg-slate-50"
-                    : "border-white/20 bg-white/10"
+                  isDark
+                    ? "border-white/20 bg-white/10"
+                    : "border-slate-200 bg-slate-50"
                 }`}
                 aria-label="Toggle menu"
               >
@@ -130,13 +134,13 @@ export default function Header() {
                       mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }
                     }
                     className={`h-0.5 w-full transition-colors duration-300 ${
-                      scrolled ? "bg-slate-700" : "bg-white"
+                      isDark ? "bg-white" : "bg-slate-700"
                     }`}
                   />
                   <motion.span
                     animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
                     className={`h-0.5 w-full transition-colors duration-300 ${
-                      scrolled ? "bg-slate-700" : "bg-white"
+                      isDark ? "bg-white" : "bg-slate-700"
                     }`}
                   />
                   <motion.span
@@ -146,7 +150,7 @@ export default function Header() {
                         : { rotate: 0, y: 0 }
                     }
                     className={`h-0.5 w-full transition-colors duration-300 ${
-                      scrolled ? "bg-slate-700" : "bg-white"
+                      isDark ? "bg-white" : "bg-slate-700"
                     }`}
                   />
                 </div>
