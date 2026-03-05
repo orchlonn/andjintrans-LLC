@@ -224,7 +224,7 @@ export default function ServicesPage() {
             <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
               {t("mainTitle")}
             </h2>
-            <p className="mt-4 text-slate-500">
+            <p className="mt-4 text-slate-600">
               {t("mainDescription")}
             </p>
 
@@ -251,7 +251,7 @@ export default function ServicesPage() {
                       <h3 className="mt-4 text-xl font-bold text-slate-900">
                         {t(`${service.key}.title`)}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-slate-500">
+                      <p className="mt-3 text-sm leading-relaxed text-slate-600">
                         {t(`${service.key}.description`)}
                       </p>
                       <span className="mt-6 inline-flex items-center text-sm text-sky-600 group-hover:text-sky-600">
@@ -286,7 +286,7 @@ export default function ServicesPage() {
             <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
               {t("additionalTitle")}
             </h2>
-            <p className="mt-4 text-slate-500">
+            <p className="mt-4 text-slate-600">
               {t("additionalDescription")}
             </p>
 
@@ -312,7 +312,7 @@ export default function ServicesPage() {
                     <h3 className="mt-4 text-xl font-bold text-slate-900">
                       {t(`${service.key}.title`)}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-500">
+                    <p className="mt-3 text-sm leading-relaxed text-slate-600">
                       {t(`${service.key}.description`)}
                     </p>
                     <span className="mt-6 inline-flex items-center text-sm text-sky-600 group-hover:text-sky-600">
@@ -348,7 +348,7 @@ export default function ServicesPage() {
               <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
                 {t("ctaTitle")}
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-slate-500">
+              <p className="mx-auto mt-4 max-w-2xl text-slate-600">
                 {t("ctaDescription")}
               </p>
               <Link

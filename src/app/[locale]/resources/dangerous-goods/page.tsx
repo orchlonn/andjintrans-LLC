@@ -35,7 +35,7 @@ export default function DangerousGoodsPage() {
             className="mb-16"
           >
             <div className="rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-transparent p-8 shadow-sm">
-              <p className="text-lg leading-relaxed text-slate-500">
+              <p className="text-lg leading-relaxed text-slate-600">
                 {t("whatIsDG")}
               </p>
             </div>
@@ -65,7 +65,7 @@ export default function DangerousGoodsPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-slate-900">{t(`classes.${key}.title`)}</h3>
-                      <p className="mt-2 text-slate-500">{t(`classes.${key}.description`)}</p>
+                      <p className="mt-2 text-slate-600">{t(`classes.${key}.description`)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -81,7 +81,7 @@ export default function DangerousGoodsPage() {
             className="mb-16"
           >
             <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">{t("requiredTitle")}</h2>
-            <p className="mt-4 text-slate-500">
+            <p className="mt-4 text-slate-600">
               {t("requiredDescription")}
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -95,7 +95,7 @@ export default function DangerousGoodsPage() {
                   className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
                 >
                   <h4 className="font-semibold text-sky-600">{t(`requiredInfo.${key}.item`)}</h4>
-                  <p className="mt-1 text-sm text-slate-500">{t(`requiredInfo.${key}.description`)}</p>
+                  <p className="mt-1 text-sm text-slate-600">{t(`requiredInfo.${key}.description`)}</p>
                 </motion.div>
               ))}
             </div>
@@ -124,7 +124,7 @@ export default function DangerousGoodsPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <p className="pt-2 text-slate-500">{tip}</p>
+                  <p className="pt-2 text-slate-600">{tip}</p>
                 </motion.div>
               ))}
             </div>

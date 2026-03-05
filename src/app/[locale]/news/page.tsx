@@ -94,7 +94,7 @@ export default function NewsPage() {
                         <span className="text-sm text-slate-400">{news.date}</span>
                       </div>
                       <h2 className="mt-4 text-xl font-bold text-slate-900 md:text-2xl">{news.title}</h2>
-                      <p className="mt-3 text-slate-500">{news.excerpt}</p>
+                      <p className="mt-3 text-slate-600">{news.excerpt}</p>
                     </motion.article>
                   );
                 })}
@@ -107,7 +107,7 @@ export default function NewsPage() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">{t("emptyTitle")}</h3>
-                <p className="mt-2 text-slate-500">
+                <p className="mt-2 text-slate-600">
                   {t("emptyDescription")}
                 </p>
               </div>
@@ -125,7 +125,7 @@ export default function NewsPage() {
               <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
                 {t("ctaTitle")}
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-slate-500">
+              <p className="mx-auto mt-4 max-w-2xl text-slate-600">
                 {t("ctaDescription")}
               </p>
               <Link

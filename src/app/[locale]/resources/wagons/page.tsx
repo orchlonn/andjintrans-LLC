@@ -33,7 +33,7 @@ export default function WagonsPage() {
           >
             <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">{t("selectionTitle")}</h2>
             <div className="mt-6 rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-transparent p-8 shadow-sm">
-              <p className="text-lg leading-relaxed text-slate-500">
+              <p className="text-lg leading-relaxed text-slate-600">
                 {t("selectionDescription")}
               </p>
             </div>
@@ -63,7 +63,7 @@ export default function WagonsPage() {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold text-slate-900">{t(`wagons.${key}.title`)}</h3>
-                      <div className="mt-3 space-y-2 text-sm text-slate-500">
+                      <div className="mt-3 space-y-2 text-sm text-slate-600">
                         <p><span className="text-sky-600">{t("labelUsage")}:</span> {t(`wagons.${key}.usage`)}</p>
                         {t.has(`wagons.${key}.advantage`) && <p><span className="text-sky-600">{t("labelAdvantage")}:</span> {t(`wagons.${key}.advantage`)}</p>}
                         {t.has(`wagons.${key}.suitable`) && <p><span className="text-sky-600">{t("labelSuitable")}:</span> {t(`wagons.${key}.suitable`)}</p>}
@@ -94,7 +94,7 @@ export default function WagonsPage() {
                   transition={{ delay: index * 0.05 }}
                   className="rounded-xl border border-sky-200 bg-sky-50 p-4 shadow-sm"
                 >
-                  <p className="text-sm text-slate-500">{t(`quickTips.${key}.type`)}</p>
+                  <p className="text-sm text-slate-600">{t(`quickTips.${key}.type`)}</p>
                   <p className="mt-1 font-semibold text-sky-600">{t(`quickTips.${key}.recommendation`)}</p>
                 </motion.div>
               ))}

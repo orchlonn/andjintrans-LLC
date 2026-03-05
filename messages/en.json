@@ -945,7 +945,7 @@
     "labelFeature": "Feature",
     "labelNote": "Note",
     "containers": {
-      "c1": { "title": "Standard Dry Container", "usage": "General cargo, boxed goods, equipment, palletized cargo.", "sizes": "20', 40'", "advantage": "Widest network availability, relatively affordable cost, available on most routes." },
+      "c1": { "title": "Standard Container", "usage": "General cargo, boxed goods, equipment, palletized cargo.", "sizes": "20', 40'", "advantage": "Widest network availability, relatively affordable cost, available on most routes." },
       "c2": { "title": "High Cube Container (HC)", "usage": "High-volume but relatively light cargo (e.g., packaged products, light industrial goods).", "sizes": "40'HC, 45'HC", "advantage": "Taller than standard 40', providing more capacity." },
       "c3": { "title": "Reefer Container", "usage": "Food, pharmaceuticals, and some chemical products requiring temperature control.", "feature": "Temperature control, air circulation, and in some cases humidity control.", "note": "Pre-planning of set point, packaging, ventilation requirements, and plug-in availability is needed." },
       "c4": { "title": "Open Top Container", "usage": "Tall/oversized cargo that needs to be loaded from above by crane/hoist.", "feature": "Roof is covered with tarpaulin/cover.", "note": "Securing (lashing) and protection from water/moisture is important." },

@@ -33,7 +33,7 @@ export default function IncotermsPage() {
           >
             <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">{t("whatTitle")}</h2>
             <div className="mt-6 rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 to-transparent p-8 shadow-sm">
-              <p className="text-lg leading-relaxed text-slate-500">
+              <p className="text-lg leading-relaxed text-slate-600">
                 {t("whatDescription")}
               </p>
               <p className="mt-4 text-lg font-semibold text-sky-600">
@@ -66,7 +66,7 @@ export default function IncotermsPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-slate-900">{t(`anyMode.${code}.name`)}</h3>
-                      <p className="mt-2 text-slate-500">{t(`anyMode.${code}.description`)}</p>
+                      <p className="mt-2 text-slate-600">{t(`anyMode.${code}.description`)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -98,7 +98,7 @@ export default function IncotermsPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-slate-900">{t(`sea.${code}.name`)}</h3>
-                      <p className="mt-2 text-slate-500">{t(`sea.${code}.description`)}</p>
+                      <p className="mt-2 text-slate-600">{t(`sea.${code}.description`)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -125,7 +125,7 @@ export default function IncotermsPage() {
                   className="rounded-2xl border border-sky-200 bg-sky-50 p-6 shadow-sm"
                 >
                   <h3 className="font-semibold text-sky-600">{t(`recommendations.${key}.title`)}</h3>
-                  <p className="mt-2 text-slate-500">{t(`recommendations.${key}.description`)}</p>
+                  <p className="mt-2 text-slate-600">{t(`recommendations.${key}.description`)}</p>
                 </motion.div>
               ))}
             </div>

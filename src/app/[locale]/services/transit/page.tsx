@@ -81,7 +81,7 @@ export default function TransitTransportPage() {
                     </svg>
                   </div>
                   <h3 className="font-semibold text-slate-900">{service.title}</h3>
-                  <p className="mt-2 text-sm text-slate-500">{service.description}</p>
+                  <p className="mt-2 text-sm text-slate-600">{service.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -110,7 +110,7 @@ export default function TransitTransportPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                    <p className="mt-1 text-slate-500">{item.description}</p>
+                    <p className="mt-1 text-slate-600">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -127,7 +127,7 @@ export default function TransitTransportPage() {
               <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
                 {t("ctaTitle")}
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-slate-500">
+              <p className="mx-auto mt-4 max-w-2xl text-slate-600">
                 {t("ctaDescription")}
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">

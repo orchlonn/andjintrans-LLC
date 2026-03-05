@@ -350,7 +350,7 @@ export default function Home() {
                 {t("servicesSection.titleHighlight")}
               </span>
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-500">
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
               {t("servicesSection.description")}
             </p>
           </AnimatedSection>
@@ -381,7 +381,7 @@ export default function Home() {
                       <h3 className="mt-4 text-lg font-semibold text-slate-900">
                         {service.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-slate-500">
+                      <p className="mt-3 text-sm leading-relaxed text-slate-600">
                         {service.description}
                       </p>
                       <span className="mt-4 inline-flex items-center text-sm text-sky-600 group-hover:text-sky-500">
@@ -443,7 +443,7 @@ export default function Home() {
                     <h3 className="text-xl font-semibold text-slate-900">
                       {service.title}
                     </h3>
-                    <p className="mt-4 text-slate-500">{service.description}</p>
+                    <p className="mt-4 text-slate-600">{service.description}</p>
                     <span className="mt-4 inline-flex items-center text-sm text-amber-600 group-hover:text-amber-500">
                       {tc("learnMore")}
                       <svg
@@ -506,7 +506,7 @@ export default function Home() {
                     <h3 className="text-lg font-semibold text-slate-900">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm text-slate-500">
+                    <p className="mt-2 text-sm text-slate-600">
                       {item.description}
                     </p>
                   </div>
@@ -554,7 +554,7 @@ export default function Home() {
               <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
                 {t("cta.title")}
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-slate-500">
+              <p className="mx-auto mt-4 max-w-xl text-slate-600">
                 {t("cta.description")}
               </p>
               <div className="mt-8">

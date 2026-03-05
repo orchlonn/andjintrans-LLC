@@ -251,7 +251,7 @@ export default function ContactPage() {
                   <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
                     {t("formTitle")}
                   </h2>
-                  <p className="mt-3 text-slate-500">
+                  <p className="mt-3 text-slate-600">
                     {t("formDescription")}
                   </p>
                 </div>

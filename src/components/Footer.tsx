@@ -21,7 +21,7 @@ export default function Footer() {
               height={42}
               className="h-10 w-auto"
             />
-            <p className="mt-4 text-sm text-slate-500">
+            <p className="mt-4 text-sm text-slate-600">
               {t("description")}
             </p>
           </div>
@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3 className="font-semibold text-slate-900">{t("services")}</h3>
-            <ul className="mt-4 space-y-2 text-sm text-slate-500">
+            <ul className="mt-4 space-y-2 text-sm text-slate-600">
               <li>
                 <Link href="/services/air" className="hover:text-sky-600">
                   {t("airTransport")}
@@ -66,7 +66,7 @@ export default function Footer() {
           {/* Resources */}
           <div>
             <h3 className="font-semibold text-slate-900">{t("resources")}</h3>
-            <ul className="mt-4 space-y-2 text-sm text-slate-500">
+            <ul className="mt-4 space-y-2 text-sm text-slate-600">
               <li>
                 <Link
                   href="/resources/incoterms"
@@ -118,7 +118,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="font-semibold text-slate-900">{t("contact")}</h3>
-            <ul className="mt-4 space-y-2 text-sm text-slate-500">
+            <ul className="mt-4 space-y-2 text-sm text-slate-600">
               <li>{t("address1")}</li>
               <li>{t("address2")}</li>
               <li>{t("address3")}</li>

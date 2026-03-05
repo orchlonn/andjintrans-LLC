@@ -31,7 +31,7 @@ export default function LanguageSwitcher({ scrolled = false }: { scrolled?: bool
           locale === "mn"
             ? "bg-sky-500 text-white"
             : scrolled
-              ? "text-slate-500 hover:text-sky-600"
+              ? "text-slate-600 hover:text-sky-600"
               : "text-slate-300 hover:text-white"
         }`}
       >
@@ -44,7 +44,7 @@ export default function LanguageSwitcher({ scrolled = false }: { scrolled?: bool
           locale === "en"
             ? "bg-sky-500 text-white"
             : scrolled
-              ? "text-slate-500 hover:text-sky-600"
+              ? "text-slate-600 hover:text-sky-600"
               : "text-slate-300 hover:text-white"
         }`}
       >

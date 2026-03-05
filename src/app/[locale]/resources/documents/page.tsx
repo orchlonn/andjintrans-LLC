@@ -59,7 +59,7 @@ export default function DocumentsPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-slate-900">{t(`${category.key}.${itemKey}.name`)}</h4>
-                      <p className="mt-1 text-sm text-slate-500">{t(`${category.key}.${itemKey}.description`)}</p>
+                      <p className="mt-1 text-sm text-slate-600">{t(`${category.key}.${itemKey}.description`)}</p>
                     </div>
                   </motion.div>
                 ))}

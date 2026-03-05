@@ -74,7 +74,7 @@ export default function AirTransportPage() {
                     </svg>
                   </div>
                   <h3 className="font-semibold text-slate-900">{t(`types.${service.key}.title`)}</h3>
-                  <p className="mt-2 text-sm text-slate-500">{t(`types.${service.key}.description`)}</p>
+                  <p className="mt-2 text-sm text-slate-600">{t(`types.${service.key}.description`)}</p>
                 </motion.div>
               ))}
             </div>
@@ -103,7 +103,7 @@ export default function AirTransportPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-slate-900">{t(`steps.${item.key}.title`)}</h3>
-                    <p className="mt-1 text-slate-500">{t(`steps.${item.key}.description`)}</p>
+                    <p className="mt-1 text-slate-600">{t(`steps.${item.key}.description`)}</p>
                   </div>
                 </motion.div>
               ))}
@@ -147,7 +147,7 @@ export default function AirTransportPage() {
               <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
                 {t("ctaTitle")}
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-slate-500">
+              <p className="mx-auto mt-4 max-w-2xl text-slate-600">
                 {t("ctaDescription")}
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
