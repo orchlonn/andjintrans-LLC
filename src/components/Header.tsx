@@ -28,10 +28,10 @@ export default function Header() {
     { href: "/resources" as const, label: t("resources") },
   ];
 
-  const isHome = pathname === "/";
+  const hasHero = pathname === "/" || pathname === "/about" || pathname === "/services" || pathname === "/resources";
 
-  // On non-home pages, always use the bright (scrolled) style
-  const isDark = isHome && !scrolled;
+  // On pages with hero background images, use dark style until scrolled
+  const isDark = hasHero && !scrolled;
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";

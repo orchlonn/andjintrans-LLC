@@ -29,26 +29,11 @@ export default function AboutPage() {
         title={t("title")}
         highlightedTitle={t("highlightedTitle")}
         description={t("description")}
+        backgroundImage="/about_us.jpeg"
+        imageAlt={t("imageAlt")}
       />
 
-      {/* Transport image */}
-      <div className="px-6 pb-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mx-auto max-w-5xl overflow-hidden rounded-3xl"
-        >
-          <Image
-            src="/about_us.jpeg"
-            alt={t("imageAlt")}
-            width={1200}
-            height={800}
-            className="h-auto w-full"
-          />
-        </motion.div>
-      </div>
-
-      <div className="px-6 pb-24">
+      <div className="px-6 pb-24 pt-20">
         <div className="mx-auto max-w-5xl">
           {/* Introduction */}
           <motion.section

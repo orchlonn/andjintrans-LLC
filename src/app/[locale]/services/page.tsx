@@ -193,26 +193,11 @@ export default function ServicesPage() {
         title={t("title")}
         highlightedTitle={t("highlightedTitle")}
         description={t("description")}
+        backgroundImage="/service.jpeg"
+        imageAlt={t("imageAlt")}
       />
 
-      {/* Hero image */}
-      <div className="px-6 pb-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mx-auto max-w-5xl overflow-hidden rounded-3xl"
-        >
-          <Image
-            src="/service.jpeg"
-            alt={t("imageAlt")}
-            width={1200}
-            height={800}
-            className="h-auto w-full"
-          />
-        </motion.div>
-      </div>
-
-      <div className="px-6 pb-24">
+      <div className="px-6 pb-24 pt-20">
         <div className="mx-auto max-w-6xl">
           {/* Main Transport Services */}
           <motion.section
